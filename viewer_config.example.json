@@ -1,0 +1,25 @@
+{
+  "title": "柑橘3品種・6ハプロタイプ",
+  "bin_width": 100000,
+  "paths": [
+    {"id": "CKIhap1", "label": "紀州 hap1", "short": "CKI h1", "group": "kishu", "color": "#f0ad3d", "aliases": ["CKIhap1*", "*CKI*hap1*"]},
+    {"id": "CKIhap2", "label": "紀州 hap2", "short": "CKI h2", "group": "kishu", "color": "#ffd889", "aliases": ["CKIhap2*", "*CKI*hap2*"]},
+    {"id": "CUNphKi", "label": "温州・紀州由来", "short": "CUN Ki", "group": "mikan-kishu", "color": "#f4bd55", "aliases": ["CUNphKi*", "*CUN*phKi*"]},
+    {"id": "CUNphKu", "label": "温州・九年母由来", "short": "CUN Ku", "group": "mikan-kunenbo", "color": "#59a9df", "aliases": ["CUNphKu*", "*CUN*phKu*"]},
+    {"id": "CKUhap1", "label": "九年母 hap1", "short": "CKU h1", "group": "kunenbo", "color": "#3e94d8", "aliases": ["CKUhap1*", "*CKU*hap1*"]},
+    {"id": "CKUhap2", "label": "九年母 hap2", "short": "CKU h2", "group": "kunenbo", "color": "#8ec7ee", "aliases": ["CKUhap2*", "*CKU*hap2*"]}
+  ],
+  "chromosomes": [
+    {"id": "Chr1", "odgi_bin": "work/odgi-bin/Chr1.tsv"},
+    {"id": "Chr2", "odgi_bin": "work/odgi-bin/Chr2.tsv"},
+    {"id": "Chr3", "odgi_bin": "work/odgi-bin/Chr3.tsv"},
+    {"id": "Chr4", "odgi_bin": "work/odgi-bin/Chr4.tsv"},
+    {"id": "Chr5", "odgi_bin": "work/odgi-bin/Chr5.tsv"},
+    {"id": "Chr6", "odgi_bin": "work/odgi-bin/Chr6.tsv"},
+    {"id": "Chr7", "odgi_bin": "work/odgi-bin/Chr7.tsv"},
+    {"id": "Chr8", "odgi_bin": "work/odgi-bin/Chr8.tsv"},
+    {"id": "Chr9", "odgi_bin": "work/odgi-bin/Chr9.tsv"}
+  ],
+  "variants": "work/variants.tsv",
+  "switches": "work/switches.tsv"
+}

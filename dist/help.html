@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1718" />
+    <meta name="description" content="Unshu Haplotype Viewerの表示内容、色、数値、計算方法を説明するHelpページ" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1718'/%3E%3Cpath d='M12 34h13l6-12 7 24 6-12h8' fill='none' stroke='%23f2b84b' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <title>Help · Unshu Haplotype Viewer</title>
+    <link rel="stylesheet" href="./styles.css?v=11" />
+    <link rel="stylesheet" href="./help.css?v=1" />
+  </head>
+  <body class="help-page">
+    <header class="topbar">
+      <a class="brand brand-link" href="./" aria-label="Unshu Haplotype Viewer">
+        <span class="mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M2 13h5l3-7 4 13 3-6h5" fill="none" stroke="#f0ad3d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><strong>Unshu Haplotype Viewer</strong><small>Satsuma (Unshu) · Kishu · Kunenbo</small></span>
+      </a>
+      <div class="top-actions">
+        <a class="help-back" href="./" data-text-ja="ビューワへ戻る" data-text-en="Back to viewer">ビューワへ戻る</a>
+        <button class="language-toggle" id="help-language" aria-label="Switch language">English</button>
+      </div>
+    </header>
+
+    <main class="help-main">
+      <article data-lang="ja">
+        <div class="help-hero">
+          <p class="eyebrow">HELP / DISPLAY GUIDE</p>
+          <h1>このビューワが表示しているもの</h1>
+          <p>Unshu Haplotype Viewerは、温州・紀州・九年母の6ハプロタイプを含むGFAを、<code>CUN#1</code>参照パスの染色体座標へ投影して比較するための軽量ビューワです。</p>
+          <div class="help-callout"><strong>一般的なノード・エッジ図とは表示方法が異なります。</strong>複雑なグラフをそのまま描く代わりに、共通の横軸へ各パスの共有ノード量、向き、親との類似度を集約しています。</div>
+        </div>
+
+        <nav class="help-nav" aria-label="ページ内メニュー">
+          <a href="#view-ja">基本表示</a><a href="#colors-ja">色と線</a><a href="#scores-ja">数値</a><a href="#events-ja">候補イベント</a><a href="#traits-ja">遺伝子</a><a href="#limits-ja">注意点</a>
+        </nav>
+
+        <section class="help-section" id="view-ja">
+          <h2>比較セットと横軸</h2>
+          <div class="help-grid three">
+            <div class="help-card"><span class="help-number">6</span><h3>全6本</h3><p>温州2本、紀州2本、九年母2本を同じ参照座標で比較します。品種間の分岐や、温州2 hapの親系統への近さを見る表示です。</p></div>
+            <div class="help-card"><span class="help-number">3</span><h3>紀州トリオ</h3><p>CUNphKiと紀州hap1・hap2を比較し、温州側が局所的にどちらの紀州hapへ近いかを示します。</p></div>
+            <div class="help-card"><span class="help-number">3</span><h3>九年母トリオ</h3><p>CUNphKuと九年母hap1・hap2を比較し、温州側が局所的にどちらの九年母hapへ近いかを示します。</p></div>
+          </div>
+          <p class="help-note"><strong>横軸：</strong>GFA中の <code>CUN#1#chN</code> パスを0 bpからたどった座標です。各値は50 kbビンで集約しています。</p>
+        </section>
+
+        <section class="help-section" id="colors-ja">
+          <h2>染色体トラックの色と線</h2>
+          <div class="legend-table">
+            <div><i style="--c:#f0ad3d"></i><strong>濃黄</strong><span>紀州 hap1</span></div>
+            <div><i style="--c:#ffd889"></i><strong>淡黄</strong><span>紀州 hap2</span></div>
+            <div><i style="--c:#f4bd55"></i><strong>黄</strong><span>温州・紀州由来候補 CUNphKi</span></div>
+            <div><i style="--c:#59a9df"></i><strong>青</strong><span>温州・九年母由来候補 CUNphKu</span></div>
+            <div><i style="--c:#3e94d8"></i><strong>濃青</strong><span>九年母 hap1</span></div>
+            <div><i style="--c:#8ec7ee"></i><strong>淡青</strong><span>九年母 hap2</span></div>
+            <div><i style="--c:#f36a6a"></i><strong>赤の下線</strong><span>共有ノードのうち逆向きが15%を超えるビン</span></div>
+          </div>
+          <h3>トラックの濃淡</h3>
+          <p>各50 kbビンについて、参照パスの塩基のうち、そのパスにも存在するGFAノードが占める割合を <code>coverage</code> としています。濃いほど同じ参照ノードを多く共有します。染色体内の最大値に合わせて平方根スケールで表示しています。</p>
+          <div class="help-warning"><strong>coverageはシーケンスリード深度でも塩基配列一致率でもありません。</strong>GFA共有ノードを参照座標へ投影した割合です。</div>
+          <h3>「染色体全体」の棒の高さ</h3>
+          <p>染色体を100区間に分け、各区間に重なる6パスの <code>coverage</code> 平均を平方根スケールで高さへ変換しています。高い区間ほど、6パス全体として参照ノードがよく保持されています。黄色い枠は現在の表示範囲です。</p>
+        </section>
+
+        <section class="help-section" id="scores-ja">
+          <h2>親由来・hap類似度グラフの数値</h2>
+          <p>類似度には、共有GFAノードをノード長で重み付けしたJaccard係数を使います。</p>
+          <div class="formula"><span>J(A, B) =</span><span>共有ノード長の合計 ÷ 和集合ノード長の合計</span></div>
+          <h3>全6本表示</h3>
+          <div class="formula"><span>score =</span><span>max(紀州hap1, hap2とのJ) − max(九年母hap1, hap2とのJ)</span></div>
+          <ul>
+            <li><strong>+1に近い：</strong>紀州側に強く近い</li>
+            <li><strong>−1に近い：</strong>九年母側に強く近い</li>
+            <li><strong>0付近：</strong>両親に同程度、または比較情報が弱い</li>
+            <li><strong>黄線：</strong>CUNphKi　<strong>青線：</strong>CUNphKu</li>
+          </ul>
+          <p>灰色背景は親2群の判別力 <code>1 − J(紀州2 hapの和集合, 九年母2 hapの和集合)</code> が0.08未満、または比較可能な共有ノードがない区間です。</p>
+          <h3>3本表示</h3>
+          <div class="formula"><span>score =</span><span>J(温州hap, 親hap1) − J(温州hap, 親hap2)</span></div>
+          <p>上側はhap1寄り、下側はhap2寄りです。値が0付近を頻繁に往復するだけでは組換えとは判定しません。</p>
+          <p>類似度グラフの横幅、左右余白、目盛り、現在位置の縦線は上のゲノムブラウザと共通です。同じ座標は上下で同じx位置に表示されます。</p>
+        </section>
+
+        <section class="help-section" id="events-ja">
+          <h2>経路差・切替・逆向き候補</h2>
+          <dl class="help-defs">
+            <div><dt>BUBBLE／経路差候補</dt><dd>6パスすべてではなく1〜5パスだけが参照ノードを共有する連続ビンです。正式なbubble decompositionではなく、参照投影による探索候補です。</dd></div>
+            <div><dt>confidence</dt><dd>候補区間で参照ノードを持つパス数を6で割った占有率です。統計的信頼区間や検定の確率ではありません。</dd></div>
+            <div><dt>黄色い点・破線</dt><dd>局所類似度が+0.08より大きい状態と−0.08より小さい状態の間で符号が変わり、新しい状態が3ビン連続した位置です。組換えを確定するものではなく、検証対象となる経路切替候補です。</dd></div>
+            <div><dt>赤線／INV候補</dt><dd>参照と共有するノードのうち、参照と逆向きに通る割合が15%を超えたビンです。反復配列やグラフ構築の影響も受けます。</dd></div>
+          </dl>
+        </section>
+
+        <section class="help-section" id="traits-ja">
+          <h2>表現型候補遺伝子</h2>
+          <p>候補遺伝子はGFAから自動発見したものではありません。文献から選んだ候補を <code>trait_loci.json</code> に登録し、原著の遺伝子配列またはMiGD2 r2.0の相同転写配列をGFAの <code>CUN#1</code> パスへ照合して座標化しています。</p>
+          <ul>
+            <li><strong>色付きの帯：</strong>開始〜終了までの遺伝子区間</li>
+            <li><strong>周辺表示：</strong>遺伝子本体、上流・下流配列、近傍SVを一緒に調べるための広い窓</li>
+            <li><strong>機能実証／機構実証：</strong>柑橘で実験的な支持がある</li>
+            <li><strong>SV・GWAS関連：</strong>集団内の変異と形質の関連があるが、この3品種での因果は未確認</li>
+            <li><strong>経路相同候補：</strong>既知経路遺伝子に似るが、表示した相同遺伝子自体の機能は未確認</li>
+            <li><strong>近縁群で機能実証：</strong>別の柑橘品種・近縁群で支持され、この3品種差の原因は未確定</li>
+          </ul>
+          <p>22候補を収録しています。初めて候補を選ぶと、その染色体全体に遺伝子位置を表示します。同じ遺伝子名をもう一度押すと周辺へ滑らかに拡大し、再度押すと染色体全体へ戻ります。右欄には遺伝子区間とMiGD2遺伝子IDに加え、原著の対象材料、実験根拠、この3品種へ適用するときの限界、座標対応法、原著リンクを表示します。CitRKD1、CsTPS1、Ruby1では、遺伝子本体に加えて上流の挿入・欠失や分岐構造も観察対象です。</p>
+        </section>
+
+        <section class="help-section" id="limits-ja">
+          <h2>解釈するときの注意</h2>
+          <ul class="limit-list">
+            <li>共有ノード類似度は塩基配列identity、IBD、親子関係を直接測る値ではありません。</li>
+            <li>CUNphKi／CUNphKuの割り当ては染色体ごとの共有ノード類似度による暫定推定です。特にChr2はphasingや割り当ての再検証が必要です。</li>
+            <li>0付近の揺れは、親同士が似た区間、比較可能ノードの不足、反復配列、50 kb集約、参照パスへの投影で生じます。</li>
+            <li>組換え、SV、因果遺伝子の確定には、塩基レベルのアラインメント、read support、遺伝子注釈、発現、集団解析などの追加検証が必要です。</li>
+          </ul>
+        </section>
+      </article>
+
+      <article data-lang="en">
+        <div class="help-hero">
+          <p class="eyebrow">HELP / DISPLAY GUIDE</p>
+          <h1>What this viewer displays</h1>
+          <p>Unshu Haplotype Viewer is a lightweight view of a six-haplotype GFA for Satsuma (Unshu), Kishu and Kunenbo, projected onto chromosome coordinates of the <code>CUN#1</code> reference path.</p>
+          <div class="help-callout"><strong>This is different from a node-and-edge graph drawing.</strong> Instead of drawing the full graph, it summarizes shared nodes, orientation and parental similarity along one common horizontal coordinate.</div>
+        </div>
+
+        <nav class="help-nav" aria-label="Page navigation">
+          <a href="#view-en">Views</a><a href="#colors-en">Colors</a><a href="#scores-en">Scores</a><a href="#events-en">Events</a><a href="#traits-en">Genes</a><a href="#limits-en">Limitations</a>
+        </nav>
+
+        <section class="help-section" id="view-en">
+          <h2>Comparison sets and coordinates</h2>
+          <div class="help-grid three">
+            <div class="help-card"><span class="help-number">6</span><h3>All six</h3><p>Compares two Satsuma (Unshu), two Kishu and two Kunenbo haplotypes on one reference axis.</p></div>
+            <div class="help-card"><span class="help-number">3</span><h3>Kishu trio</h3><p>Compares CUNphKi with Kishu hap1 and hap2 to show which parental haplotype it resembles locally.</p></div>
+            <div class="help-card"><span class="help-number">3</span><h3>Kunenbo trio</h3><p>Compares CUNphKu with Kunenbo hap1 and hap2 to show which parental haplotype it resembles locally.</p></div>
+          </div>
+          <p class="help-note"><strong>Horizontal axis:</strong> positions obtained by walking the GFA path <code>CUN#1#chN</code> from 0 bp. Values are summarized in 50 kb bins.</p>
+        </section>
+
+        <section class="help-section" id="colors-en">
+          <h2>Chromosome-track colors and lines</h2>
+          <div class="legend-table">
+            <div><i style="--c:#f0ad3d"></i><strong>Dark yellow</strong><span>Kishu hap1</span></div>
+            <div><i style="--c:#ffd889"></i><strong>Light yellow</strong><span>Kishu hap2</span></div>
+            <div><i style="--c:#f4bd55"></i><strong>Yellow</strong><span>Satsuma (Unshu) Kishu-origin candidate, CUNphKi</span></div>
+            <div><i style="--c:#59a9df"></i><strong>Blue</strong><span>Satsuma (Unshu) Kunenbo-origin candidate, CUNphKu</span></div>
+            <div><i style="--c:#3e94d8"></i><strong>Dark blue</strong><span>Kunenbo hap1</span></div>
+            <div><i style="--c:#8ec7ee"></i><strong>Light blue</strong><span>Kunenbo hap2</span></div>
+            <div><i style="--c:#f36a6a"></i><strong>Red underline</strong><span>More than 15% of shared nodes are reverse-oriented</span></div>
+          </div>
+          <h3>Track intensity</h3>
+          <p>For each 50 kb bin, <code>coverage</code> is the fraction of reference-path bases whose GFA nodes are also present in that path. Darker segments share more reference nodes. Intensity uses a square-root scale normalized within the chromosome.</p>
+          <div class="help-warning"><strong>Coverage is neither sequencing-read depth nor nucleotide identity.</strong> It is shared GFA-node coverage projected onto the reference.</div>
+          <h3>Height in the whole-chromosome overview</h3>
+          <p>The chromosome is divided into 100 intervals. Bar height is a square-root-scaled mean of <code>coverage</code> across the six paths overlapping each interval. Higher bars indicate broader retention of reference nodes. The yellow frame is the current viewing window.</p>
+        </section>
+
+        <section class="help-section" id="scores-en">
+          <h2>Parent-origin and haplotype-similarity scores</h2>
+          <p>Similarity is a Jaccard coefficient of shared GFA nodes weighted by node length.</p>
+          <div class="formula"><span>J(A, B) =</span><span>total length of intersecting nodes ÷ total length of union nodes</span></div>
+          <h3>All-six view</h3>
+          <div class="formula"><span>score =</span><span>max(J to Kishu hap1/2) − max(J to Kunenbo hap1/2)</span></div>
+          <ul><li><strong>Near +1:</strong> strongly Kishu-like</li><li><strong>Near −1:</strong> strongly Kunenbo-like</li><li><strong>Near 0:</strong> similar to both parents or weak information</li><li><strong>Yellow:</strong> CUNphKi; <strong>blue:</strong> CUNphKu</li></ul>
+          <p>Gray backgrounds mark bins where parental separability <code>1 − J(union of Kishu haps, union of Kunenbo haps)</code> is below 0.08 or comparable shared nodes are absent.</p>
+          <h3>Three-path views</h3>
+          <div class="formula"><span>score =</span><span>J(Satsuma (Unshu) hap, parent hap1) − J(Satsuma (Unshu) hap, parent hap2)</span></div>
+          <p>Positive values favor hap1 and negative values favor hap2. Frequent movement around zero alone is not called a crossover.</p>
+          <p>The similarity graph uses the same width, horizontal margins, ticks and current-position line as the genome browser above. The same coordinate is drawn at the same x position in both panels.</p>
+        </section>
+
+        <section class="help-section" id="events-en">
+          <h2>Path-divergence, switch and inversion candidates</h2>
+          <dl class="help-defs">
+            <div><dt>BUBBLE / path-divergence candidate</dt><dd>A run of bins where one to five, rather than all six, paths share reference nodes. This is an exploratory projection signal, not a formal bubble decomposition.</dd></div>
+            <div><dt>confidence</dt><dd>The fraction of the six paths retaining reference nodes in the candidate interval. It is not a statistical confidence interval or probability.</dd></div>
+            <div><dt>Yellow dot and dashed line</dt><dd>A transition between scores above +0.08 and below −0.08 where the new state persists for three bins. It is a candidate path switch requiring validation.</dd></div>
+            <div><dt>Red line / INV candidate</dt><dd>A bin where more than 15% of shared nodes are traversed opposite to the reference orientation. Repeats and graph construction can also produce this signal.</dd></div>
+          </dl>
+        </section>
+
+        <section class="help-section" id="traits-en">
+          <h2>Phenotype candidate genes</h2>
+          <p>Candidate genes are curated from publications and stored in <code>trait_loci.json</code>; they are not discovered automatically from the GFA. The published gene sequence, or its MiGD2 r2.0 homologous transcript, was aligned to the GFA <code>CUN#1</code> path to obtain viewer coordinates.</p>
+          <ul><li><strong>Colored band:</strong> the gene interval from start to end</li><li><strong>Displayed neighborhood:</strong> a wider window for the gene, flanking sequence and nearby SVs</li><li><strong>Function/mechanism validated:</strong> experimental support in citrus</li><li><strong>SV/GWAS associated:</strong> a population-level variant association without proof of causality in these three cultivars</li><li><strong>Pathway homolog candidate:</strong> similarity to a known pathway gene without functional validation of the displayed homolog</li><li><strong>Validated in related citrus:</strong> supported elsewhere but not established as the cause of differences among these three cultivars</li></ul>
+          <p>Twenty-two candidates are included. The first click shows the gene on its whole chromosome. Click the same gene again to animate into its neighborhood, and click once more to return to the whole chromosome. The right panel shows the interval and MiGD2 IDs together with the paper's study material, experimental evidence, limits for these cultivars, coordinate-mapping basis and primary-source link. For CitRKD1, CsTPS1 and Ruby1, upstream insertions, deletions and graph branches are also targets for inspection.</p>
+        </section>
+
+        <section class="help-section" id="limits-en">
+          <h2>Interpretation limits</h2>
+          <ul class="limit-list"><li>Shared-node similarity is not nucleotide identity, IBD or direct proof of parentage.</li><li>CUNphKi/CUNphKu labels are provisional chromosome-level assignments from shared-node similarity. Chr2 particularly needs phasing and assignment validation.</li><li>Oscillation near zero can arise from low parental separability, missing comparable nodes, repeats, 50 kb binning and reference projection.</li><li>Crossover, SV and causal-gene claims require nucleotide alignment, read support, annotation, expression and population-level validation.</li></ul>
+        </section>
+      </article>
+    </main>
+    <script src="./help.js?v=1"></script>
+  </body>
+</html>

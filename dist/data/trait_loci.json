@@ -1,0 +1,1337 @@
+{
+  "schema": "citrus-pathweaver/trait-loci/v2",
+  "coordinateSystem": "CUN#1 paths in the loaded GFA",
+  "mappingMethod": "MiGD2 r2.0 primary-transcript sequences aligned to the corresponding CUN#1 GFA path",
+  "loci": [
+    {
+      "id": "citsweet6",
+      "symbol": "CitSWEET6",
+      "trait": {
+        "ja": "甘味",
+        "en": "Sweetness"
+      },
+      "title": {
+        "ja": "果糖輸送",
+        "en": "Fructose transport"
+      },
+      "evidence": "validated",
+      "evidenceLabel": {
+        "ja": "機能実証",
+        "en": "Functionally validated"
+      },
+      "chromosome": "Chr3",
+      "start": 5238891,
+      "end": 5241126,
+      "window": 1200000,
+      "color": "#60c99a",
+      "genes": {
+        "CUNphKi": "CUN3Ki009000",
+        "CUNphKu": "CUN3Ku008700"
+      },
+      "description": {
+        "ja": "CitSWEET6は果糖輸送体として実証され、CitZAT5の下流で糖組成を変える候補です。現在のNCBI注釈では同じアクセッションがSWEET4と表記されるため、論文名を優先して表示します。",
+        "en": "CitSWEET6 was validated as a fructose transporter downstream of CitZAT5. The same accession is currently annotated by NCBI as SWEET4, so the paper's gene name is retained here."
+      },
+      "literature": {
+        "studySystem": {
+          "ja": "温州ミカン品種 ‘Gongchuan’ と、その高糖度枝変わり ‘Youliang’。",
+          "en": "Satsuma mandarin 'Gongchuan' and its sweeter bud sport 'Youliang'."
+        },
+        "experiment": {
+          "ja": "発現解析、膜局在、酵母輸送試験と一過性発現により、果糖輸送への関与を検証。",
+          "en": "Expression, membrane localization, yeast transport and transient assays tested fructose transport."
+        },
+        "scope": {
+          "ja": "論文は枝変わり間の糖組成を扱う。紀州・九年母との違いを説明するかは、この座位の配列・制御領域と発現を別途検証する必要があります。",
+          "en": "The paper concerns sugar composition in a bud sport; explaining Kishu/Kunenbo differences requires separate sequence, regulatory and expression tests at this locus."
+        },
+        "mapping": {
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Fang et al. 2023 · Plant Physiology · doi:10.1093/plphys/kiad156",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36911987/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      },
+      "source": "https://pubmed.ncbi.nlm.nih.gov/36911987/"
+    },
+    {
+      "id": "citsus5",
+      "symbol": "CitSUS5",
+      "trait": {
+        "ja": "甘味",
+        "en": "Sweetness"
+      },
+      "title": {
+        "ja": "ショ糖分解とヘキソース形成",
+        "en": "Sucrose cleavage and hexose formation"
+      },
+      "evidence": "validated",
+      "evidenceLabel": {
+        "ja": "機能実証",
+        "en": "Functionally validated"
+      },
+      "chromosome": "Chr6",
+      "start": 21943453,
+      "end": 21947579,
+      "window": 1400000,
+      "color": "#79cf9f",
+      "genes": {
+        "CUNphKi": "CUN6Ki154800",
+        "CUNphKu": "CUN6Ku151700"
+      },
+      "description": {
+        "ja": "CitSUS5はショ糖を果糖・グルコース側へ分解する活性が示され、CitZAT5の下流候補です。",
+        "en": "CitSUS5 was shown to promote sucrose cleavage toward fructose and glucose and is a downstream target of CitZAT5."
+      },
+      "literature": {
+        "studySystem": {
+          "ja": "温州ミカン ‘Gongchuan’ と枝変わり ‘Youliang’。",
+          "en": "Satsuma mandarin 'Gongchuan' and its bud sport 'Youliang'."
+        },
+        "experiment": {
+          "ja": "酵素活性と一過性発現で、CitSUS5がショ糖分解とヘキソース比に関与することを検証。",
+          "en": "Enzyme and transient-expression assays tested the contribution of CitSUS5 to sucrose cleavage and hexose proportion."
+        },
+        "scope": {
+          "ja": "3品種間の甘味差の原因座位としては未検証です。",
+          "en": "It has not been tested as a causal locus for sweetness differences among the three cultivars."
+        },
+        "mapping": {
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Fang et al. 2023 · Plant Physiology · doi:10.1093/plphys/kiad156",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36911987/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      },
+      "source": "https://pubmed.ncbi.nlm.nih.gov/36911987/"
+    },
+    {
+      "id": "sps1",
+      "symbol": "CitSPS1",
+      "trait": {
+        "ja": "甘味",
+        "en": "Sweetness"
+      },
+      "title": {
+        "ja": "ショ糖合成",
+        "en": "Sucrose synthesis"
+      },
+      "evidence": "related",
+      "evidenceLabel": {
+        "ja": "発現・生化学候補",
+        "en": "Expression/biochemical candidate"
+      },
+      "chromosome": "Chr1",
+      "start": 27818445,
+      "end": 27825648,
+      "window": 1500000,
+      "color": "#91d28a",
+      "genes": {
+        "CUNphKi": "CUN1Ki207400",
+        "CUNphKu": "CUN1Ku207600"
+      },
+      "description": {
+        "ja": "CitSPS1は温州果実からクローニングされたショ糖リン酸合成酵素で、成熟果実で高く発現します。直接の形質決定遺伝子ではなく代謝経路候補です。",
+        "en": "CitSPS1 is a sucrose-phosphate synthase cloned from Satsuma fruit and highly expressed in mature fruit. It is a metabolic-pathway candidate rather than an established trait-determining gene."
+      },
+      "literature": {
+        "studySystem": {
+          "ja": "温州ミカンの葉・花・果実。",
+          "en": "Leaves, flowers and fruit of Satsuma mandarin."
+        },
+        "experiment": {
+          "ja": "cDNAクローニングとRNA blotで組織・成熟段階別の発現を解析。",
+          "en": "cDNA cloning and RNA blots characterized tissue- and stage-specific expression."
+        },
+        "scope": {
+          "ja": "発現相関の根拠であり、この3品種の甘味差への因果効果は未実証です。",
+          "en": "The evidence is expression based; causality for sweetness differences among the three cultivars is untested."
+        },
+        "mapping": {
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Komatsu et al. 1996 · Molecular and General Genetics · doi:10.1007/BF02173781",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/8842155/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      },
+      "source": "https://pubmed.ncbi.nlm.nih.gov/8842155/"
+    },
+    {
+      "id": "inva",
+      "symbol": "INVA homolog",
+      "trait": {
+        "ja": "甘味",
+        "en": "Sweetness"
+      },
+      "title": {
+        "ja": "ショ糖分解・糖蓄積候補",
+        "en": "Sucrose breakdown and sugar accumulation"
+      },
+      "evidence": "related",
+      "evidenceLabel": {
+        "ja": "近縁品種で機能実証",
+        "en": "Validated in a related mandarin"
+      },
+      "chromosome": "Chr5",
+      "start": 29206103,
+      "end": 29210562,
+      "window": 1400000,
+      "color": "#67c79b",
+      "genes": {
+        "CUNphKi": "CUN5Ki171000",
+        "CUNphKu": "CUN5Ku158300"
+      },
+      "description": {
+        "ja": "ミトコンドリア型の中性／アルカリ性INVA。近縁マンダリンで遺伝子操作によりショ糖・果糖・グルコース量が変化しました。",
+        "en": "A mitochondrial neutral/alkaline INVA. Manipulation in a related mandarin changed sucrose, fructose and glucose contents."
+      },
+      "literature": {
+        "studySystem": {
+          "ja": "寛皮性マンダリン ‘Nanfengmiju’ と形質転換材料。",
+          "en": "Loose-skin mandarin 'Nanfengmiju' and transformed material."
+        },
+        "experiment": {
+          "ja": "CrkINVAの過剰発現・機能解析で果実糖含量への影響を検証。",
+          "en": "CrkINVA overexpression and functional assays tested effects on fruit sugar content."
+        },
+        "scope": {
+          "ja": "3品種差の原因とは未確定。表示位置は論文のミトコンドリア型INVAに対応する相同遺伝子です。",
+          "en": "It is not established as the cause among the three cultivars; the displayed genes are homologs of the paper's mitochondrial INVA."
+        },
+        "mapping": {
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Zhang et al. 2025 · Genome Biology · doi:10.1186/s13059-025-03535-4",
+            "url": "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03535-4",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      },
+      "source": "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03535-4"
+    },
+    {
+      "id": "citzat5",
+      "symbol": "CitZAT5",
+      "trait": {
+        "ja": "甘味",
+        "en": "Sweetness"
+      },
+      "title": {
+        "ja": "CitSUS5・CitSWEET6の転写制御",
+        "en": "Regulation of CitSUS5 and CitSWEET6"
+      },
+      "evidence": "validated",
+      "evidenceLabel": {
+        "ja": "制御機能実証",
+        "en": "Regulatory function validated"
+      },
+      "chromosome": "Chr8",
+      "start": 33403475,
+      "end": 33404438,
+      "window": 1500000,
+      "color": "#44b985",
+      "genes": {
+        "CUNphKi": "CUN8Ki168400",
+        "CUNphKu": "CUN8Ku176300"
+      },
+      "description": {
+        "ja": "CitZAT5はCitSUS5とCitSWEET6を直接活性化し、糖含量とヘキソース比を変える転写因子です。",
+        "en": "CitZAT5 directly activates CitSUS5 and CitSWEET6 and changes sugar content and the hexose proportion."
+      },
+      "literature": {
+        "studySystem": {
+          "ja": "温州ミカン ‘Gongchuan’ と枝変わり ‘Youliang’。",
+          "en": "Satsuma mandarin 'Gongchuan' and its bud sport 'Youliang'."
+        },
+        "experiment": {
+          "ja": "プロモーター結合、転写活性化、過剰発現・RNAiで糖含量への因果効果を検証。",
+          "en": "Promoter binding, transactivation, overexpression and RNAi established a causal effect on sugar content."
+        },
+        "scope": {
+          "ja": "同じ温州系統での強い根拠ですが、表示中の温州個体と枝変わりは異なります。",
+          "en": "This is strong evidence in Satsuma germplasm, although the study's bud sport is not the displayed Satsuma individual."
+        },
+        "mapping": {
+          "ja": "論文アクセッションXM_006424377をCUN#1へ投影。MiGD2の両相同遺伝子は離れた位置にも整列するため、周辺構造は要確認。",
+          "en": "Paper accession XM_006424377 was projected to CUN#1. The two MiGD2 homologs also align at separated positions, so local structure should be checked."
+        },
+        "sources": [
+          {
+            "citation": "Fang et al. 2023 · Plant Physiology · doi:10.1093/plphys/kiad156",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36911987/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      },
+      "source": "https://pubmed.ncbi.nlm.nih.gov/36911987/"
+    },
+    {
+      "id": "citph4",
+      "symbol": "CitPH4",
+      "trait": {
+        "ja": "酸味",
+        "en": "Acidity"
+      },
+      "title": {
+        "ja": "クエン酸蓄積",
+        "en": "Citric acid accumulation"
+      },
+      "evidence": "validated",
+      "evidenceLabel": {
+        "ja": "機能実証",
+        "en": "Functionally validated"
+      },
+      "chromosome": "Chr2",
+      "start": 373473,
+      "end": 374766,
+      "window": 800000,
+      "color": "#de735f",
+      "genes": {
+        "CUNphKi": "CUN2Ki004600",
+        "CUNphKu": "CUN2Ku004700"
+      },
+      "description": {
+        "ja": "CitPH4は柑橘果実のクエン酸蓄積を制御するMYB転写因子。今回の4項目で最も因果根拠が強い候補です。",
+        "en": "CitPH4 is a MYB transcription factor controlling citric acid accumulation in citrus fruit and has the strongest causal evidence in this list."
+      },
+      "source": "https://www.nature.com/articles/s41588-023-01516-6",
+      "literature": {
+        "studySystem": {
+          "ja": "複数柑橘の酸度変異と形質転換材料。",
+          "en": "Natural acidity variants and transformed citrus material."
+        },
+        "experiment": {
+          "ja": "自然変異、転写制御、遺伝子操作からクエン酸蓄積への因果効果を検証。",
+          "en": "Natural variation, transcriptional regulation and gene manipulation tested a causal effect on citrate accumulation."
+        },
+        "scope": {
+          "ja": "強い酸度候補。3品種での対立遺伝子・発現差は未検証。",
+          "en": "A strong acidity candidate; allelic and expression differences in these three cultivars remain untested."
+        },
+        "mapping": {
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Huang et al. 2023 · Nature Genetics",
+            "url": "https://www.nature.com/articles/s41588-023-01516-6",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ph1",
+      "symbol": "CitPH1",
+      "trait": {
+        "ja": "酸味",
+        "en": "Acidity"
+      },
+      "title": {
+        "ja": "液胞プロトンポンプ複合体",
+        "en": "Vacuolar proton-pump complex"
+      },
+      "evidence": "validated",
+      "evidenceLabel": {
+        "ja": "遺伝・機能実証",
+        "en": "Genetic/functional evidence"
+      },
+      "chromosome": "Chr7",
+      "start": 31558539,
+      "end": 31563573,
+      "window": 1600000,
+      "color": "#e36d5e",
+      "genes": {
+        "CUNphKi": "CUN7Ki069800",
+        "CUNphKu": "CUN7Ku071200"
+      },
+      "description": {
+        "ja": "CitPH1はCitPH5と複合体を作り、果実液胞を強く酸性化してクエン酸を蓄積させます。",
+        "en": "CitPH1 forms a complex with CitPH5 that strongly acidifies fruit vacuoles and enables citrate accumulation."
+      },
+      "literature": {
+        "studySystem": {
+          "ja": "酸性・低酸性のレモン、オレンジ、マンダリンと酵母・植物細胞系。",
+          "en": "Acidic and acidless lemons, oranges and mandarins, plus yeast and plant-cell assays."
+        },
+        "experiment": {
+          "ja": "自然変異、共発現、タンパク質相互作用とプロトン輸送試験からPH1–PH5複合体を検証。",
+          "en": "Natural variants, coexpression, protein interaction and proton-transport assays established the PH1–PH5 complex."
+        },
+        "scope": {
+          "ja": "酸度の強い因果候補。3品種ではコード配列に加えて発現制御領域も比較する価値があります。",
+          "en": "A strong causal acidity candidate; coding and regulatory regions are both worth comparing in these cultivars."
+        },
+        "mapping": {
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Strazzer et al. 2019 · Nature Communications · doi:10.1038/s41467-019-08516-3",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6391481/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      },
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6391481/"
+    },
+    {
+      "id": "ph5",
+      "symbol": "CitPH5",
+      "trait": {
+        "ja": "酸味",
+        "en": "Acidity"
+      },
+      "title": {
+        "ja": "液胞酸性化P型ATPase",
+        "en": "Vacuolar-acidifying P-type ATPase"
+      },
+      "evidence": "validated",
+      "evidenceLabel": {
+        "ja": "遺伝・機能実証",
+        "en": "Genetic/functional evidence"
+      },
+      "chromosome": "Chr7",
+      "start": 33926663,
+      "end": 33933581,
+      "window": 1600000,
+      "color": "#f08b63",
+      "genes": {
+        "CUNphKi": "CUN7Ki103300",
+        "CUNphKu": "CUN7Ku104800"
+      },
+      "description": {
+        "ja": "CitPH5はCitPH1と組むP型ATPaseで、低酸性変異では発現低下や機能変異が見つかっています。",
+        "en": "CitPH5 is a P-type ATPase partnering with CitPH1; acidless mutants carry expression or functional defects affecting this system."
+      },
+      "literature": {
+        "studySystem": {
+          "ja": "酸性・低酸性の複数柑橘と異種発現系。",
+          "en": "Multiple acidic and acidless citrus accessions and heterologous assays."
+        },
+        "experiment": {
+          "ja": "自然変異、発現、相互作用、膜輸送機能を統合して液胞酸性化への役割を検証。",
+          "en": "Natural variation, expression, interaction and membrane-transport assays established its role in vacuolar acidification."
+        },
+        "scope": {
+          "ja": "強い酸度候補ですが、この3品種での機能差は未検証です。",
+          "en": "It is a strong acidity candidate, but functional differences among these three cultivars remain untested."
+        },
+        "mapping": {
+          "ja": "PH5相同遺伝子はCUN#1上の離れた位置にも高類似で整列するため、この座標は主整列先。局所グラフと注釈の確認が必要。",
+          "en": "PH5 homologs also align with high similarity at a distant CUN#1 position; this is the principal projection and requires local graph/annotation review."
+        },
+        "sources": [
+          {
+            "citation": "Strazzer et al. 2019 · Nature Communications · doi:10.1038/s41467-019-08516-3",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6391481/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      },
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6391481/"
+    },
+    {
+      "id": "noemi",
+      "symbol": "Noemi / AN1",
+      "trait": {
+        "ja": "酸味",
+        "en": "Acidity"
+      },
+      "title": {
+        "ja": "酸度とアントシアニンの上位制御",
+        "en": "Upstream control of acidity and anthocyanins"
+      },
+      "evidence": "validated",
+      "evidenceLabel": {
+        "ja": "自然変異・機能実証",
+        "en": "Natural-variant/functional evidence"
+      },
+      "chromosome": "Chr3",
+      "start": 44784979,
+      "end": 44790257,
+      "window": 1500000,
+      "color": "#cc788d",
+      "genes": {
+        "CUNphKi": "CUN3Ki335900",
+        "CUNphKu": "CUN3Ku328400"
+      },
+      "description": {
+        "ja": "NoemiはbHLH転写因子で、酸度とアントシアニン形成を結び付ける上位制御因子です。",
+        "en": "Noemi is a bHLH transcription factor linking fruit acidity with anthocyanin formation."
+      },
+      "literature": {
+        "studySystem": {
+          "ja": "低酸性柑橘の自然変異、系統解析と相補実験。",
+          "en": "Natural acidless citrus variants, phylogenetic analysis and complementation assays."
+        },
+        "experiment": {
+          "ja": "Noemiの欠損と低酸・色素欠失の共分離、相補による回復を検証。",
+          "en": "Loss of Noemi cosegregated with low acidity/pigment loss, and complementation restored the phenotype."
+        },
+        "scope": {
+          "ja": "酸度と色の両方を読む候補。3品種で同じ変異があるとは限りません。",
+          "en": "A joint acidity/color candidate; the same causal variant need not occur in these three cultivars."
+        },
+        "mapping": {
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Butelli et al. 2019 · Current Biology · doi:10.1016/j.cub.2018.11.040",
+            "url": "https://doi.org/10.1016/j.cub.2018.11.040",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      },
+      "source": "https://doi.org/10.1016/j.cub.2018.11.040"
+    },
+    {
+      "id": "cs",
+      "symbol": "CitCS homolog",
+      "trait": {
+        "ja": "酸味",
+        "en": "Acidity"
+      },
+      "title": {
+        "ja": "クエン酸合成経路",
+        "en": "Citrate synthesis pathway"
+      },
+      "evidence": "related",
+      "evidenceLabel": {
+        "ja": "経路・発現候補",
+        "en": "Pathway/expression candidate"
+      },
+      "chromosome": "Chr4",
+      "start": 29381195,
+      "end": 29387208,
+      "window": 1500000,
+      "color": "#d9a75d",
+      "genes": {
+        "CUNphKi": "CUN4Ki254200",
+        "CUNphKu": "CUN4Ku255900"
+      },
+      "description": {
+        "ja": "クエン酸合成酵素CSの相同遺伝子。ポンカン果実ではCitCS群の発現がクエン酸量と相関しましたが、単独の形質決定遺伝子とは確定していません。",
+        "en": "A citrate-synthase homolog. CitCS expression correlated with citrate levels in Ponkan fruit, but CS has not been established as a single trait-determining gene."
+      },
+      "literature": {
+        "studySystem": {
+          "ja": "露地・施設栽培および低温処理したポンカン果実。",
+          "en": "Field-, greenhouse- and low-temperature-treated Ponkan fruit."
+        },
+        "experiment": {
+          "ja": "クエン酸量と代謝遺伝子発現を成熟過程で比較し、CitCS群との相関を解析。",
+          "en": "Citrate content and metabolic-gene expression were compared during ripening and correlated with CitCS expression."
+        },
+        "scope": {
+          "ja": "経路候補として表示。SVがあっても酸味への因果性は代謝物・発現で追試が必要です。",
+          "en": "Shown as a pathway candidate; any SV requires metabolite and expression validation before inferring an acidity effect."
+        },
+        "mapping": {
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Lin et al. 2016 · Scientific Reports · doi:10.1038/srep26729",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27249065/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      },
+      "source": "https://pubmed.ncbi.nlm.nih.gov/27249065/"
+    },
+    {
+      "id": "aco",
+      "symbol": "CcACO3 homolog",
+      "trait": {
+        "ja": "酸味",
+        "en": "Acidity"
+      },
+      "title": {
+        "ja": "クエン酸分解経路",
+        "en": "Citrate catabolism pathway"
+      },
+      "evidence": "related",
+      "evidenceLabel": {
+        "ja": "経路・発現候補",
+        "en": "Pathway/expression candidate"
+      },
+      "chromosome": "Chr2",
+      "start": 30286238,
+      "end": 30292671,
+      "window": 1600000,
+      "color": "#c69756",
+      "genes": {
+        "CUNphKi": "CUN2Ki141200",
+        "CUNphKu": "CUN2Ku135900"
+      },
+      "description": {
+        "ja": "アコニターゼはクエン酸をイソクエン酸へ変える分解経路の入口です。柑橘では複数コピーがあり、発現と酸度の対応は品種により一貫しません。",
+        "en": "Aconitase converts citrate to isocitrate at the entry to citrate catabolism. Citrus has multiple copies, and expression-acidity relationships are not consistent across cultivars."
+      },
+      "literature": {
+        "studySystem": {
+          "ja": "酸性・低酸性のマンダリン、オレンジ、レモンの果肉成熟系列。",
+          "en": "Fruit-development series from acidic and acidless mandarins, oranges and lemons."
+        },
+        "experiment": {
+          "ja": "CcAco1–3をクローニングし、発達段階・品種別の発現と酸度を比較。",
+          "en": "CcAco1–3 were cloned and their expression was compared with acidity across stages and genotypes."
+        },
+        "scope": {
+          "ja": "経路候補であり因果遺伝子ではありません。多重遺伝子族のため、この表示座標はCcACO3の主対応先です。",
+          "en": "This is a pathway candidate, not a causal gene. Because ACO is a multigene family, the displayed interval is the principal CcACO3 projection."
+        },
+        "mapping": {
+          "ja": "論文配列FN552255とMiGD2相同遺伝子を投影。Chr2上の別の高類似領域にも整列するため、コピー数と注釈を要確認。",
+          "en": "Paper sequence FN552255 and MiGD2 homologs were projected. They also align to another high-similarity Chr2 region, so copy number and annotation require review."
+        },
+        "sources": [
+          {
+            "citation": "Terol et al. 2010 · BMC Plant Biology · doi:10.1186/1471-2229-10-222",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3017834/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      },
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3017834/"
+    },
+    {
+      "id": "citlgt",
+      "symbol": "CitLGT",
+      "trait": {
+        "ja": "苦味",
+        "en": "Bitterness"
+      },
+      "title": {
+        "ja": "リモノイドの非苦味化",
+        "en": "Debittering limonoids"
+      },
+      "evidence": "validated",
+      "evidenceLabel": {
+        "ja": "酵素機能実証",
+        "en": "Enzyme validated"
+      },
+      "chromosome": "Chr8",
+      "start": 2497259,
+      "end": 2499059,
+      "window": 1300000,
+      "color": "#b98f55",
+      "genes": {
+        "CUNphKi": "CUN8Ki038300",
+        "CUNphKu": "CUN8Ku038500"
+      },
+      "description": {
+        "ja": "CitLGTは苦味のあるリモノイドアグリコンを非苦味性グルコシドへ変換する酵素です。",
+        "en": "CitLGT converts bitter limonoid aglycones into non-bitter glucosides."
+      },
+      "literature": {
+        "studySystem": {
+          "ja": "温州ミカン果皮白層からのcDNA、およびネーブルオレンジ果実発達系列。",
+          "en": "cDNA from Satsuma albedo and a navel-orange fruit-development series."
+        },
+        "experiment": {
+          "ja": "in vitro翻訳産物の酵素活性と、発達中の転写量・リモニングルコシド量の対応を検証。",
+          "en": "Enzyme activity of the in-vitro product and developmental correspondence between transcript and limonin glucoside were tested."
+        },
+        "scope": {
+          "ja": "温州由来の直接的な酵素根拠。品種間の苦味差には基質量や発現制御も関与します。",
+          "en": "Direct enzyme evidence from Satsuma; cultivar bitterness also depends on substrate abundance and regulation."
+        },
+        "mapping": {
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Kita et al. 2000 · FEBS Letters · doi:10.1016/S0014-5793(00)01275-8",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10713266/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      },
+      "source": "https://pubmed.ncbi.nlm.nih.gov/10713266/"
+    },
+    {
+      "id": "dglct_cluster",
+      "symbol": "Cit1,2RhaT / dGlcT cluster",
+      "trait": {
+        "ja": "苦味",
+        "en": "Bitterness"
+      },
+      "title": {
+        "ja": "ナリンギン型苦味配糖体",
+        "en": "Naringin-type bitter glycosides"
+      },
+      "evidence": "related",
+      "evidenceLabel": {
+        "ja": "経路相同候補",
+        "en": "Pathway homolog candidate"
+      },
+      "chromosome": "Chr8",
+      "start": 32357906,
+      "end": 32372361,
+      "window": 1800000,
+      "color": "#c7a56a",
+      "genes": {
+        "CUNphKi": "CUN8Ki160300",
+        "CUNphKu": "CUN8Ku167100"
+      },
+      "description": {
+        "ja": "1,2RhaTは苦味のあるネオヘスペリドシドを作りますが、マンダリンでは1,2RhaTそのものが欠失し、近縁のdGlcT2/3が残ると報告されています。ここはMiGD2でC12RT1相同注釈を持つ遺伝子群の範囲で、機能確定座位ではありません。",
+        "en": "1,2RhaT produces bitter neohesperidosides, but mandarins were reported to lack 1,2RhaT itself while retaining related dGlcT2/3 genes. This interval spans MiGD2 genes annotated as C12RT1 homologs and is not a functionally confirmed locus."
+      },
+      "source": "https://academic.oup.com/jxb/article/70/10/2759/5370300",
+      "literature": {
+        "studySystem": {
+          "ja": "苦味型・非苦味型の柑橘と組換え酵素。",
+          "en": "Bitter/non-bitter citrus and recombinant enzymes."
+        },
+        "experiment": {
+          "ja": "1,2RhaTの有無とナリンギン型フラボノイド形成を遺伝・生化学的に検証。",
+          "en": "Presence of 1,2RhaT and formation of naringin-type flavonoids were tested genetically and biochemically."
+        },
+        "scope": {
+          "ja": "マンダリンでは真の1,2RhaT欠失が報告されるため、表示は残存相同クラスター。",
+          "en": "True 1,2RhaT loss is reported in mandarins, so the display is a retained homologous cluster."
+        },
+        "mapping": {
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Frydman et al. 2019 · Journal of Experimental Botany",
+            "url": "https://academic.oup.com/jxb/article/70/10/2759/5370300",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "cstps1",
+      "symbol": "CsTPS1",
+      "trait": {
+        "ja": "香り",
+        "en": "Aroma"
+      },
+      "title": {
+        "ja": "バレンセン合成とプロモーター欠失",
+        "en": "Valencene synthesis and promoter deletion"
+      },
+      "evidence": "mechanism",
+      "evidenceLabel": {
+        "ja": "酵素・SV関連",
+        "en": "Enzyme/SV evidence"
+      },
+      "chromosome": "Chr3",
+      "start": 11650850,
+      "end": 11663004,
+      "window": 1600000,
+      "color": "#f3c453",
+      "genes": {
+        "CUNphKi": "CUN3Ki128500",
+        "CUNphKu": "CUN3Ku125600"
+      },
+      "description": {
+        "ja": "CsTPS1はバレンセン合成酵素で、マンダリン交雑系統ではプロモーター欠失がバレンセン欠乏と関連します。九年母の強香全体を説明する遺伝子ではなく、香気成分ごとの候補です。",
+        "en": "CsTPS1 encodes valencene synthase, and a promoter deletion is associated with valencene deficiency in mandarin hybrids. It is a component-specific candidate rather than a complete explanation of Kunenbo's strong aroma."
+      },
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6417135/",
+      "literature": {
+        "studySystem": {
+          "ja": "マンダリン交雑系統と香気成分解析。",
+          "en": "Mandarin hybrids with aroma profiling."
+        },
+        "experiment": {
+          "ja": "酵素機能とプロモーター欠失をバレンセン量と比較。",
+          "en": "Enzyme function and a promoter deletion were compared with valencene abundance."
+        },
+        "scope": {
+          "ja": "香り全体ではなくバレンセンに特異的な候補。",
+          "en": "A valencene-specific candidate, not a complete explanation of aroma."
+        },
+        "mapping": {
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Sharon-Asa et al. 2003 / later citrus SV study",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6417135/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "citmtse1",
+      "symbol": "CitMTSE1",
+      "trait": {
+        "ja": "香り",
+        "en": "Aroma"
+      },
+      "title": {
+        "ja": "D-リモネン合成",
+        "en": "D-limonene synthesis"
+      },
+      "evidence": "validated",
+      "evidenceLabel": {
+        "ja": "酵素機能実証",
+        "en": "Enzyme validated"
+      },
+      "chromosome": "Chr5",
+      "start": 12260007,
+      "end": 12263396,
+      "window": 1600000,
+      "color": "#75cbb1",
+      "genes": {
+        "CUNphKi": "CUN5Ki058600",
+        "CUNphKu": "CUN5Ku050400"
+      },
+      "description": {
+        "ja": "CitMTSE1は温州から単離され、D-リモネンを作る酵素として実証されています。TPSは多重遺伝子族なので、周辺のコピー数差や分岐構造も合わせて調べる候補です。",
+        "en": "CitMTSE1 was isolated from Satsuma (Unshu) and functionally shown to synthesize D-limonene. Because TPS genes form a multigene family, nearby copy-number and graph-branch differences are also worth examining."
+      },
+      "source": "https://doi.org/10.1016/j.plantsci.2003.07.006",
+      "literature": {
+        "studySystem": {
+          "ja": "温州ミカン由来cDNA。",
+          "en": "A cDNA isolated from Satsuma mandarin."
+        },
+        "experiment": {
+          "ja": "組換え酵素でD-リモネン合成活性を検証。",
+          "en": "A recombinant enzyme was tested for D-limonene synthase activity."
+        },
+        "scope": {
+          "ja": "リモネン成分の直接候補。TPS多重遺伝子族のため近傍コピーも要確認。",
+          "en": "A direct limonene candidate; nearby copies matter because TPS is a multigene family."
+        },
+        "mapping": {
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Shimada et al. 2004 · Plant Science",
+            "url": "https://doi.org/10.1016/j.plantsci.2003.07.006",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ruby1",
+      "symbol": "Ruby1 homolog",
+      "trait": {
+        "ja": "色",
+        "en": "Colour"
+      },
+      "title": {
+        "ja": "アントシアニン制御と上流レトロトランスポゾン",
+        "en": "Anthocyanin control and an upstream retrotransposon"
+      },
+      "evidence": "mechanism",
+      "evidenceLabel": {
+        "ja": "制御SV実証",
+        "en": "Regulatory SV validated"
+      },
+      "chromosome": "Chr6",
+      "start": 23023979,
+      "end": 23024403,
+      "window": 1200000,
+      "color": "#bd6b8e",
+      "genes": {
+        "CUNphKi": "CUN6Ki171600",
+        "CUNphKu": "CUN6Ku168700"
+      },
+      "description": {
+        "ja": "Ruby1は柑橘のアントシアニン合成を制御します。ブラッドオレンジでは上流レトロトランスポゾンが低温依存の果実着色を生みます。この3品種で赤果肉を説明する候補ではありませんが、制御領域SVをグラフで見る代表例です。",
+        "en": "Ruby1 controls citrus anthocyanin biosynthesis. In blood orange, an upstream retrotransposon confers cold-dependent fruit pigmentation. It is not a red-flesh candidate for these three cultivars, but it is a strong example of a regulatory SV to inspect in a graph."
+      },
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3336134/",
+      "literature": {
+        "studySystem": {
+          "ja": "ブラッドオレンジと非赤色柑橘。",
+          "en": "Blood orange and non-red citrus."
+        },
+        "experiment": {
+          "ja": "Ruby1上流レトロトランスポゾン、低温応答、アントシアニン発現を関連付け。",
+          "en": "An upstream retrotransposon, cold response and anthocyanin expression were linked."
+        },
+        "scope": {
+          "ja": "制御SVの代表例だが、3品種に赤果肉を予測する座位ではない。",
+          "en": "A regulatory-SV example, not a prediction of red flesh in these three cultivars."
+        },
+        "mapping": {
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Butelli et al. 2012 · The Plant Cell",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3336134/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ccd4b1",
+      "symbol": "CCD4b1 homolog",
+      "trait": {
+        "ja": "色",
+        "en": "Colour"
+      },
+      "title": {
+        "ja": "橙赤色β-シトラウリン形成",
+        "en": "Orange-red beta-citraurin formation"
+      },
+      "evidence": "validated",
+      "evidenceLabel": {
+        "ja": "酵素機能実証",
+        "en": "Enzyme validated"
+      },
+      "chromosome": "Chr4",
+      "start": 21856934,
+      "end": 21859155,
+      "window": 1400000,
+      "color": "#f08b62",
+      "genes": {
+        "CUNphKi": "CUN4Ki149600",
+        "CUNphKu": "CUN4Ku150500"
+      },
+      "description": {
+        "ja": "CCD4b1はゼアキサンチンなどを切断し、柑橘の果皮を橙赤色にするβ-シトラウリンなどのC30アポカロテノイド形成に関与します。表示位置は温州CCD4相同遺伝子です。",
+        "en": "CCD4b1 cleaves carotenoids such as zeaxanthin to form C30 apocarotenoids including beta-citraurin, which contributes orange-red citrus peel color. The displayed locus is the Satsuma (Unshu) CCD4 homolog."
+      },
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3808326/",
+      "literature": {
+        "studySystem": {
+          "ja": "橙赤色果皮の柑橘と酵素試験。",
+          "en": "Orange-red citrus peel and enzyme assays."
+        },
+        "experiment": {
+          "ja": "CCD4b1のカロテノイド切断活性とβ-シトラウリン形成を検証。",
+          "en": "Carotenoid-cleavage activity and beta-citraurin formation were tested."
+        },
+        "scope": {
+          "ja": "果皮色候補。表示中3品種の色差への因果性は未検証。",
+          "en": "A peel-color candidate whose causal role in these three cultivars is untested."
+        },
+        "mapping": {
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Ma et al. 2013 · Plant Physiology",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3808326/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "citkc1",
+      "symbol": "CitKC1",
+      "trait": {
+        "ja": "果実サイズ",
+        "en": "Fruit size"
+      },
+      "title": {
+        "ja": "果径に関連するカリウムチャネル",
+        "en": "Potassium channel associated with fruit diameter"
+      },
+      "evidence": "related",
+      "evidenceLabel": {
+        "ja": "SV・GWAS関連",
+        "en": "SV/GWAS associated"
+      },
+      "chromosome": "Chr1",
+      "start": 4377143,
+      "end": 4383433,
+      "window": 1400000,
+      "color": "#e7a85d",
+      "genes": {
+        "CUNphKi": "CUN1Ki034000",
+        "CUNphKu": "CUN1Ku033800"
+      },
+      "description": {
+        "ja": "CitKC1と重なる8.7 kbのGypsy型挿入は、マンダリン祖先を持つ集団で小さい果径と関連し、転写産物の構造と発現にも影響しました。この3品種の大きさの違いを直接証明した座位ではありません。",
+        "en": "An 8.7 kb Gypsy insertion overlapping CitKC1 was associated with smaller fruit diameter in accessions with mandarin ancestry and affected transcript structure and expression. It has not been proven to cause the size differences among these three cultivars."
+      },
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12577126/",
+      "literature": {
+        "studySystem": {
+          "ja": "マンダリン祖先を含む柑橘集団。",
+          "en": "A citrus population with mandarin ancestry."
+        },
+        "experiment": {
+          "ja": "CitKC1と重なる挿入SVを果径、転写構造、発現と関連付け。",
+          "en": "An insertion overlapping CitKC1 was associated with fruit diameter, transcript structure and expression."
+        },
+        "scope": {
+          "ja": "集団関連であり、この家系内の因果性は未検証。",
+          "en": "A population association; causality within this pedigree remains untested."
+        },
+        "mapping": {
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Citrus SV-GWAS study · 2025",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12577126/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gai",
+      "symbol": "GAI/DELLA homolog",
+      "trait": {
+        "ja": "果実サイズ",
+        "en": "Fruit size"
+      },
+      "title": {
+        "ja": "ジベレリン応答候補",
+        "en": "Gibberellin-response candidate"
+      },
+      "evidence": "related",
+      "evidenceLabel": {
+        "ja": "近縁群で機能実証",
+        "en": "Validated in related citrus"
+      },
+      "chromosome": "Chr1",
+      "start": 6856232,
+      "end": 6858376,
+      "window": 1400000,
+      "color": "#76a9ed",
+      "genes": {
+        "CUNphKi": "CUN1Ki062300",
+        "CUNphKu": "CUN1Ku063000"
+      },
+      "description": {
+        "ja": "GAI/DELLAは果実成長を抑えるジベレリン応答因子です。表示位置はMiGD2で対応した相同遺伝子で、温州・紀州・九年母のサイズ差を直接証明した座位ではありません。",
+        "en": "GAI/DELLA is a gibberellin-response repressor of fruit growth. This is the MiGD2 homolog, not a locus proven to cause the size difference among Satsuma (Unshu), Kishu and Kunenbo."
+      },
+      "source": "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03535-4",
+      "literature": {
+        "studySystem": {
+          "ja": "寛皮性マンダリンのパンゲノム・形質転換材料。",
+          "en": "Loose-skin mandarin pangenome and transformed material."
+        },
+        "experiment": {
+          "ja": "GAI/DELLA経路と果実成長を機能解析。",
+          "en": "The GAI/DELLA pathway and fruit growth were functionally analyzed."
+        },
+        "scope": {
+          "ja": "近縁柑橘での根拠で、3品種の果実サイズ差の原因とは未確定。",
+          "en": "Evidence comes from related citrus and does not establish the cause of fruit-size differences here."
+        },
+        "mapping": {
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Zhang et al. 2025 · Genome Biology",
+            "url": "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-025-03535-4",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "csubc24",
+      "symbol": "CsUBC24",
+      "trait": {
+        "ja": "種なし",
+        "en": "Seedlessness"
+      },
+      "title": {
+        "ja": "雄性不稔・葯の裂開",
+        "en": "Male fertility and anther dehiscence"
+      },
+      "evidence": "mechanism",
+      "evidenceLabel": {
+        "ja": "機構実証",
+        "en": "Mechanism validated"
+      },
+      "chromosome": "Chr2",
+      "start": 41282005,
+      "end": 41286738,
+      "window": 1400000,
+      "color": "#b993df",
+      "genes": {
+        "CUNphKi": "CUN2Ki266100",
+        "CUNphKu": "CUN2Ku245100"
+      },
+      "description": {
+        "ja": "miR399–CsUBC24系は柑橘の雄性不稔に関与します。ただし温州の種なし性全体を単一遺伝子だけで説明するものではありません。",
+        "en": "The miR399–CsUBC24 module affects citrus male fertility, but it does not by itself explain the complete seedless phenotype of Satsuma (Unshu)."
+      },
+      "source": "https://pubmed.ncbi.nlm.nih.gov/32513835/",
+      "literature": {
+        "studySystem": {
+          "ja": "柑橘の雄性不稔系統。",
+          "en": "Male-sterile citrus lines."
+        },
+        "experiment": {
+          "ja": "miR399–CsUBC24系の発現操作と葯形態を解析。",
+          "en": "Expression manipulation of the miR399–CsUBC24 module was compared with anther phenotypes."
+        },
+        "scope": {
+          "ja": "雄性不稔の候補であり、温州の種なし性全体を単独では説明しない。",
+          "en": "A male-sterility candidate that does not alone explain the full seedless phenotype of Satsuma."
+        },
+        "mapping": {
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Liu et al. 2020 · Plant Biotechnology Journal",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32513835/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "citrkd1",
+      "symbol": "CitRKD1 / CitRWP",
+      "trait": {
+        "ja": "多胚性",
+        "en": "Polyembryony"
+      },
+      "title": {
+        "ja": "珠心胚形成と上流MITE挿入",
+        "en": "Nucellar embryogenesis and an upstream MITE insertion"
+      },
+      "evidence": "validated",
+      "evidenceLabel": {
+        "ja": "機能・遺伝実証",
+        "en": "Functional/genetic evidence"
+      },
+      "chromosome": "Chr1",
+      "start": 27456884,
+      "end": 27459184,
+      "window": 1000000,
+      "color": "#d889b5",
+      "genes": {
+        "CUNphKi": "CUN1Ki201800",
+        "CUNphKu": "CUN1Ku201700"
+      },
+      "description": {
+        "ja": "温州では上流にMITEを持つCitRKD1対立遺伝子が生殖組織で優先的に発現し、機能抑制で珠心胚形成が失われました。遺伝子本体だけでなく上流の分岐・挿入構造を見る価値が高い座位です。",
+        "en": "In Satsuma (Unshu), the CitRKD1 allele carrying an upstream MITE is preferentially expressed in reproductive tissues, and suppression abolished nucellar embryogenesis. Both the gene and upstream graph branches are informative at this locus."
+      },
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6090715/",
+      "literature": {
+        "studySystem": {
+          "ja": "温州ミカンと単胚性柑橘。",
+          "en": "Satsuma and monoembryonic citrus."
+        },
+        "experiment": {
+          "ja": "上流MITE、対立遺伝子発現、遺伝子抑制から珠心胚形成を検証。",
+          "en": "An upstream MITE, allele-specific expression and gene suppression tested nucellar embryogenesis."
+        },
+        "scope": {
+          "ja": "温州での直接的根拠があり、上流SVも見るべき座位。",
+          "en": "Direct Satsuma evidence; the upstream graph region is as important as the coding sequence."
+        },
+        "mapping": {
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Wang et al. 2017 · Nature Communications",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6090715/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "citomt",
+      "symbol": "CitOMT",
+      "trait": {
+        "ja": "機能性成分",
+        "en": "Bioactive compound"
+      },
+      "title": {
+        "ja": "ノビレチン生合成",
+        "en": "Nobiletin biosynthesis"
+      },
+      "evidence": "validated",
+      "evidenceLabel": {
+        "ja": "酵素機能実証",
+        "en": "Enzyme validated"
+      },
+      "chromosome": "Chr3",
+      "start": 19933464,
+      "end": 19937897,
+      "window": 1400000,
+      "color": "#9ac967",
+      "genes": {
+        "CUNphKi": "CUN3Ki175100",
+        "CUNphKu": "CUN3Ku166100"
+      },
+      "description": {
+        "ja": "CitOMTは温州とポンカンから単離され、ノビレチン生合成に必要なフラボン3′位のメチル化活性が実証されました。ポンカンでは温州より高い発現と蓄積が報告されています。",
+        "en": "CitOMT was isolated from Satsuma (Unshu) and Ponkan and catalyzes 3′-O-methylation required for nobiletin biosynthesis. Higher expression and nobiletin accumulation were reported in Ponkan than in Satsuma (Unshu)."
+      },
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7498457/",
+      "literature": {
+        "studySystem": {
+          "ja": "温州ミカンとポンカン。",
+          "en": "Satsuma mandarin and Ponkan."
+        },
+        "experiment": {
+          "ja": "酵素反応、発現量、ノビレチン蓄積を比較。",
+          "en": "Enzyme reactions, expression and nobiletin accumulation were compared."
+        },
+        "scope": {
+          "ja": "機能性成分候補で、香り・味の主要因とは限らない。",
+          "en": "A bioactive-compound candidate that need not be a major taste or aroma determinant."
+        },
+        "mapping": {
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
+        },
+        "sources": [
+          {
+            "citation": "Itoh et al. 2020",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7498457/",
+            "label": {
+              "ja": "原著論文",
+              "en": "Primary paper"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "unmappedTraits": [
+    {
+      "trait": {
+        "ja": "九年母の強香",
+        "en": "Kunenbo's strong aroma"
+      },
+      "note": {
+        "ja": "成分別の酵素候補は上に追加しましたが、九年母の複雑な強香全体を説明する因果座位は未確定です。",
+        "en": "Component-specific enzyme candidates are now mapped above, but a causal locus explaining Kunenbo's overall strong aroma is not established."
+      }
+    },
+    {
+      "trait": {
+        "ja": "剥皮性",
+        "en": "Peelability"
+      },
+      "note": {
+        "ja": "QTLや発現相関候補はありますが、この3品種差を説明する確定遺伝子はありません。",
+        "en": "QTL and expression-associated candidates exist, but no gene is established for the difference among these three cultivars."
+      }
+    },
+    {
+      "trait": {
+        "ja": "候補遺伝子の読み方",
+        "en": "How to interpret candidates"
+      },
+      "note": {
+        "ja": "機能実証、近縁品種、発現相関では根拠の強さが異なります。グラフ上の変異だけで表現型への因果性は確定しません。",
+        "en": "Functional tests, related-cultivar evidence and expression correlations carry different strength. A graph variant alone does not establish phenotypic causality."
+      }
+    }
+  ]
+}
