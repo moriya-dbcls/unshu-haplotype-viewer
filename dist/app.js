@@ -25,7 +25,7 @@
       whole: "全体", overview: "染色体全体", kishuLineage: "紀州系統", kunenboLineage: "九年母系統", invCandidate: "逆位候補", lowConfidence: "低信頼",
       referenceShared: "参照共有ノード", offReference: "参照外配列量", graphStructureTitle: "参照外分岐の局所グラフ", graphStructureHelp: "灰色がCUN#1参照パス、上側の分岐が参照にない配列です。画面端の矢印は分岐が表示範囲外へ続くことを示します。", graphZoomHint: "2 Mb以下へ拡大すると、参照外分岐をグラフとして表示します。", graphNoBranches: "この範囲には表示対象の参照外分岐がありません。", offReferenceBp: "参照外", branchNodes: "GFAノード", branchSupport: "通るパス", shownBranches: "表示分岐", continuesOutside: "表示範囲外へ継続",
       similarityHelp: "ゼロ交差は組換え候補。GFA共有ノードの差を表示します。", allOriginTitle: "温州2 hapの親由来：紀州 ↔ 九年母", allOriginHelp: "黄=CUNphKi、青=CUNphKu。各温州hapと親4 hapの最大共有ノード類似度の差です。灰色は親間の判別力が低い区間。", kishuSimilarityHelp: "CUNphKiと紀州hap1／hap2の共有ノード類似度差。上ほどhap1、下ほどhap2に近い区間です。", kunenboSimilarityHelp: "CUNphKuと九年母hap1／hap2の共有ノード類似度差。上ほどhap1、下ほどhap2に近い区間です。", kishuAxis: "紀州", kunenboAxis: "九年母", hap1Axis: "hap1", hap2Axis: "hap2", eventsTitle: "表示範囲のイベント", eventHelp: "候補を選択すると位置を拡大します。", noEvents: "表示範囲にイベントはありません。",
-      selection: "選択範囲", selectionHint: "染色体上をクリックすると、その位置のパス状態を確認できます。", position: "位置", window: "表示幅", shownPaths: "表示パス", events: "イベント",
+      selection: "選択範囲", selectionHint: "染色体上をクリックすると、その位置のパス状態を確認できます。", graphAria: "6ハプロタイプの染色体グラフ。左右へドラッグすると表示幅を保って移動できます。", position: "位置", window: "表示幅", shownPaths: "表示パス", events: "イベント",
       recombNote: "組換えは新規配列ではなく、温州パスが親のhap1／hap2に対応する経路を切り替える現象として読みます。", pathState: "パス状態", pathHelp: "現在位置で最も近い親ハプロタイプを示します。",
       loadedBadge: "GFA投影データ", loading: "Chr1–9 GFAを読み込み中", loaded: "Chr1–9 GFAを表示中", loadToast: "Chr1–9のGFA投影データを読み込みました", pathDivergence: "経路差候補",
       support: "支持", confidence: "信頼度", crossoverCandidate: "経路切替候補",
@@ -39,7 +39,7 @@
       whole: "Fit", overview: "Whole chromosome", kishuLineage: "Kishu lineage", kunenboLineage: "Kunenbo lineage", invCandidate: "Inversion candidate", lowConfidence: "Low confidence",
       referenceShared: "Reference-shared nodes", offReference: "Off-reference sequence", graphStructureTitle: "Local off-reference graph", graphStructureHelp: "Gray is the CUN#1 reference path; branches above it are absent from that path. An arrow at an edge means the branch continues beyond the view.", graphZoomHint: "Zoom to 2 Mb or less to show off-reference branches as a graph.", graphNoBranches: "No retained off-reference branch occurs in this region.", offReferenceBp: "Off-reference", branchNodes: "GFA nodes", branchSupport: "Traversed by", shownBranches: "branches shown", continuesOutside: "Continues beyond the displayed window",
       similarityHelp: "Zero crossings indicate crossover candidates. Values are differences in shared GFA nodes.", allOriginTitle: "Parent origin of two Satsuma (Unshu) haplotypes: Kishu ↔ Kunenbo", allOriginHelp: "Yellow=CUNphKi; blue=CUNphKu. Each line is the difference between its best Kishu and best Kunenbo shared-node similarity. Gray marks low parental separability.", kishuSimilarityHelp: "Shared-node similarity difference between CUNphKi and Kishu hap1/hap2. Higher values favor hap1; lower values favor hap2.", kunenboSimilarityHelp: "Shared-node similarity difference between CUNphKu and Kunenbo hap1/hap2. Higher values favor hap1; lower values favor hap2.", kishuAxis: "Kishu", kunenboAxis: "Kunenbo", hap1Axis: "hap1", hap2Axis: "hap2", eventsTitle: "Events in view", eventHelp: "Select a candidate to zoom to its position.", noEvents: "No events in the current view.",
-      selection: "Selection", selectionHint: "Click the chromosome view to inspect path states at that position.", position: "Position", window: "Window", shownPaths: "Visible paths", events: "Events",
+      selection: "Selection", selectionHint: "Click the chromosome view to inspect path states at that position.", graphAria: "Six-haplotype chromosome graph. Drag left or right to pan without changing the window width.", position: "Position", window: "Window", shownPaths: "Visible paths", events: "Events",
       recombNote: "A crossover is read as a switch in which parental haplotype path the Satsuma (Unshu) path follows, rather than as novel sequence.", pathState: "Path state", pathHelp: "Shows the closest parental haplotype at the current position.",
       loadedBadge: "GFA projection", loading: "Loading Chr1–9 GFA", loaded: "Showing Chr1–9 GFA", loadToast: "Loaded the Chr1–9 GFA projection", pathDivergence: "Path divergence candidate",
       support: "Support", confidence: "Confidence", crossoverCandidate: "Path-switch candidate",
@@ -65,6 +65,8 @@
     language: new URLSearchParams(location.search).get("lang") === "en" || localStorage.getItem("citrus-language") === "en" ? "en" : "ja",
   };
   let windowAnimationFrame = 0;
+  let graphDrag = null;
+  let suppressGraphClick = false;
 
   const t = key => I18N[state.language][key] || key;
   const modeLabel = mode => state.language === "ja" ? MODES[mode].label : ({all:"All 6 haplotypes",kishu:"Kishu-origin trio",kunenbo:"Kunenbo-origin trio"}[mode]);
@@ -457,6 +459,7 @@
     const plotW = W - left - right;
     const laneGap = paths.length <= 3 ? 78 : 48;
     const laneStart = paths.length <= 3 ? 100 : 83;
+    svg.setAttribute("aria-label", t("graphAria"));
     svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.innerHTML = "";
     const x = pos => left + (pos - state.start) / (state.end - state.start) * plotW;
 
@@ -568,6 +571,10 @@
       el.addEventListener("mouseleave", hideTooltip);
     });
     svg.onclick = e => {
+      if (suppressGraphClick) {
+        suppressGraphClick = false;
+        return;
+      }
       const r = svg.getBoundingClientRect();
       const sx = (e.clientX - r.left) * W / r.width;
       if (sx < left || sx > W - right) return;
@@ -933,6 +940,56 @@
   };
   els["overview-track"].onclick=e=>{const r=els["overview-track"].getBoundingClientRect();const chr=getChr(),center=(e.clientX-r.left)/r.width*chr.length,width=state.end-state.start;setWindow(center-width/2,center+width/2);};
   els["branch-overview-track"].onclick=e=>{const r=els["branch-overview-track"].getBoundingClientRect();const chr=getChr(),center=(e.clientX-r.left)/r.width*chr.length,width=state.end-state.start;setWindow(center-width/2,center+width/2);};
+  els.graph.addEventListener("pointerdown", e => {
+    if (e.button !== 0 || e.isPrimary === false || e.target.closest(".event-mark,.switch-mark,.locus-marker,.path-label")) return;
+    const rect = els.graph.getBoundingClientRect();
+    const viewWidth = Math.max(720, rect.width || 900);
+    const plotLeft = CHART_LAYOUT.left / viewWidth * rect.width;
+    const plotRight = rect.width - CHART_LAYOUT.right / viewWidth * rect.width;
+    const localX = e.clientX - rect.left;
+    if (localX < plotLeft || localX > plotRight) return;
+    if (windowAnimationFrame) cancelAnimationFrame(windowAnimationFrame);
+    windowAnimationFrame = 0;
+    graphDrag = {
+      pointerId: e.pointerId,
+      clientX: e.clientX,
+      start: state.start,
+      end: state.end,
+      plotWidth: Math.max(1, plotRight - plotLeft),
+      moved: false,
+    };
+    suppressGraphClick = false;
+    hideTooltip();
+    els.graph.classList.add("dragging");
+    els.graph.setPointerCapture(e.pointerId);
+    e.preventDefault();
+  });
+  els.graph.addEventListener("pointermove", e => {
+    if (!graphDrag || graphDrag.pointerId !== e.pointerId) return;
+    const deltaX = e.clientX - graphDrag.clientX;
+    if (!graphDrag.moved && Math.abs(deltaX) < 4) return;
+    graphDrag.moved = true;
+    const chr = getChr();
+    const width = graphDrag.end - graphDrag.start;
+    const offset = -deltaX / graphDrag.plotWidth * width;
+    const start = clamp(graphDrag.start + offset, 0, Math.max(0, chr.length - width));
+    state.start = start;
+    state.end = start + width;
+    state.cursor = clamp(state.cursor, state.start, state.end);
+    render();
+    e.preventDefault();
+  });
+  const finishGraphDrag = (e, suppressClick) => {
+    if (!graphDrag || graphDrag.pointerId !== e.pointerId) return;
+    const moved = graphDrag.moved;
+    graphDrag = null;
+    els.graph.classList.remove("dragging");
+    if (els.graph.hasPointerCapture(e.pointerId)) els.graph.releasePointerCapture(e.pointerId);
+    if (moved && suppressClick) suppressGraphClick = true;
+  };
+  els.graph.addEventListener("pointerup", e => finishGraphDrag(e, true));
+  els.graph.addEventListener("pointercancel", e => finishGraphDrag(e, false));
+  els.graph.addEventListener("lostpointercapture", e => finishGraphDrag(e, false));
   els.graph.addEventListener("wheel",e=>{e.preventDefault();zoom(e.deltaY>0?1.25:.8);},{passive:false});
   window.addEventListener("resize",()=>render());
   window.addEventListener("keydown",e=>{if(e.target.matches("input"))return;if(e.key==="1")setMode("all");if(e.key==="2")setMode("kishu");if(e.key==="3")setMode("kunenbo");if(e.key==="+")zoom(.5);if(e.key==="-")zoom(2);});

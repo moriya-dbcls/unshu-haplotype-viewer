@@ -191,7 +191,8 @@ button { color: inherit; }
 .mini-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 
 .graph-wrap { position: relative; min-height: 405px; background: #0a181a; }
-#graph { width: 100%; height: 405px; display: block; touch-action: none; }
+#graph { width: 100%; height: 405px; display: block; touch-action: none; cursor: grab; }
+#graph.dragging, #graph.dragging * { cursor: grabbing !important; }
 .path-label { cursor: help; transition: filter .15s ease; }
 .path-label:hover, .path-label:focus { filter: brightness(1.35); text-decoration: underline; outline: none; }
 .tooltip {
