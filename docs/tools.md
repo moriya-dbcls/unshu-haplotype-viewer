@@ -65,7 +65,7 @@ python3 tools/merge_viewer_json.py \
   outputs/ch8.viewer.json \
   outputs/ch9.viewer.json \
   --output dist/data/citrus_ch1-ch9.viewer.json \
-  --title '温州・紀州・九年母 3品種6ハプロタイプ（v2）' \
+  --title '温州・紀州・九年母 3品種6ハプロタイプ（温州アセンブリv2）' \
   --dataset-version v2 \
   --reference-assembly 'CUN#1 = MiGD2 CUNphKu r2.0 chromosomes'
 ```
@@ -83,7 +83,7 @@ python3 tools/update_trait_coordinates_from_gff.py \
   --hap-key CUNphKu \
   --output dist/data/trait_loci.json \
   --report docs/trait-loci-v2-coordinate-map.tsv \
-  --coordinate-system 'CUN#1 paths in the v2 GFA; identical chromosome lengths to MiGD2 CUNphKu r2.0' \
+  --coordinate-system 'CUN#1 paths in the GFA built with Satsuma assembly v2; identical chromosome lengths to MiGD2 CUNphKu r2.0' \
   --mapping-method 'MiGD2 CUNphKu r2.0 primary-transcript GFF3 coordinates for the recorded CUNphKu gene IDs' \
   --mapping-note-ja '表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。' \
   --mapping-note-en 'Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3.'
