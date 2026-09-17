@@ -62,7 +62,7 @@
           <h3>「染色体全体」の棒の高さ</h3>
           <p>上段の「参照共有ノード」は、染色体を100区間に分け、各区間に重なる表示パスの <code>coverage</code> 平均を平方根スケールで高さへ変換しています。下段の「参照外配列量」は、その区間にアンカーされた参照外walkの合計bpを対数スケールで示します。黄色い枠は現在の表示範囲です。</p>
           <h3>参照外分岐の局所グラフ</h3>
-          <p>表示幅が2 Mb以下になると、<code>CUN#1</code>参照パスを灰色の直線、参照パスにない連続walkを上側の分岐として描きます。黄色は紀州系統だけが通る分岐、青は九年母系統だけ、灰色は両系統にまたがる分岐です。四角の幅は参照外配列長の対数に応じた表示上の要約で、実際のゲノム座標幅ではありません。分岐にマウスを置くと参照外bp、GFAノード数、通過パスを確認できます。</p>
+          <p>表示幅が2 Mb以下になると、<code>CUN#1</code>参照パスを灰色の直線、参照パスにない連続walkを上側の分岐として描きます。黄色は紀州系統だけが通る分岐、青は九年母系統だけ、灰色は両系統にまたがる分岐です。画面端の矢印は分岐が表示範囲外へ続くことを表し、その端で参照パスへ戻ることを意味しません。四角の幅は参照外配列長の対数に応じた表示上の要約で、実際のゲノム座標幅ではありません。分岐にマウスを置くと参照外bp、GFAノード数、通過パスを確認できます。</p>
           <div class="help-warning"><strong>局所グラフは軽量な要約です。</strong>50 bp未満の分岐、未配置walk、全ノード名、個々のエッジは省略しています。</div>
         </section>
 
@@ -159,7 +159,7 @@
           <h3>Height in the whole-chromosome overview</h3>
           <p>The upper “Reference-shared nodes” row is a square-root-scaled mean of <code>coverage</code> across the displayed paths in each of 100 intervals. The lower “Off-reference sequence” row uses a log scale for the total bp in off-reference walks anchored to each interval. The yellow frame is the current viewing window.</p>
           <h3>Local off-reference graph</h3>
-          <p>At a window width of 2 Mb or less, the gray line is the <code>CUN#1</code> reference path and the upper branches are continuous walks absent from that path. Yellow branches occur only in the Kishu lineage, blue only in the Kunenbo lineage, and gray in both. Rectangle width is a display summary scaled by log off-reference length, not genomic width. Hover a branch for off-reference bp, GFA-node count and traversing paths.</p>
+          <p>At a window width of 2 Mb or less, the gray line is the <code>CUN#1</code> reference path and the upper branches are continuous walks absent from that path. Yellow branches occur only in the Kishu lineage, blue only in the Kunenbo lineage, and gray in both. An arrow at an edge means that the branch continues beyond the displayed window; it does not reconnect to the reference at that edge. Rectangle width is a display summary scaled by log off-reference length, not genomic width. Hover a branch for off-reference bp, GFA-node count and traversing paths.</p>
           <div class="help-warning"><strong>The local graph is a lightweight summary.</strong> Branches below 50 bp, unplaced walks, full node names and individual edges are omitted.</div>
         </section>
 

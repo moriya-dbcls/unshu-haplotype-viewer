@@ -23,7 +23,7 @@
       comparison: "比較セット", all6: "全6本", all6sub: "共通座標で比較", kishu3: "紀州 3本", kishu3sub: "CKI h1/h2 + CUNphKi", kunenbo3: "九年母 3本", kunenbo3sub: "CUNphKu + CKU h1/h2",
       chromosome: "染色体", data: "データ", upload: "別のviewer JSONをドロップまたは選択", openJson: "JSONを開く", tracks: "トラック", sv: "SV・分岐候補", inversion: "逆向き区間", uncertain: "低信頼区間",
       whole: "全体", overview: "染色体全体", kishuLineage: "紀州系統", kunenboLineage: "九年母系統", invCandidate: "逆位候補", lowConfidence: "低信頼",
-      referenceShared: "参照共有ノード", offReference: "参照外配列量", graphStructureTitle: "参照外分岐の局所グラフ", graphStructureHelp: "灰色がCUN#1参照パス、上側の分岐が参照にない配列です。分岐はGFA walkを要約して表示します。", graphZoomHint: "2 Mb以下へ拡大すると、参照外分岐をグラフとして表示します。", graphNoBranches: "この範囲には表示対象の参照外分岐がありません。", offReferenceBp: "参照外", branchNodes: "GFAノード", branchSupport: "通るパス", shownBranches: "表示分岐",
+      referenceShared: "参照共有ノード", offReference: "参照外配列量", graphStructureTitle: "参照外分岐の局所グラフ", graphStructureHelp: "灰色がCUN#1参照パス、上側の分岐が参照にない配列です。画面端の矢印は分岐が表示範囲外へ続くことを示します。", graphZoomHint: "2 Mb以下へ拡大すると、参照外分岐をグラフとして表示します。", graphNoBranches: "この範囲には表示対象の参照外分岐がありません。", offReferenceBp: "参照外", branchNodes: "GFAノード", branchSupport: "通るパス", shownBranches: "表示分岐", continuesOutside: "表示範囲外へ継続",
       similarityHelp: "ゼロ交差は組換え候補。GFA共有ノードの差を表示します。", allOriginTitle: "温州2 hapの親由来：紀州 ↔ 九年母", allOriginHelp: "黄=CUNphKi、青=CUNphKu。各温州hapと親4 hapの最大共有ノード類似度の差です。灰色は親間の判別力が低い区間。", kishuSimilarityHelp: "CUNphKiと紀州hap1／hap2の共有ノード類似度差。上ほどhap1、下ほどhap2に近い区間です。", kunenboSimilarityHelp: "CUNphKuと九年母hap1／hap2の共有ノード類似度差。上ほどhap1、下ほどhap2に近い区間です。", kishuAxis: "紀州", kunenboAxis: "九年母", hap1Axis: "hap1", hap2Axis: "hap2", eventsTitle: "表示範囲のイベント", eventHelp: "候補を選択すると位置を拡大します。", noEvents: "表示範囲にイベントはありません。",
       selection: "選択範囲", selectionHint: "染色体上をクリックすると、その位置のパス状態を確認できます。", position: "位置", window: "表示幅", shownPaths: "表示パス", events: "イベント",
       recombNote: "組換えは新規配列ではなく、温州パスが親のhap1／hap2に対応する経路を切り替える現象として読みます。", pathState: "パス状態", pathHelp: "現在位置で最も近い親ハプロタイプを示します。",
@@ -37,7 +37,7 @@
       comparison: "Comparison set", all6: "All 6", all6sub: "Compare in shared coordinates", kishu3: "Kishu trio", kishu3sub: "CKI h1/h2 + CUNphKi", kunenbo3: "Kunenbo trio", kunenbo3sub: "CUNphKu + CKU h1/h2",
       chromosome: "Chromosome", data: "Data", upload: "Drop or choose another viewer JSON", openJson: "Open JSON", tracks: "Tracks", sv: "SV / branch candidates", inversion: "Reverse-oriented regions", uncertain: "Low-confidence regions",
       whole: "Fit", overview: "Whole chromosome", kishuLineage: "Kishu lineage", kunenboLineage: "Kunenbo lineage", invCandidate: "Inversion candidate", lowConfidence: "Low confidence",
-      referenceShared: "Reference-shared nodes", offReference: "Off-reference sequence", graphStructureTitle: "Local off-reference graph", graphStructureHelp: "Gray is the CUN#1 reference path; branches above it are sequences absent from that path. GFA walks are summarized for display.", graphZoomHint: "Zoom to 2 Mb or less to show off-reference branches as a graph.", graphNoBranches: "No retained off-reference branch occurs in this region.", offReferenceBp: "Off-reference", branchNodes: "GFA nodes", branchSupport: "Traversed by", shownBranches: "branches shown",
+      referenceShared: "Reference-shared nodes", offReference: "Off-reference sequence", graphStructureTitle: "Local off-reference graph", graphStructureHelp: "Gray is the CUN#1 reference path; branches above it are absent from that path. An arrow at an edge means the branch continues beyond the view.", graphZoomHint: "Zoom to 2 Mb or less to show off-reference branches as a graph.", graphNoBranches: "No retained off-reference branch occurs in this region.", offReferenceBp: "Off-reference", branchNodes: "GFA nodes", branchSupport: "Traversed by", shownBranches: "branches shown", continuesOutside: "Continues beyond the displayed window",
       similarityHelp: "Zero crossings indicate crossover candidates. Values are differences in shared GFA nodes.", allOriginTitle: "Parent origin of two Satsuma (Unshu) haplotypes: Kishu ↔ Kunenbo", allOriginHelp: "Yellow=CUNphKi; blue=CUNphKu. Each line is the difference between its best Kishu and best Kunenbo shared-node similarity. Gray marks low parental separability.", kishuSimilarityHelp: "Shared-node similarity difference between CUNphKi and Kishu hap1/hap2. Higher values favor hap1; lower values favor hap2.", kunenboSimilarityHelp: "Shared-node similarity difference between CUNphKu and Kunenbo hap1/hap2. Higher values favor hap1; lower values favor hap2.", kishuAxis: "Kishu", kunenboAxis: "Kunenbo", hap1Axis: "hap1", hap2Axis: "hap2", eventsTitle: "Events in view", eventHelp: "Select a candidate to zoom to its position.", noEvents: "No events in the current view.",
       selection: "Selection", selectionHint: "Click the chromosome view to inspect path states at that position.", position: "Position", window: "Window", shownPaths: "Visible paths", events: "Events",
       recombNote: "A crossover is read as a switch in which parental haplotype path the Satsuma (Unshu) path follows, rather than as novel sequence.", pathState: "Path state", pathHelp: "Shows the closest parental haplotype at the current position.",
@@ -639,18 +639,26 @@
       const selected = [...branches].sort((a,b) => b.offReferenceBp - a.offReferenceBp).slice(0,24).sort((a,b) => a.start - b.start);
       const colors = {kishu:"#f0ad3d",kunenbo:"#3e94d8",shared:"#a8b8b7"};
       selected.forEach((branch, index) => {
-        const startX = x(clamp(branch.start, state.start, state.end));
-        const endX = x(clamp(branch.end, state.start, state.end));
-        const anchorX1 = Math.min(startX,endX), anchorX2 = Math.max(startX,endX);
-        const midX = (anchorX1 + anchorX2) / 2;
+        const outsideLeft = branch.start < state.start;
+        const outsideRight = branch.end > state.end;
+        const anchorX1 = x(clamp(branch.start, state.start, state.end));
+        const anchorX2 = x(clamp(branch.end, state.start, state.end));
         const laneY = 26 + (index % 5) * 20;
         const color = colors[branch.lineage] || colors.shared;
         const nodeWidth = clamp(8 + Math.log10(Math.max(1,branch.offReferenceBp)) * 6, 16, 55);
-        const visualStart = Math.min(anchorX1, midX - nodeWidth / 2);
-        const visualEnd = Math.max(anchorX2, midX + nodeWidth / 2);
-        const path = svgEl("path", {d:`M ${anchorX1} ${referenceY} C ${anchorX1} ${laneY}, ${visualStart} ${laneY}, ${midX-nodeWidth/2} ${laneY} L ${midX+nodeWidth/2} ${laneY} C ${visualEnd} ${laneY}, ${anchorX2} ${laneY}, ${anchorX2} ${referenceY}`,fill:"none",stroke:color,"stroke-width":2.2,opacity:.9,class:"branch-mark","data-branch":branch.id});
+        const midX = clamp((anchorX1 + anchorX2) / 2, l + nodeWidth / 2 + 9, W - r - nodeWidth / 2 - 9);
+        const blockLeft = midX - nodeWidth / 2, blockRight = midX + nodeWidth / 2;
+        const leftPath = outsideLeft
+          ? `M ${l} ${laneY} L ${blockLeft} ${laneY}`
+          : `M ${anchorX1} ${referenceY} C ${anchorX1} ${laneY}, ${Math.min(anchorX1,blockLeft)} ${laneY}, ${blockLeft} ${laneY}`;
+        const rightPath = outsideRight
+          ? `L ${W-r} ${laneY}`
+          : `C ${Math.max(anchorX2,blockRight)} ${laneY}, ${anchorX2} ${laneY}, ${anchorX2} ${referenceY}`;
+        const path = svgEl("path", {d:`${leftPath} L ${blockRight} ${laneY} ${rightPath}`,fill:"none",stroke:color,"stroke-width":2.2,opacity:.9,class:"branch-mark","data-branch":branch.id});
         svg.append(path);
-        svg.append(svgEl("rect", {x:midX-nodeWidth/2,y:laneY-5,width:nodeWidth,height:10,rx:4,fill:color,stroke:"#071416","stroke-width":1,class:"branch-mark","data-branch":branch.id}));
+        svg.append(svgEl("rect", {x:blockLeft,y:laneY-5,width:nodeWidth,height:10,rx:4,fill:color,stroke:"#071416","stroke-width":1,class:"branch-mark","data-branch":branch.id}));
+        if (outsideLeft) svg.append(svgEl("path", {d:`M ${l+7} ${laneY-5} L ${l} ${laneY} L ${l+7} ${laneY+5}`,fill:"none",stroke:color,"stroke-width":2.2,class:"branch-mark","data-branch":branch.id}));
+        if (outsideRight) svg.append(svgEl("path", {d:`M ${W-r-7} ${laneY-5} L ${W-r} ${laneY} L ${W-r-7} ${laneY+5}`,fill:"none",stroke:color,"stroke-width":2.2,class:"branch-mark","data-branch":branch.id}));
         if (branch.offReferenceBp >= 1000 && nodeWidth >= 34) {
           const label = svgEl("text", {x:midX,y:laneY-9,fill:color,"font-size":8,"text-anchor":"middle","pointer-events":"none"});
           label.textContent = branch.offReferenceBp >= 1e6 ? `${(branch.offReferenceBp/1e6).toFixed(1)} Mb` : `${Math.round(branch.offReferenceBp/1e3)} kb`;
@@ -671,7 +679,8 @@
       const branch = branches.find(item => item.id === element.dataset.branch);
       if (!branch) return;
       element.style.cursor = "pointer";
-      const tooltip = event => showBranchTooltip(event, `<strong>${fmtMb(branch.start)}–${fmtMb(branch.end)}</strong><br>${t("offReferenceBp")}: ${Number(branch.offReferenceBp).toLocaleString("en-US")} bp · ${branch.nodeCount.toLocaleString("en-US")} ${t("branchNodes")}<br>${t("branchSupport")}: ${(branch.support || []).join(", ")}`);
+      const outsideNote = branch.start < state.start || branch.end > state.end ? `<br>↔ ${t("continuesOutside")}` : "";
+      const tooltip = event => showBranchTooltip(event, `<strong>${fmtMb(branch.start)}–${fmtMb(branch.end)}</strong><br>${t("offReferenceBp")}: ${Number(branch.offReferenceBp).toLocaleString("en-US")} bp · ${branch.nodeCount.toLocaleString("en-US")} ${t("branchNodes")}<br>${t("branchSupport")}: ${(branch.support || []).join(", ")}${outsideNote}`);
       element.addEventListener("mouseenter", tooltip);
       element.addEventListener("mousemove", tooltip);
       element.addEventListener("mouseleave", hideBranchTooltip);
