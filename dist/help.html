@@ -7,7 +7,7 @@
     <meta name="description" content="Unshu Haplotype Viewerの表示内容、色、数値、計算方法を説明するHelpページ" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1718'/%3E%3Cpath d='M12 34h13l6-12 7 24 6-12h8' fill='none' stroke='%23f2b84b' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
     <title>Help · Unshu Haplotype Viewer</title>
-    <link rel="stylesheet" href="./styles.css?v=11" />
+    <link rel="stylesheet" href="./styles.css?v=12" />
     <link rel="stylesheet" href="./help.css?v=1" />
   </head>
   <body class="help-page">
@@ -60,7 +60,10 @@
           <p>各50 kbビンについて、参照パスの塩基のうち、そのパスにも存在するGFAノードが占める割合を <code>coverage</code> としています。濃いほど同じ参照ノードを多く共有します。染色体内の最大値に合わせて平方根スケールで表示しています。</p>
           <div class="help-warning"><strong>coverageはシーケンスリード深度でも塩基配列一致率でもありません。</strong>GFA共有ノードを参照座標へ投影した割合です。</div>
           <h3>「染色体全体」の棒の高さ</h3>
-          <p>染色体を100区間に分け、各区間に重なる6パスの <code>coverage</code> 平均を平方根スケールで高さへ変換しています。高い区間ほど、6パス全体として参照ノードがよく保持されています。黄色い枠は現在の表示範囲です。</p>
+          <p>上段の「参照共有ノード」は、染色体を100区間に分け、各区間に重なる表示パスの <code>coverage</code> 平均を平方根スケールで高さへ変換しています。下段の「参照外配列量」は、その区間にアンカーされた参照外walkの合計bpを対数スケールで示します。黄色い枠は現在の表示範囲です。</p>
+          <h3>参照外分岐の局所グラフ</h3>
+          <p>表示幅が2 Mb以下になると、<code>CUN#1</code>参照パスを灰色の直線、参照パスにない連続walkを上側の分岐として描きます。黄色は紀州系統だけが通る分岐、青は九年母系統だけ、灰色は両系統にまたがる分岐です。四角の幅は参照外配列長の対数に応じた表示上の要約で、実際のゲノム座標幅ではありません。分岐にマウスを置くと参照外bp、GFAノード数、通過パスを確認できます。</p>
+          <div class="help-warning"><strong>局所グラフは軽量な要約です。</strong>50 bp未満の分岐、未配置walk、全ノード名、個々のエッジは省略しています。</div>
         </section>
 
         <section class="help-section" id="scores-ja">
@@ -154,7 +157,10 @@
           <p>For each 50 kb bin, <code>coverage</code> is the fraction of reference-path bases whose GFA nodes are also present in that path. Darker segments share more reference nodes. Intensity uses a square-root scale normalized within the chromosome.</p>
           <div class="help-warning"><strong>Coverage is neither sequencing-read depth nor nucleotide identity.</strong> It is shared GFA-node coverage projected onto the reference.</div>
           <h3>Height in the whole-chromosome overview</h3>
-          <p>The chromosome is divided into 100 intervals. Bar height is a square-root-scaled mean of <code>coverage</code> across the six paths overlapping each interval. Higher bars indicate broader retention of reference nodes. The yellow frame is the current viewing window.</p>
+          <p>The upper “Reference-shared nodes” row is a square-root-scaled mean of <code>coverage</code> across the displayed paths in each of 100 intervals. The lower “Off-reference sequence” row uses a log scale for the total bp in off-reference walks anchored to each interval. The yellow frame is the current viewing window.</p>
+          <h3>Local off-reference graph</h3>
+          <p>At a window width of 2 Mb or less, the gray line is the <code>CUN#1</code> reference path and the upper branches are continuous walks absent from that path. Yellow branches occur only in the Kishu lineage, blue only in the Kunenbo lineage, and gray in both. Rectangle width is a display summary scaled by log off-reference length, not genomic width. Hover a branch for off-reference bp, GFA-node count and traversing paths.</p>
+          <div class="help-warning"><strong>The local graph is a lightweight summary.</strong> Branches below 50 bp, unplaced walks, full node names and individual edges are omitted.</div>
         </section>
 
         <section class="help-section" id="scores-en">

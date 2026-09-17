@@ -16,7 +16,8 @@
 python3 tools/gfa_to_viewer.py /path/to/ch1.gfa \
   --output outputs/ch1.viewer.json \
   --reference 'CUN#1' \
-  --bin-width 50000
+  --bin-width 50000 \
+  --min-branch-bp 50
 ```
 
 引数：
@@ -25,6 +26,7 @@ python3 tools/gfa_to_viewer.py /path/to/ch1.gfa \
 - `--output`：出力JSON（必須）
 - `--reference`：座標軸に使うパスの接頭辞。既定値は `CUN#1`
 - `--bin-width`：集約幅（bp）。既定値は5,000 bp。公開版は50,000 bpを使用
+- `--min-branch-bp`：局所グラフへ残す参照外分岐の最小長。既定値は50 bp
 
 このスクリプトは、次の6パスを想定しています。
 
@@ -40,6 +42,10 @@ python3 tools/gfa_to_viewer.py /path/to/ch1.gfa \
 GFAの `P` レコードは、ノード名の後ろに `+` または `-` が付いたカンマ区切りのwalkを想定しています。パス名に `#ch1:開始-終了` のような区間があれば、その座標を表示範囲に利用します。
 
 温州2パスの紀州由来／九年母由来の割り当ては、染色体全体の共有ノード長で重み付けしたJaccard係数から1対1になるよう暫定的に決めます。確定した系譜情報ではありません。
+
+参照パスに含まれない連続walkは、前後の参照ノードへアンカーして抽出します。出力には、染色体全体表示用の50 kb集約値 `offReferenceBins` と、局所グラフ用の `graphBranches` が入ります。`graphBranches` は開始・終了アンカー、参照外塩基数、ノード数、通過するパスだけを保持し、ノード名・塩基配列は含めません。前後どちらにも参照ノードがないwalkは `unplacedOffReferenceBp` にパス別の合計だけを記録します。
+
+ビューワでは表示範囲が2 Mbを超える場合は参照外配列量の集約棒、2 Mb以下では最大24分岐の要約グラフを表示します。黄色は紀州系統だけが通る分岐、青は九年母系統だけが通る分岐、灰色は両系統にまたがる分岐です。これはGFAの全ノード・全エッジを描く図ではなく、`CUN#1` 座標へアンカーした軽量な要約です。
 
 ## 複数染色体を結合する
 
@@ -116,7 +122,7 @@ python3 -m http.server 8000 --directory dist
 ## 主な注意点
 
 - 出力は参照パスへの投影であり、一般的なノード・エッジ図そのものではありません。
+- 参照外分岐は50 bp未満を局所グラフから省略しますが、`offReferenceBins` の塩基数には含めます。
 - coverageはリード深度や塩基配列identityではなく、参照区間に投影された共有GFAノードの割合です。
 - BUBBLEは正式なbubble decompositionではなく、一部パスだけに参照共有ノードがある連続ビンです。
 - 親由来、経路切替、逆向き領域はいずれも探索候補です。塩基レベルアラインメントやread supportによる追加検証が必要です。
-

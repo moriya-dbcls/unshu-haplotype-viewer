@@ -204,9 +204,13 @@ button { color: inherit; }
 
 .overview { padding: 14px 16px 15px; border-top: 1px solid var(--line-soft); }
 .overview-labels { display: flex; justify-content: space-between; color: var(--muted); font-size: 11px; margin-bottom: 7px; }
+.overview-row { display: grid; grid-template-columns: 112px minmax(0, 1fr); align-items: center; gap: 10px; margin-top: 7px; }
+.overview-row > span { color: var(--muted-2); font-size: 9px; text-align: right; }
 .overview-track { position: relative; height: 34px; border-radius: 7px; overflow: hidden; background: #071214; border: 1px solid #253d41; cursor: crosshair; }
 .overview-bars { position: absolute; inset: 0; display: flex; align-items: end; gap: 1px; padding: 3px; }
 .overview-bar { flex: 1; min-width: 1px; background: #345357; border-radius: 1px 1px 0 0; }
+.branch-overview-track { height: 27px; }
+.branch-bar { background: var(--mikan); opacity: .72; }
 .overview-window { position: absolute; top: 0; bottom: 0; border: 2px solid var(--focus); background: rgba(245,213,107,.08); border-radius: 5px; pointer-events: none; }
 
 .legend {
@@ -227,6 +231,10 @@ button { color: inherit; }
 .similarity-card { padding: 15px 0 0; overflow: hidden; }
 .similarity-copy { padding: 0 15px; }
 .similarity-svg { width: 100%; height: 132px; display: block; }
+.local-graph-card { padding: 15px 0 0; overflow: hidden; }
+.local-graph-copy { padding: 0 15px; }
+.local-graph-wrap { position: relative; min-height: 188px; }
+.local-graph-svg { width: 100%; height: 188px; display: block; }
 
 .events { display: grid; gap: 7px; max-height: 132px; overflow: auto; }
 .event-row {
@@ -311,6 +319,7 @@ button { color: inherit; }
   .mode-copy span { display: none; }
   .chr-grid { grid-template-columns: repeat(9, minmax(0, 1fr)); }
   .chr-button { padding: 7px 0; }
+  .overview-row { grid-template-columns: 86px minmax(0, 1fr); }
   .upload, .filters { display: none; }
   .main { padding: 12px; }
   .viewer-head { position: static; margin: 0 0 12px; padding: 0; background: none; border-bottom: 0; }

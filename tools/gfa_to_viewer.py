@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from collections import defaultdict
@@ -65,12 +66,23 @@ def stable_switches(scores: list[dict[str, float]], span_start: int, span_end: i
     return result
 
 
+def branch_digest(nodes: list[tuple[str, str]]) -> str:
+    """Return a stable, compact identity for one off-reference walk."""
+    digest = hashlib.sha1()
+    for node, orientation in nodes:
+        digest.update(node.encode())
+        digest.update(orientation.encode())
+        digest.update(b"\0")
+    return digest.hexdigest()[:16]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("gfa", type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--reference", default="CUN#1")
     parser.add_argument("--bin-width", type=int, default=5000)
+    parser.add_argument("--min-branch-bp", type=int, default=50, help="minimum off-reference length retained for local graph rendering")
     args = parser.parse_args()
 
     lengths: dict[str, int] = {}
@@ -130,6 +142,98 @@ def main() -> None:
 
     bin_width = args.bin_width
     bins = [(start, min(start + bin_width, view_end)) for start in range(view_start, view_end, bin_width)]
+
+    # Keep two complementary representations of sequence absent from the
+    # reference path: a light chromosome-wide summary and selected anchored
+    # walks for the local graph.  The local records deliberately omit raw
+    # sequences and node IDs so that the browser JSON stays small.
+    off_reference_bins = [{"start": start, "end": end, "bp": 0, "branches": 0, "paths": set(), "bpByPath": {}} for start, end in bins]
+    graph_branch_index: dict[tuple[int, int, str], dict] = {}
+    unplaced_bp: dict[str, int] = defaultdict(int)
+    for source, records in grouped.items():
+        viewer_id = source_to_id.get(source)
+        if not viewer_id:
+            continue
+        for _, walk in records:
+            previous_anchor: str | None = None
+            off_walk: list[tuple[str, str]] = []
+
+            def commit_branch(next_anchor: str | None) -> None:
+                nonlocal off_walk, previous_anchor
+                if not off_walk:
+                    return
+                off_bp = sum(lengths.get(node, 1) for node, _ in off_walk)
+                left = node_positions.get(previous_anchor) if previous_anchor else None
+                right = node_positions.get(next_anchor) if next_anchor else None
+                if left and right:
+                    anchor_start, anchor_end = sorted((left[1], right[0]))
+                    kind = "two-anchor"
+                    reversed_anchors = right[0] < left[1]
+                elif left:
+                    anchor_start = anchor_end = left[1]
+                    kind = "left-anchor"
+                    reversed_anchors = False
+                elif right:
+                    anchor_start = anchor_end = right[0]
+                    kind = "right-anchor"
+                    reversed_anchors = False
+                else:
+                    unplaced_bp[viewer_id] += off_bp
+                    off_walk = []
+                    return
+
+                midpoint = (anchor_start + anchor_end) / 2
+                bin_index = min(len(bins) - 1, max(0, int((midpoint - view_start) // bin_width)))
+                summary = off_reference_bins[bin_index]
+                summary["bp"] += off_bp
+                summary["branches"] += 1
+                summary["paths"].add(viewer_id)
+                summary["bpByPath"][viewer_id] = summary["bpByPath"].get(viewer_id, 0) + off_bp
+
+                if off_bp >= args.min_branch_bp:
+                    digest = branch_digest(off_walk)
+                    key = (anchor_start, anchor_end, digest)
+                    branch = graph_branch_index.get(key)
+                    if branch is None:
+                        branch = {
+                            "id": f"branch-{len(graph_branch_index) + 1}",
+                            "start": anchor_start,
+                            "end": anchor_end,
+                            "offReferenceBp": off_bp,
+                            "nodeCount": len(off_walk),
+                            "kind": kind,
+                            "reversedAnchors": reversed_anchors,
+                            "support": set(),
+                        }
+                        graph_branch_index[key] = branch
+                    branch["support"].add(viewer_id)
+                off_walk = []
+
+            for node, orientation in walk:
+                if node in node_positions:
+                    commit_branch(node)
+                    previous_anchor = node
+                else:
+                    off_walk.append((node, orientation))
+            commit_branch(None)
+
+    def branch_lineage(support: set[str]) -> str:
+        kishu = {"CKIhap1", "CKIhap2", "CUNphKi"}
+        kunenbo = {"CKUhap1", "CKUhap2", "CUNphKu"}
+        if support and support <= kishu:
+            return "kishu"
+        if support and support <= kunenbo:
+            return "kunenbo"
+        return "shared"
+
+    graph_branches = []
+    for branch in graph_branch_index.values():
+        branch["support"] = sorted(branch["support"])
+        branch["lineage"] = branch_lineage(set(branch["support"]))
+        graph_branches.append(branch)
+    graph_branches.sort(key=lambda branch: (branch["start"], branch["end"], -branch["offReferenceBp"]))
+    for summary in off_reference_bins:
+        summary["paths"] = sorted(summary["paths"])
     source_nodes: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
     for source, records in grouped.items():
         for _, walk in records:
@@ -238,6 +342,9 @@ def main() -> None:
             "similarityKi": similarity_ki, "similarityKu": similarity_ku,
             "parentOrigin": parent_origin,
             "variants": variants, "tracks": tracks,
+            "offReferenceBins": off_reference_bins,
+            "graphBranches": graph_branches,
+            "unplacedOffReferenceBp": dict(unplaced_bp),
             "source": {"gfa": args.gfa.name, "referencePath": reference_name, "projection": "shared reference nodes"},
         }],
         "originAssignment": {
@@ -248,7 +355,7 @@ def main() -> None:
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, separators=(",", ":")))
-    print(json.dumps({"output": str(args.output), "size_kib": round(args.output.stat().st_size / 1024, 1), "view": [view_start, view_end], "origin_assignment": origin_map, "origin_scores": origin_scores}, ensure_ascii=False))
+    print(json.dumps({"output": str(args.output), "size_kib": round(args.output.stat().st_size / 1024, 1), "view": [view_start, view_end], "graph_branches": len(graph_branches), "origin_assignment": origin_map, "origin_scores": origin_scores}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

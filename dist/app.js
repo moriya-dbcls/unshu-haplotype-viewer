@@ -23,6 +23,7 @@
       comparison: "比較セット", all6: "全6本", all6sub: "共通座標で比較", kishu3: "紀州 3本", kishu3sub: "CKI h1/h2 + CUNphKi", kunenbo3: "九年母 3本", kunenbo3sub: "CUNphKu + CKU h1/h2",
       chromosome: "染色体", data: "データ", upload: "別のviewer JSONをドロップまたは選択", openJson: "JSONを開く", tracks: "トラック", sv: "SV・分岐候補", inversion: "逆向き区間", uncertain: "低信頼区間",
       whole: "全体", overview: "染色体全体", kishuLineage: "紀州系統", kunenboLineage: "九年母系統", invCandidate: "逆位候補", lowConfidence: "低信頼",
+      referenceShared: "参照共有ノード", offReference: "参照外配列量", graphStructureTitle: "参照外分岐の局所グラフ", graphStructureHelp: "灰色がCUN#1参照パス、上側の分岐が参照にない配列です。分岐はGFA walkを要約して表示します。", graphZoomHint: "2 Mb以下へ拡大すると、参照外分岐をグラフとして表示します。", graphNoBranches: "この範囲には表示対象の参照外分岐がありません。", offReferenceBp: "参照外", branchNodes: "GFAノード", branchSupport: "通るパス", shownBranches: "表示分岐",
       similarityHelp: "ゼロ交差は組換え候補。GFA共有ノードの差を表示します。", allOriginTitle: "温州2 hapの親由来：紀州 ↔ 九年母", allOriginHelp: "黄=CUNphKi、青=CUNphKu。各温州hapと親4 hapの最大共有ノード類似度の差です。灰色は親間の判別力が低い区間。", kishuSimilarityHelp: "CUNphKiと紀州hap1／hap2の共有ノード類似度差。上ほどhap1、下ほどhap2に近い区間です。", kunenboSimilarityHelp: "CUNphKuと九年母hap1／hap2の共有ノード類似度差。上ほどhap1、下ほどhap2に近い区間です。", kishuAxis: "紀州", kunenboAxis: "九年母", hap1Axis: "hap1", hap2Axis: "hap2", eventsTitle: "表示範囲のイベント", eventHelp: "候補を選択すると位置を拡大します。", noEvents: "表示範囲にイベントはありません。",
       selection: "選択範囲", selectionHint: "染色体上をクリックすると、その位置のパス状態を確認できます。", position: "位置", window: "表示幅", shownPaths: "表示パス", events: "イベント",
       recombNote: "組換えは新規配列ではなく、温州パスが親のhap1／hap2に対応する経路を切り替える現象として読みます。", pathState: "パス状態", pathHelp: "現在位置で最も近い親ハプロタイプを示します。",
@@ -36,6 +37,7 @@
       comparison: "Comparison set", all6: "All 6", all6sub: "Compare in shared coordinates", kishu3: "Kishu trio", kishu3sub: "CKI h1/h2 + CUNphKi", kunenbo3: "Kunenbo trio", kunenbo3sub: "CUNphKu + CKU h1/h2",
       chromosome: "Chromosome", data: "Data", upload: "Drop or choose another viewer JSON", openJson: "Open JSON", tracks: "Tracks", sv: "SV / branch candidates", inversion: "Reverse-oriented regions", uncertain: "Low-confidence regions",
       whole: "Fit", overview: "Whole chromosome", kishuLineage: "Kishu lineage", kunenboLineage: "Kunenbo lineage", invCandidate: "Inversion candidate", lowConfidence: "Low confidence",
+      referenceShared: "Reference-shared nodes", offReference: "Off-reference sequence", graphStructureTitle: "Local off-reference graph", graphStructureHelp: "Gray is the CUN#1 reference path; branches above it are sequences absent from that path. GFA walks are summarized for display.", graphZoomHint: "Zoom to 2 Mb or less to show off-reference branches as a graph.", graphNoBranches: "No retained off-reference branch occurs in this region.", offReferenceBp: "Off-reference", branchNodes: "GFA nodes", branchSupport: "Traversed by", shownBranches: "branches shown",
       similarityHelp: "Zero crossings indicate crossover candidates. Values are differences in shared GFA nodes.", allOriginTitle: "Parent origin of two Satsuma (Unshu) haplotypes: Kishu ↔ Kunenbo", allOriginHelp: "Yellow=CUNphKi; blue=CUNphKu. Each line is the difference between its best Kishu and best Kunenbo shared-node similarity. Gray marks low parental separability.", kishuSimilarityHelp: "Shared-node similarity difference between CUNphKi and Kishu hap1/hap2. Higher values favor hap1; lower values favor hap2.", kunenboSimilarityHelp: "Shared-node similarity difference between CUNphKu and Kunenbo hap1/hap2. Higher values favor hap1; lower values favor hap2.", kishuAxis: "Kishu", kunenboAxis: "Kunenbo", hap1Axis: "hap1", hap2Axis: "hap2", eventsTitle: "Events in view", eventHelp: "Select a candidate to zoom to its position.", noEvents: "No events in the current view.",
       selection: "Selection", selectionHint: "Click the chromosome view to inspect path states at that position.", position: "Position", window: "Window", shownPaths: "Visible paths", events: "Events",
       recombNote: "A crossover is read as a switch in which parental haplotype path the Satsuma (Unshu) path follows, rather than as novel sequence.", pathState: "Path state", pathHelp: "Shows the closest parental haplotype at the current position.",
@@ -185,7 +187,8 @@
             <div class="graph-wrap" id="graph-wrap"><svg id="graph" role="img" aria-label="6ハプロタイプの染色体グラフ"></svg><div class="tooltip" id="tooltip"></div></div>
             <div class="overview">
               <div class="overview-labels"><span data-i18n="overview">${t("overview")}</span><span id="overview-length">—</span></div>
-              <div class="overview-track" id="overview-track"><div class="overview-bars" id="overview-bars"></div><div class="overview-window" id="overview-window"></div></div>
+              <div class="overview-row"><span data-i18n="referenceShared">${t("referenceShared")}</span><div class="overview-track" id="overview-track"><div class="overview-bars" id="overview-bars"></div><div class="overview-window" id="overview-window"></div></div></div>
+              <div class="overview-row"><span data-i18n="offReference">${t("offReference")}</span><div class="overview-track branch-overview-track" id="branch-overview-track"><div class="overview-bars" id="branch-overview-bars"></div><div class="overview-window" id="branch-overview-window"></div></div></div>
             </div>
             <div class="legend">
               <span class="legend-item"><i class="swatch kishu"></i><span data-i18n="kishuLineage">${t("kishuLineage")}</span></span>
@@ -196,6 +199,11 @@
           </section>
 
           <div class="lower-grid">
+            <section class="card small-card local-graph-card">
+              <div class="local-graph-copy"><h3 data-i18n="graphStructureTitle">${t("graphStructureTitle")}</h3>
+              <div class="sub" id="local-graph-help">${t("graphStructureHelp")}</div></div>
+              <div class="local-graph-wrap" id="local-graph-wrap"><svg class="local-graph-svg" id="local-graph" role="img" aria-label="参照外分岐の局所グラフ"></svg><div class="tooltip" id="branch-tooltip"></div></div>
+            </section>
             <section class="card small-card similarity-card">
               <div class="similarity-copy"><h3 id="similarity-title">親ハプロタイプへの局所類似度</h3>
               <div class="sub" id="similarity-help">${t("allOriginHelp")}</div></div>
@@ -235,7 +243,8 @@
 
   const els = Object.fromEntries([
     "chr-grid", "view-title", "view-subtitle", "graph", "graph-wrap", "tooltip", "overview-bars", "overview-window",
-    "overview-track", "overview-length", "mode-badge", "window-badge", "coordinate", "similarity", "similarity-title", "similarity-help",
+    "overview-track", "branch-overview-track", "branch-overview-bars", "branch-overview-window", "overview-length", "mode-badge", "window-badge", "coordinate", "similarity", "similarity-title", "similarity-help",
+    "local-graph", "local-graph-wrap", "local-graph-help", "branch-tooltip",
     "events", "events-sub", "selection-hint", "metric-position", "metric-window", "metric-paths", "metric-events",
     "path-cards", "file-input", "drop-zone", "data-status", "toast", "trait-loci", "trait-unmapped-list", "locus-details"
   ].map(id => [id, document.getElementById(id)]));
@@ -309,7 +318,7 @@
       state.start = fromStart + (targetStart - fromStart) * eased;
       state.end = fromEnd + (targetEnd - fromEnd) * eased;
       state.cursor = clamp(state.cursor, state.start, state.end);
-      renderHeader(); renderGraph(); renderOverview(); renderSimilarity(); renderInspector();
+      renderHeader(); renderGraph(); renderOverview(); renderLocalGraph(); renderSimilarity(); renderInspector();
       if (progress < 1) windowAnimationFrame = requestAnimationFrame(frame);
       else { windowAnimationFrame = 0; render(); }
     };
@@ -574,6 +583,106 @@
   }
   function hideTooltip() { els.tooltip.style.display = "none"; }
 
+  function showBranchTooltip(event, html) {
+    const wrap = els["local-graph-wrap"].getBoundingClientRect();
+    const tooltip = els["branch-tooltip"];
+    tooltip.innerHTML = html; tooltip.style.display = "block";
+    tooltip.style.left = `${clamp(event.clientX - wrap.left + 10, 8, wrap.width - 250)}px`;
+    tooltip.style.top = `${clamp(event.clientY - wrap.top + 10, 8, wrap.height - 88)}px`;
+  }
+  function hideBranchTooltip() { els["branch-tooltip"].style.display = "none"; }
+
+  function renderLocalGraph() {
+    const svg = els["local-graph"];
+    const chr = getChr();
+    const visiblePaths = new Set(getPaths().map(path => path.id));
+    const branches = (chr.graphBranches || []).filter(branch =>
+      branch.end >= state.start && branch.start <= state.end &&
+      (branch.support || []).some(path => visiblePaths.has(path))
+    );
+    const W = Math.max(720, svg.getBoundingClientRect().width || 900), H = 188;
+    const l = CHART_LAYOUT.left, r = CHART_LAYOUT.right, top = 12, bottom = 27;
+    const pw = W - l - r;
+    const x = position => l + (position - state.start) / (state.end - state.start) * pw;
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.innerHTML = "";
+
+    const step = tickStep(state.end - state.start);
+    const first = Math.ceil(state.start / step) * step;
+    for (let position = first; position <= state.end; position += step) {
+      const xx = x(position);
+      svg.append(svgEl("line", {x1:xx,y1:top,x2:xx,y2:H-bottom,stroke:"#1b3033","stroke-width":1}));
+      const label = svgEl("text", {x:xx,y:H-7,fill:"#8ba2a1","font-size":9,"text-anchor":"middle"});
+      label.textContent = position >= 1e6 ? `${(position / 1e6).toFixed(step < 1e6 ? 1 : 0)} Mb` : `${Math.round(position / 1e3)} kb`;
+      svg.append(label);
+    }
+
+    const referenceY = 142;
+    const refLabel = svgEl("text", {x:l-12,y:referenceY+4,fill:"#a8b8b7","font-size":10,"text-anchor":"end"});
+    refLabel.textContent = "CUN#1 ref"; svg.append(refLabel);
+    svg.append(svgEl("line", {x1:l,y1:referenceY,x2:W-r,y2:referenceY,stroke:"#778789","stroke-width":7,"stroke-linecap":"round",opacity:.8}));
+
+    const wide = state.end - state.start > 2e6;
+    if (wide) {
+      const bins = (chr.offReferenceBins || []).filter(bin => bin.end >= state.start && bin.start <= state.end);
+      const values = bins.map(bin => [...visiblePaths].reduce((sum, path) => sum + Number(bin.bpByPath?.[path] || 0), 0));
+      const max = Math.max(1, ...values);
+      bins.forEach((bin, index) => {
+        const bp = values[index]; if (!bp) return;
+        const start = Math.max(bin.start, state.start), end = Math.min(bin.end, state.end);
+        const height = 12 + Math.log1p(bp) / Math.log1p(max) * 68;
+        svg.append(svgEl("rect", {x:x(start),y:referenceY-height,width:Math.max(1,x(end)-x(start)),height,fill:MODES[state.mode].accent,opacity:.48}));
+      });
+      const hint = svgEl("text", {x:l+pw/2,y:34,fill:"#b5c5c3","font-size":11,"text-anchor":"middle"});
+      hint.textContent = t("graphZoomHint"); svg.append(hint);
+      els["local-graph-help"].textContent = t("graphStructureHelp");
+    } else {
+      const selected = [...branches].sort((a,b) => b.offReferenceBp - a.offReferenceBp).slice(0,24).sort((a,b) => a.start - b.start);
+      const colors = {kishu:"#f0ad3d",kunenbo:"#3e94d8",shared:"#a8b8b7"};
+      selected.forEach((branch, index) => {
+        const startX = x(clamp(branch.start, state.start, state.end));
+        const endX = x(clamp(branch.end, state.start, state.end));
+        const anchorX1 = Math.min(startX,endX), anchorX2 = Math.max(startX,endX);
+        const midX = (anchorX1 + anchorX2) / 2;
+        const laneY = 26 + (index % 5) * 20;
+        const color = colors[branch.lineage] || colors.shared;
+        const nodeWidth = clamp(8 + Math.log10(Math.max(1,branch.offReferenceBp)) * 6, 16, 55);
+        const visualStart = Math.min(anchorX1, midX - nodeWidth / 2);
+        const visualEnd = Math.max(anchorX2, midX + nodeWidth / 2);
+        const path = svgEl("path", {d:`M ${anchorX1} ${referenceY} C ${anchorX1} ${laneY}, ${visualStart} ${laneY}, ${midX-nodeWidth/2} ${laneY} L ${midX+nodeWidth/2} ${laneY} C ${visualEnd} ${laneY}, ${anchorX2} ${laneY}, ${anchorX2} ${referenceY}`,fill:"none",stroke:color,"stroke-width":2.2,opacity:.9,class:"branch-mark","data-branch":branch.id});
+        svg.append(path);
+        svg.append(svgEl("rect", {x:midX-nodeWidth/2,y:laneY-5,width:nodeWidth,height:10,rx:4,fill:color,stroke:"#071416","stroke-width":1,class:"branch-mark","data-branch":branch.id}));
+        if (branch.offReferenceBp >= 1000 && nodeWidth >= 34) {
+          const label = svgEl("text", {x:midX,y:laneY-9,fill:color,"font-size":8,"text-anchor":"middle","pointer-events":"none"});
+          label.textContent = branch.offReferenceBp >= 1e6 ? `${(branch.offReferenceBp/1e6).toFixed(1)} Mb` : `${Math.round(branch.offReferenceBp/1e3)} kb`;
+          svg.append(label);
+        }
+      });
+      if (!selected.length) {
+        const empty = svgEl("text", {x:l+pw/2,y:72,fill:"#79908f","font-size":11,"text-anchor":"middle"});
+        empty.textContent = t("graphNoBranches"); svg.append(empty);
+      }
+      const omitted = Math.max(0, branches.length - selected.length);
+      els["local-graph-help"].textContent = `${t("graphStructureHelp")} ${selected.length}${omitted ? ` / ${branches.length}` : ""} ${t("shownBranches")}.`;
+    }
+
+    const cursorX = x(state.cursor);
+    svg.append(svgEl("line", {x1:cursorX,y1:top,x2:cursorX,y2:H-bottom,stroke:"#edf4f2","stroke-width":1,opacity:.55,"stroke-dasharray":"2 5"}));
+    svg.querySelectorAll(".branch-mark").forEach(element => {
+      const branch = branches.find(item => item.id === element.dataset.branch);
+      if (!branch) return;
+      element.style.cursor = "pointer";
+      const tooltip = event => showBranchTooltip(event, `<strong>${fmtMb(branch.start)}–${fmtMb(branch.end)}</strong><br>${t("offReferenceBp")}: ${Number(branch.offReferenceBp).toLocaleString("en-US")} bp · ${branch.nodeCount.toLocaleString("en-US")} ${t("branchNodes")}<br>${t("branchSupport")}: ${(branch.support || []).join(", ")}`);
+      element.addEventListener("mouseenter", tooltip);
+      element.addEventListener("mousemove", tooltip);
+      element.addEventListener("mouseleave", hideBranchTooltip);
+      element.addEventListener("click", () => {
+        const center = (branch.start + branch.end) / 2;
+        const width = Math.max(100000, Math.abs(branch.end - branch.start) * 2.5, branch.offReferenceBp * 2.5);
+        state.cursor = center; setWindow(center-width/2, center+width/2);
+      });
+    });
+  }
+
   function renderSimilarity() {
     const svg = els.similarity; const chr = getChr();
     const W = Math.max(720, svg.getBoundingClientRect().width || 900), H = 132;
@@ -675,8 +784,20 @@
       return clamp(8 + Math.sqrt(meanCoverage) * 87, 8, 95);
     });
     els["overview-bars"].innerHTML = heights.map(height => `<i class="overview-bar" style="height:${height}%;opacity:.76"></i>`).join("");
+    const visiblePaths = new Set(getPaths().map(path => path.id));
+    const offReference = Array.from({length:100}, (_, i) => {
+      const start = chr.length * i / 100, end = chr.length * (i + 1) / 100;
+      return (chr.offReferenceBins || []).filter(bin => bin.end >= start && bin.start <= end)
+        .reduce((sum, bin) => sum + [...visiblePaths].reduce((subtotal, path) => subtotal + Number(bin.bpByPath?.[path] || 0), 0), 0);
+    });
+    const maxOffReference = Math.max(1, ...offReference);
+    els["branch-overview-bars"].innerHTML = offReference.map(bp => {
+      const height = bp ? clamp(8 + Math.log1p(bp) / Math.log1p(maxOffReference) * 87, 8, 95) : 3;
+      return `<i class="overview-bar branch-bar" style="height:${height}%"></i>`;
+    }).join("");
     const left = state.start/chr.length*100, width=(state.end-state.start)/chr.length*100;
     els["overview-window"].style.left=`${left}%`; els["overview-window"].style.width=`${width}%`;
+    els["branch-overview-window"].style.left=`${left}%`; els["branch-overview-window"].style.width=`${width}%`;
     els["overview-length"].textContent=fmtMb(chr.length);
   }
 
@@ -743,14 +864,14 @@
     document.querySelectorAll(".chr-button").forEach(b=>b.classList.toggle("active",b.dataset.chr===chr.id));
   }
 
-  function render() { renderHeader(); renderTraitLoci(); renderGraph(); renderOverview(); renderSimilarity(); renderEvents(); renderInspector(); }
+  function render() { renderHeader(); renderTraitLoci(); renderGraph(); renderOverview(); renderLocalGraph(); renderSimilarity(); renderEvents(); renderInspector(); }
 
   function toast(message) { els.toast.textContent=message; els.toast.classList.add("show"); clearTimeout(toast.timer); toast.timer=setTimeout(()=>els.toast.classList.remove("show"),2600); }
 
   function validateData(data) {
     if(!data || data.schema!=="citrus-pathweaver/v1") throw new Error("対応するschemaではありません");
     if(!Array.isArray(data.paths)||!data.paths.length||!Array.isArray(data.chromosomes)||!data.chromosomes.length) throw new Error("pathsまたはchromosomesがありません");
-    data.chromosomes.forEach(c=>{ if(!c.id||!Number.isFinite(c.length))throw new Error("染色体IDまたは長さが不正です"); c.variants=c.variants||[]; c.switchesKi=c.switchesKi||[]; c.switchesKu=c.switchesKu||[]; c.similarityKi=c.similarityKi||[]; c.similarityKu=c.similarityKu||[]; c.parentOrigin=c.parentOrigin||{}; c.tracks=c.tracks||{}; });
+    data.chromosomes.forEach(c=>{ if(!c.id||!Number.isFinite(c.length))throw new Error("染色体IDまたは長さが不正です"); c.variants=c.variants||[]; c.switchesKi=c.switchesKi||[]; c.switchesKu=c.switchesKu||[]; c.similarityKi=c.similarityKi||[]; c.similarityKu=c.similarityKu||[]; c.parentOrigin=c.parentOrigin||{}; c.tracks=c.tracks||{}; c.offReferenceBins=c.offReferenceBins||[]; c.graphBranches=c.graphBranches||[]; });
     return data;
   }
 
@@ -802,6 +923,7 @@
     if(state.data){els["data-status"].textContent=state.filename==="Chr1–9 GFA"?t("loaded"):(state.language==="ja"?`${state.filename} を表示中`:`Showing ${state.filename}`);render();}
   };
   els["overview-track"].onclick=e=>{const r=els["overview-track"].getBoundingClientRect();const chr=getChr(),center=(e.clientX-r.left)/r.width*chr.length,width=state.end-state.start;setWindow(center-width/2,center+width/2);};
+  els["branch-overview-track"].onclick=e=>{const r=els["branch-overview-track"].getBoundingClientRect();const chr=getChr(),center=(e.clientX-r.left)/r.width*chr.length,width=state.end-state.start;setWindow(center-width/2,center+width/2);};
   els.graph.addEventListener("wheel",e=>{e.preventDefault();zoom(e.deltaY>0?1.25:.8);},{passive:false});
   window.addEventListener("resize",()=>render());
   window.addEventListener("keydown",e=>{if(e.target.matches("input"))return;if(e.key==="1")setMode("all");if(e.key==="2")setMode("kishu");if(e.key==="3")setMode("kunenbo");if(e.key==="+")zoom(.5);if(e.key==="-")zoom(2);});
