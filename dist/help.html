@@ -17,7 +17,7 @@
         <span><strong>Unshu Haplotype Viewer</strong><small>Satsuma (Unshu) · Kishu · Kunenbo</small></span>
       </a>
       <div class="top-actions">
-        <a class="help-back" href="./v1/" data-text-ja="温州アセンブリv1を見る" data-text-en="View Satsuma assembly v1">温州アセンブリv1を見る</a>
+        <a class="help-back" href="./v1/" data-text-ja="全6ハプロタイプのアセンブリv1を見る" data-text-en="View all six haplotype assemblies v1">全6ハプロタイプのアセンブリv1を見る</a>
         <a class="help-back" href="./" data-text-ja="ビューワへ戻る" data-text-en="Back to viewer">ビューワへ戻る</a>
         <button class="language-toggle" id="help-language" aria-label="Switch language">English</button>
       </div>
@@ -28,7 +28,7 @@
         <div class="help-hero">
           <p class="eyebrow">HELP / DISPLAY GUIDE</p>
           <h1>このビューワが表示しているもの</h1>
-          <p>Unshu Haplotype Viewerは、温州みかんアセンブリv2と紀州・九年母の各2ハプロタイプから作成した6ハプロタイプGFAを、<code>CUN#1</code>参照パスの染色体座標へ投影して比較するための軽量ビューワです。ここでいうv2はGFA形式の版ではなく、温州みかんアセンブリの版を表します。</p>
+          <p>Unshu Haplotype Viewerは、温州・紀州・九年母の全6ハプロタイプのアセンブリv2から作成したGFAを、<code>CUN#1</code>参照パスの染色体座標へ投影して比較するための軽量ビューワです。ここでいうv2はGFA形式の版ではなく、入力した6ハプロタイプアセンブリの版を表します。</p>
           <div class="help-callout"><strong>一般的なノード・エッジ図とは表示方法が異なります。</strong>複雑なグラフをそのまま描く代わりに、共通の横軸へ各パスの共有ノード量、向き、親との類似度を集約しています。</div>
         </div>
 
@@ -101,7 +101,7 @@
 
         <section class="help-section" id="traits-ja">
           <h2>表現型候補遺伝子</h2>
-          <p>候補遺伝子はGFAから自動発見したものではありません。文献から選んだ候補を <code>trait_loci.json</code> に登録しています。現在の温州みかんアセンブリv2を使ったGFAでは <code>CUN#1</code> がMiGD2 <code>CUNphKu r2.0</code> の染色体長と一致するため、記録済み遺伝子IDをMiGD2 primary-transcript GFF3で検索し、そのmRNA区間を表示座標にしています。</p>
+          <p>候補遺伝子はGFAから自動発見したものではありません。文献から選んだ候補を <code>trait_loci.json</code> に登録しています。現在の全6ハプロタイプのアセンブリv2を使ったGFAでは <code>CUN#1</code> がMiGD2 <code>CUNphKu r2.0</code> の染色体長と一致するため、記録済み遺伝子IDをMiGD2 primary-transcript GFF3で検索し、そのmRNA区間を表示座標にしています。</p>
           <ul>
             <li><strong>色付きの帯：</strong>開始〜終了までの遺伝子区間</li>
             <li><strong>周辺表示：</strong>遺伝子本体、上流・下流配列、近傍SVを一緒に調べるための広い窓</li>
@@ -128,7 +128,7 @@
         <div class="help-hero">
           <p class="eyebrow">HELP / DISPLAY GUIDE</p>
           <h1>What this viewer displays</h1>
-          <p>Unshu Haplotype Viewer is a lightweight view of a six-haplotype GFA built from version 2 of the Satsuma (Unshu) assembly and two haplotypes each from Kishu and Kunenbo, projected onto chromosome coordinates of the <code>CUN#1</code> reference path. Here, v2 denotes the Satsuma assembly version, not a version of the GFA format.</p>
+          <p>Unshu Haplotype Viewer is a lightweight view of a GFA built from version 2 of all six haplotype assemblies from Satsuma (Unshu), Kishu and Kunenbo, projected onto chromosome coordinates of the <code>CUN#1</code> reference path. Here, v2 denotes the input haplotype assembly version, not a version of the GFA format.</p>
           <div class="help-callout"><strong>This is different from a node-and-edge graph drawing.</strong> Instead of drawing the full graph, it summarizes shared nodes, orientation and parental similarity along one common horizontal coordinate.</div>
         </div>
 
@@ -196,7 +196,7 @@
 
         <section class="help-section" id="traits-en">
           <h2>Phenotype candidate genes</h2>
-          <p>Candidate genes are curated from publications and stored in <code>trait_loci.json</code>; they are not discovered automatically from the GFA. In the GFA built with version 2 of the Satsuma assembly, <code>CUN#1</code> has the same chromosome lengths as MiGD2 <code>CUNphKu r2.0</code>. Recorded gene IDs are therefore located with the MiGD2 primary-transcript GFF3, and their mRNA intervals are used as viewer coordinates.</p>
+          <p>Candidate genes are curated from publications and stored in <code>trait_loci.json</code>; they are not discovered automatically from the GFA. In the GFA built from version 2 of all six haplotype assemblies, <code>CUN#1</code> has the same chromosome lengths as MiGD2 <code>CUNphKu r2.0</code>. Recorded gene IDs are therefore located with the MiGD2 primary-transcript GFF3, and their mRNA intervals are used as viewer coordinates.</p>
           <ul><li><strong>Colored band:</strong> the gene interval from start to end</li><li><strong>Displayed neighborhood:</strong> a wider window for the gene, flanking sequence and nearby SVs</li><li><strong>Function/mechanism validated:</strong> experimental support in citrus</li><li><strong>SV/GWAS associated:</strong> a population-level variant association without proof of causality in these three cultivars</li><li><strong>Pathway homolog candidate:</strong> similarity to a known pathway gene without functional validation of the displayed homolog</li><li><strong>Validated in related citrus:</strong> supported elsewhere but not established as the cause of differences among these three cultivars</li></ul>
           <p>Twenty-two candidates are included. The first click shows the gene on its whole chromosome. Click the same gene again to animate into its neighborhood, and click once more to return to the whole chromosome. The right panel shows the interval and MiGD2 IDs together with the paper's study material, experimental evidence, limits for these cultivars, coordinate-mapping basis and primary-source link. For CitRKD1, CsTPS1 and Ruby1, upstream insertions, deletions and graph branches are also targets for inspection.</p>
         </section>

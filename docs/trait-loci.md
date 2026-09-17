@@ -24,9 +24,9 @@
 
 ## 座標の作り方
 
-表示座標は、温州みかんアセンブリv2を使って作成したGFAの `CUN#1` パス上の座標です。ここでいうv2はGFA形式の版ではなく、温州みかんアセンブリの版です。このGFAの `CUN#1` は、9染色体すべてでMiGD2 `CUNphKu r2.0` と染色体長が一致します。2026年9月17日の更新では、各候補に記録済みの `CUNphKu` 遺伝子IDをMiGD2のprimary-transcript GFF3で検索し、そのmRNA区間へ座標を更新しました。
+表示座標は、温州・紀州・九年母の全6ハプロタイプのアセンブリv2を使って作成したGFAの `CUN#1` パス上の座標です。ここでいうv2はGFA形式の版ではなく、入力した6ハプロタイプアセンブリの版です。このGFAの `CUN#1` は、9染色体すべてでMiGD2 `CUNphKu r2.0` と染色体長が一致します。2026年9月17日の更新では、各候補に記録済みの `CUNphKu` 遺伝子IDをMiGD2のprimary-transcript GFF3で検索し、そのmRNA区間へ座標を更新しました。
 
-更新前のファイルは `dist/data/trait_loci.v1.json`、旧座標と新座標の対応表は `docs/trait-loci-v2-coordinate-map.tsv` に保存しています。GFF3の取得元は [MiGD2 Genome and gene annotation data](https://mikan.dna.naro.go.jp/migd2/data_download/download.html) です。使用した `CUNphKu_r2.0.primaryTranscript.gff3.gz` のSHA-256は `54d4d04a1cd67003415907ad5e270a4b8d78cc3dff5dce91d8663319541734e3` です。温州みかんアセンブリv2を使って作成したGFAのファイルサイズ、SHA-256、CUN#1長は `docs/v2-data-manifest.tsv` に記録しています。
+更新前のファイルは `dist/data/trait_loci.v1.json`、旧座標と新座標の対応表は `docs/trait-loci-v2-coordinate-map.tsv` に保存しています。GFF3の取得元は [MiGD2 Genome and gene annotation data](https://mikan.dna.naro.go.jp/migd2/data_download/download.html) です。使用した `CUNphKu_r2.0.primaryTranscript.gff3.gz` のSHA-256は `54d4d04a1cd67003415907ad5e270a4b8d78cc3dff5dce91d8663319541734e3` です。全6ハプロタイプのアセンブリv2を使って作成したGFAのファイルサイズ、SHA-256、CUN#1長は `docs/v2-data-manifest.tsv` に記録しています。
 
 各エントリには、可能な範囲で次を記録しています。
 
@@ -54,7 +54,7 @@
 - `homolog` と付いた項目は、表示遺伝子そのものの機能が実証されたことを意味しません。
 - 文献の遺伝子名と現在のデータベース注釈名が一致しない場合があります。
 - MiGD2遺伝子IDは相同候補であり、1対1オルソログを保証しません。
-- 座標は現在の温州みかんアセンブリv2を使ったGFAのCUN#1投影に依存します。別のGFA、参照パス、アセンブリ版では再マッピングが必要です。
+- 座標は現在の全6ハプロタイプのアセンブリv2を使ったGFAのCUN#1投影に依存します。別のGFA、参照パス、アセンブリ版では再マッピングが必要です。
 - このJSONは静的に読み込まれます。GFAを更新しても自動では更新されません。
 
 ## 更新方法

@@ -1,6 +1,6 @@
 {
   "schema": "citrus-pathweaver/trait-loci/v2",
-  "coordinateSystem": "CUN#1 paths in the GFA built with Satsuma assembly v2; identical chromosome lengths to MiGD2 CUNphKu r2.0",
+  "coordinateSystem": "CUN#1 paths in the GFA built from version 2 of all six haplotype assemblies; identical chromosome lengths to MiGD2 CUNphKu r2.0",
   "mappingMethod": "MiGD2 CUNphKu r2.0 primary-transcript GFF3 coordinates for the recorded CUNphKu gene IDs",
   "loci": [
     {
