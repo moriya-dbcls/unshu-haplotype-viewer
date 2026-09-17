@@ -4,6 +4,7 @@
   const DATA_CONFIG = Object.freeze({
     viewerUrl: "data/citrus_ch1-ch9.viewer.json?v=3",
     traitUrl: "data/trait_loci.json?v=13",
+    geneUrl: "data/gene_index.v2.json?v=2",
     version: "v2",
     ...(window.UNSHU_DATA_CONFIG || {}),
   });
@@ -38,7 +39,8 @@
       support: "支持", confidence: "信頼度", crossoverCandidate: "経路切替候補",
       noComparable: "この領域には比較可能な親共有ノードがありません", nearest: "に最も近い区間（共有ノード判定）", noParent: "親候補なし", noMikan: "この表示セットには温州パスがありません。",
       kishuSimilarity: "CUNphKi：CKI hap1 ↔ hap2 類似度", kunenboSimilarity: "CUNphKu：CKU hap1 ↔ hap2 類似度", pathsWord: "paths", windowWord: "window",
-      traitLoci: "表現型候補", traitLociHelp: "最初は染色体全体を表示。同じ遺伝子名で周辺へ拡大／全体へ戻ります。", traitDetails: "表現型候補の詳細", mappedFrom: "座標対応", sourcePaper: "原著論文", openLocus: "領域を開く", evidenceLimits: "注意点・未局在形質", geneInterval: "遺伝子区間", displayNeighborhood: "周辺表示", help: "Help", viewV1: "全6ハプロタイプのアセンブリv1を見る", viewV2: "全6ハプロタイプのアセンブリv2を見る", literatureEvidence: "文献根拠", studySystem: "対象材料", experiment: "実験根拠", relevanceHere: "この3品種での解釈", mappingBasis: "座標の根拠", sources: "原著・ソース", openGeneOverview: "染色体全体で遺伝子を表示", zoomInGene: "遺伝子周辺へ拡大", zoomOutGene: "染色体全体へ戻る"
+      traitLoci: "表現型候補", traitLociHelp: "最初は染色体全体を表示。同じ遺伝子名で周辺へ拡大／全体へ戻ります。", traitDetails: "表現型候補の詳細", mappedFrom: "座標対応", sourcePaper: "原著論文", openLocus: "領域を開く", evidenceLimits: "注意点・未局在形質", geneInterval: "遺伝子区間", displayNeighborhood: "周辺表示", help: "Help", viewV1: "全6ハプロタイプのアセンブリv1を見る", viewV2: "全6ハプロタイプのアセンブリv2を見る", literatureEvidence: "文献根拠", studySystem: "対象材料", experiment: "実験根拠", relevanceHere: "この3品種での解釈", mappingBasis: "座標の根拠", sources: "原著・ソース", openGeneOverview: "染色体全体で遺伝子を表示", zoomInGene: "遺伝子周辺へ拡大", zoomOutGene: "染色体全体へ戻る",
+      geneSearch: "遺伝子検索", geneSearchHelp: "Gene ID・別名・相同symbol・機能名・座標で検索します。", geneSearchPlaceholder: "例：CUN3Ku008700 / CitSWEET6 / SWEET", allHaplotypes: "両方の温州hap", loadingGenes: "遺伝子索引を読み込み中…", geneIndexReady: "49,322遺伝子を検索できます", noGeneResults: "一致する遺伝子がありません", typeToSearch: "2文字以上入力してください", directCoordinate: "入力座標へ移動", directReference: "参照座標", gfaProjected: "GFA共有ノード投影", nearestAnchor: "最近傍共有ノードへ投影", unplacedGene: "Chr1–9外", geneView: "遺伝子", nearbyView: "±100 kb", chromosomeView: "染色体全体", sourceCoordinate: "元hap座標", referenceCoordinate: "表示座標", annotationFunction: "機能注釈", searchAliases: "検索別名", projectedNote: "CUNphKi座標をGFA共有ノードでCUN#1へ投影", unavailableCoordinate: "この遺伝子はChr1–9の参照座標へ配置できません"
     },
     en: {
       comparison: "Comparison set", all6: "All 6", all6sub: "Compare in shared coordinates", kishu3: "Kishu trio", kishu3sub: "CKI h1/h2 + CUNphKi", kunenbo3: "Kunenbo trio", kunenbo3sub: "CUNphKu + CKU h1/h2",
@@ -52,7 +54,8 @@
       support: "Support", confidence: "Confidence", crossoverCandidate: "Path-switch candidate",
       noComparable: "No comparable parent-shared nodes in this region", nearest: " is the closest region (shared-node estimate)", noParent: "No parent candidate", noMikan: "No Satsuma (Unshu) path in this comparison set.",
       kishuSimilarity: "CUNphKi: similarity to CKI hap1 ↔ hap2", kunenboSimilarity: "CUNphKu: similarity to CKU hap1 ↔ hap2", pathsWord: "paths", windowWord: "window",
-      traitLoci: "Trait candidates", traitLociHelp: "First click shows the whole chromosome. Click the same gene to zoom in or back out.", traitDetails: "Trait candidate details", mappedFrom: "Coordinate mapping", sourcePaper: "Source paper", openLocus: "Open region", evidenceLimits: "Caveats and unmapped traits", geneInterval: "Gene interval", displayNeighborhood: "Displayed neighborhood", help: "Help", viewV1: "View all six haplotype assemblies v1", viewV2: "View all six haplotype assemblies v2", literatureEvidence: "Literature evidence", studySystem: "Study material", experiment: "Experimental evidence", relevanceHere: "Interpretation for these cultivars", mappingBasis: "Coordinate basis", sources: "Primary sources", openGeneOverview: "Show gene on whole chromosome", zoomInGene: "Zoom into gene neighborhood", zoomOutGene: "Return to whole chromosome"
+      traitLoci: "Trait candidates", traitLociHelp: "First click shows the whole chromosome. Click the same gene to zoom in or back out.", traitDetails: "Trait candidate details", mappedFrom: "Coordinate mapping", sourcePaper: "Source paper", openLocus: "Open region", evidenceLimits: "Caveats and unmapped traits", geneInterval: "Gene interval", displayNeighborhood: "Displayed neighborhood", help: "Help", viewV1: "View all six haplotype assemblies v1", viewV2: "View all six haplotype assemblies v2", literatureEvidence: "Literature evidence", studySystem: "Study material", experiment: "Experimental evidence", relevanceHere: "Interpretation for these cultivars", mappingBasis: "Coordinate basis", sources: "Primary sources", openGeneOverview: "Show gene on whole chromosome", zoomInGene: "Zoom into gene neighborhood", zoomOutGene: "Return to whole chromosome",
+      geneSearch: "Gene search", geneSearchHelp: "Search by gene ID, alias, homolog symbol, function or coordinate.", geneSearchPlaceholder: "e.g. CUN3Ku008700 / CitSWEET6 / SWEET", allHaplotypes: "Both Satsuma haplotypes", loadingGenes: "Loading the gene index…", geneIndexReady: "Search 49,322 genes", noGeneResults: "No matching genes", typeToSearch: "Enter at least two characters", directCoordinate: "Go to coordinate", directReference: "Reference coordinate", gfaProjected: "GFA shared-node projection", nearestAnchor: "Nearest shared-node projection", unplacedGene: "Outside Chr1–9", geneView: "Gene", nearbyView: "±100 kb", chromosomeView: "Whole chromosome", sourceCoordinate: "Source hap coordinate", referenceCoordinate: "Display coordinate", annotationFunction: "Functional annotation", searchAliases: "Search aliases", projectedNote: "CUNphKi coordinates projected to CUN#1 with shared GFA nodes", unavailableCoordinate: "This gene cannot be placed on the Chr1–9 reference coordinates"
     }
   };
   const state = {
@@ -67,6 +70,9 @@
     data: null,
     traitData: null,
     activeLocus: null,
+    geneData: null,
+    activeGene: null,
+    activeGeneView: "nearby",
     locusZoomed: false,
     filename: "",
     language: new URLSearchParams(location.search).get("lang") === "en" || localStorage.getItem("citrus-language") === "en" ? "en" : "ja",
@@ -76,8 +82,13 @@
   let windowAnimationFrame = 0;
   let graphDrag = null;
   let suppressGraphClick = false;
+  let geneIndexPromise = null;
+  let geneSearchTimer = 0;
+  let geneSearchMatches = [];
+  let geneSearchActiveIndex = -1;
 
   const t = key => (I18N[state.language][key] || key).replaceAll("{version}", DATA_CONFIG.version);
+  const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character]);
   const versionLinkKey = DATA_CONFIG.version === "v1" ? "viewV2" : "viewV1";
   const versionLinkHref = DATA_CONFIG.version === "v1" ? "../" : "./v1/";
   const modeLabel = mode => state.language === "ja" ? MODES[mode].label : ({all:"All 6 haplotypes",kishu:"Kishu-origin trio",kunenbo:"Kunenbo-origin trio"}[mode]);
@@ -148,6 +159,22 @@
           <section class="section">
             <h2 class="section-title" data-i18n="chromosome">${t("chromosome")}</h2>
             <div class="chr-grid" id="chr-grid"></div>
+          </section>
+
+          <section class="section gene-search-section" id="gene-search-section" ${DATA_CONFIG.geneUrl ? "" : "hidden"}>
+            <h2 class="section-title" data-i18n="geneSearch">${t("geneSearch")}</h2>
+            <p class="section-help" data-i18n="geneSearchHelp">${t("geneSearchHelp")}</p>
+            <div class="gene-search-box">
+              <input id="gene-search-input" type="search" autocomplete="off" spellcheck="false" placeholder="${t("geneSearchPlaceholder")}" aria-label="${t("geneSearch")}" aria-controls="gene-search-results" />
+              <select id="gene-search-haplotype" aria-label="Haplotype">
+                <option value="all">${t("allHaplotypes")}</option>
+                <option value="CUNphKu">CUNphKu</option>
+                <option value="CUNphKi">CUNphKi</option>
+              </select>
+            </div>
+            <div class="gene-search-status" id="gene-search-status">${t("typeToSearch")}</div>
+            <div class="gene-search-results" id="gene-search-results" role="listbox"></div>
+            <div class="gene-search-selection" id="gene-search-selection"></div>
           </section>
 
           <section class="section trait-section">
@@ -260,7 +287,8 @@
     "overview-track", "branch-overview-track", "branch-overview-bars", "branch-overview-window", "overview-length", "mode-badge", "window-badge", "coordinate", "similarity", "similarity-title", "similarity-help",
     "local-graph", "local-graph-wrap", "local-graph-help", "local-graph-path", "branch-tooltip",
     "events", "events-sub", "selection-hint", "metric-position", "metric-window", "metric-paths", "metric-events",
-    "path-cards", "file-input", "drop-zone", "data-status", "toast", "trait-loci", "trait-unmapped-list", "locus-details"
+    "path-cards", "file-input", "drop-zone", "data-status", "toast", "trait-loci", "trait-unmapped-list", "locus-details",
+    "gene-search-section", "gene-search-input", "gene-search-haplotype", "gene-search-status", "gene-search-results", "gene-search-selection"
   ].map(id => [id, document.getElementById(id)]));
 
   function getChr() { return state.data.chromosomes.find(c => c.id === state.chromosome) || state.data.chromosomes[0]; }
@@ -278,6 +306,7 @@
     const chr = state.data.chromosomes.find(c => c.id === id);
     if (!chr) return;
     state.activeLocus = null;
+    state.activeGene = null;
     state.locusZoomed = false;
     state.chromosome = id;
     state.start = Number.isFinite(chr.viewStart) ? chr.viewStart : 0;
@@ -342,6 +371,7 @@
   function toggleTraitLocus(id) {
     const locus = state.traitData?.loci?.find(item => item.id === id);
     if (!locus || !state.data) return;
+    state.activeGene = null;
     const chr = state.data.chromosomes.find(c => c.id === locus.chromosome);
     if (!chr) return;
     const center = (locus.start + locus.end) / 2;
@@ -406,6 +436,173 @@
     if (!match) throw new Error("Chr1:0-53800000 の形式で入力してください");
     const scale = s => /m/i.test(s) ? 1e6 : /k/i.test(s) ? 1e3 : 1;
     return { chr: match[1], start: Number(match[2]) * scale(match[3]), end: Number(match[4]) * scale(match[5]) };
+  }
+
+  function geneMappingLabel(gene) {
+    if (gene.mapping === "reference") return t("directReference");
+    if (gene.mapping === "shared-node" || gene.mapping === "partial-shared-node" || gene.mapping === "ambiguous-shared-node") return t("gfaProjected");
+    if (gene.mapping === "nearest-shared-node") return t("nearestAnchor");
+    return t("unplacedGene");
+  }
+
+  function formatGeneCoordinate(gene, source = false) {
+    if (source) return `${gene.sourceSequence}:${Number(gene.sourceStart).toLocaleString("en-US")}–${Number(gene.sourceEnd).toLocaleString("en-US")}`;
+    if (!gene.chromosome || !Number.isFinite(gene.start)) return t("unplacedGene");
+    return `${gene.chromosome}:${Math.round(gene.start).toLocaleString("en-US")}–${Math.round(gene.end).toLocaleString("en-US")}`;
+  }
+
+  async function ensureGeneIndex() {
+    if (!DATA_CONFIG.geneUrl) return null;
+    if (state.geneData) return state.geneData;
+    if (geneIndexPromise) return geneIndexPromise;
+    els["gene-search-status"].textContent = t("loadingGenes");
+    geneIndexPromise = fetch(DATA_CONFIG.geneUrl).then(response => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    }).then(data => {
+      if (data.schema !== "unshu-haplotype-viewer/gene-index/v1" || !Array.isArray(data.genes)) throw new Error("unsupported gene index");
+      data.genes.forEach(gene => {
+        gene._search = [gene.id, gene.transcript, gene.name, gene.function, ...(gene.aliases || [])].join(" ").normalize("NFKC").toLocaleLowerCase();
+        gene._exact = [gene.id, gene.transcript, gene.name, ...(gene.aliases || [])].map(value => String(value).normalize("NFKC").toLocaleLowerCase());
+      });
+      state.geneData = data;
+      els["gene-search-status"].textContent = `${data.genes.length.toLocaleString("en-US")} ${state.language === "ja" ? "遺伝子を検索できます" : "genes available"}`;
+      return data;
+    }).catch(error => {
+      geneIndexPromise = null;
+      els["gene-search-status"].textContent = state.language === "ja" ? `遺伝子索引の読み込みに失敗：${error.message}` : `Failed to load gene index: ${error.message}`;
+      throw error;
+    });
+    return geneIndexPromise;
+  }
+
+  function scoreGene(gene, query, tokens) {
+    if (!tokens.every(token => gene._search.includes(token))) return -1;
+    if (gene.id.toLocaleLowerCase() === query) return 1200;
+    if (gene.transcript.toLocaleLowerCase() === query) return 1150;
+    if (gene.name.toLocaleLowerCase() === query) return 1100;
+    if (gene._exact.includes(query)) return 1050;
+    if (gene.id.toLocaleLowerCase().startsWith(query)) return 900;
+    if (gene.name.toLocaleLowerCase().startsWith(query)) return 850;
+    if (gene._exact.some(value => value.startsWith(query))) return 800;
+    const wholeWord = new RegExp(`(^|[^a-z0-9])${query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^a-z0-9]|$)`, "i");
+    if (wholeWord.test(gene.function)) return 650;
+    if (gene.function.toLocaleLowerCase().includes(query)) return 500;
+    return 300;
+  }
+
+  function renderGeneSearchResults() {
+    const raw = els["gene-search-input"].value.trim();
+    const query = raw.normalize("NFKC").toLocaleLowerCase();
+    geneSearchMatches = [];
+    geneSearchActiveIndex = -1;
+    if (!query || query.length < 2) {
+      els["gene-search-results"].innerHTML = "";
+      els["gene-search-status"].textContent = t("typeToSearch");
+      return;
+    }
+    try {
+      const coordinate = parseCoordinate(raw);
+      const chr = state.data?.chromosomes.find(item => item.id.toLocaleLowerCase() === coordinate.chr.toLocaleLowerCase());
+      if (chr && coordinate.end > coordinate.start) {
+        els["gene-search-results"].innerHTML = `<button class="gene-result coordinate-result" data-coordinate="true" role="option"><span><strong>${t("directCoordinate")}</strong><small>${escapeHtml(chr.id)}:${Math.round(coordinate.start).toLocaleString("en-US")}–${Math.round(coordinate.end).toLocaleString("en-US")}</small></span><b>↗</b></button>`;
+        els["gene-search-status"].textContent = t("directCoordinate");
+        return;
+      }
+    } catch (_error) {}
+    if (!state.geneData) return;
+    const tokens = query.split(/\s+/).filter(Boolean);
+    const haplotype = els["gene-search-haplotype"].value;
+    geneSearchMatches = state.geneData.genes
+      .filter(gene => haplotype === "all" || gene.haplotype === haplotype)
+      .map(gene => ({ gene, score: scoreGene(gene, query, tokens) }))
+      .filter(item => item.score >= 0)
+      .sort((a, b) => b.score - a.score || Number(Boolean(b.gene.chromosome)) - Number(Boolean(a.gene.chromosome)) || a.gene.id.localeCompare(b.gene.id))
+      .slice(0, 12)
+      .map(item => item.gene);
+    els["gene-search-status"].textContent = geneSearchMatches.length ? `${geneSearchMatches.length}${state.language === "ja" ? "件を表示" : " results shown"}` : t("noGeneResults");
+    els["gene-search-results"].innerHTML = geneSearchMatches.map((gene, index) => `
+      <button class="gene-result" data-gene-index="${index}" role="option" aria-selected="false">
+        <span class="gene-result-main"><strong>${escapeHtml(gene.name)}</strong><em>${escapeHtml(gene.haplotype)}</em></span>
+        <small>${escapeHtml(gene.id)} · ${escapeHtml(formatGeneCoordinate(gene))}</small>
+        <span class="gene-result-function">${escapeHtml(gene.function)}</span>
+        <span class="gene-result-mapping">${escapeHtml(geneMappingLabel(gene))}</span>
+      </button>`).join("");
+  }
+
+  function updateGeneSearchActive() {
+    const buttons = [...els["gene-search-results"].querySelectorAll(".gene-result")];
+    buttons.forEach((button, index) => {
+      const active = index === geneSearchActiveIndex;
+      button.classList.toggle("keyboard-active", active);
+      button.setAttribute("aria-selected", String(active));
+      if (active) button.scrollIntoView({ block: "nearest" });
+    });
+  }
+
+  async function runGeneSearch() {
+    const query = els["gene-search-input"].value.trim();
+    if (query.length >= 2 && !/^Chr/i.test(query)) {
+      try { await ensureGeneIndex(); } catch (_error) { return; }
+    }
+    renderGeneSearchResults();
+  }
+
+  function animateToInterval(chromosome, start, end) {
+    const chr = state.data?.chromosomes.find(item => item.id.toLocaleLowerCase() === chromosome.toLocaleLowerCase());
+    if (!chr) return false;
+    const changed = state.chromosome !== chr.id;
+    state.chromosome = chr.id;
+    state.cursor = clamp((start + end) / 2, 0, chr.length);
+    if (changed) {
+      state.start = 0; state.end = chr.length; render();
+      requestAnimationFrame(() => animateWindow(start, end, true));
+    } else animateWindow(start, end, true);
+    return true;
+  }
+
+  function focusGene(gene, view = "nearby") {
+    state.activeLocus = null;
+    state.activeGene = gene;
+    state.activeGeneView = view;
+    if (!gene.chromosome || !Number.isFinite(gene.start)) {
+      renderGeneSelection(); renderInspector(); toast(t("unavailableCoordinate"));
+      return;
+    }
+    const chr = state.data.chromosomes.find(item => item.id === gene.chromosome);
+    const center = (gene.start + gene.end) / 2;
+    let start; let end;
+    if (view === "chromosome") { start = 0; end = chr.length; }
+    else if (view === "gene") {
+      const padding = Math.max(2500, (gene.end - gene.start) * .5);
+      start = gene.start - padding; end = gene.end + padding;
+    } else { start = center - 100000; end = center + 100000; }
+    animateToInterval(gene.chromosome, start, end);
+  }
+
+  function renderGeneSelection() {
+    const gene = state.activeGene;
+    if (!gene) { els["gene-search-selection"].innerHTML = ""; return; }
+    els["gene-search-selection"].innerHTML = `
+      <div class="gene-selected-head"><span><strong>${escapeHtml(gene.name)}</strong><small>${escapeHtml(gene.id)} · ${escapeHtml(gene.haplotype)}</small></span><b>${escapeHtml(gene.strand)}</b></div>
+      <p>${escapeHtml(gene.function)}</p>
+      <span class="gene-selected-coordinate">${escapeHtml(formatGeneCoordinate(gene))}</span>
+      <div class="gene-view-buttons">
+        <button data-gene-view="gene" ${gene.chromosome ? "" : "disabled"} class="${state.activeGeneView === "gene" ? "active" : ""}">${t("geneView")}</button>
+        <button data-gene-view="nearby" ${gene.chromosome ? "" : "disabled"} class="${state.activeGeneView === "nearby" ? "active" : ""}">${t("nearbyView")}</button>
+        <button data-gene-view="chromosome" ${gene.chromosome ? "" : "disabled"} class="${state.activeGeneView === "chromosome" ? "active" : ""}">${t("chromosomeView")}</button>
+      </div>`;
+    els["gene-search-selection"].querySelectorAll("[data-gene-view]").forEach(button => button.addEventListener("click", () => focusGene(gene, button.dataset.geneView)));
+  }
+
+  function updateGeneSearchLanguage() {
+    if (!DATA_CONFIG.geneUrl) return;
+    els["gene-search-input"].placeholder = t("geneSearchPlaceholder");
+    els["gene-search-input"].setAttribute("aria-label", t("geneSearch"));
+    els["gene-search-haplotype"].options[0].textContent = t("allHaplotypes");
+    renderGeneSelection();
+    if (els["gene-search-input"].value.trim()) renderGeneSearchResults();
+    else els["gene-search-status"].textContent = state.geneData ? `${state.geneData.genes.length.toLocaleString("en-US")} ${state.language === "ja" ? "遺伝子を検索できます" : "genes available"}` : t("typeToSearch");
   }
 
   function tickStep(span) {
@@ -530,19 +727,27 @@
     });
 
     const activeLocus = state.traitData?.loci?.find(item => item.id === state.activeLocus && item.chromosome === chr.id);
-    if (activeLocus && activeLocus.end >= state.start && activeLocus.start <= state.end) {
-      const exactStart = x(Math.max(activeLocus.start, state.start));
-      const exactEnd = x(Math.min(activeLocus.end, state.end));
+    const activeGene = state.activeGene?.chromosome === chr.id ? state.activeGene : null;
+    const activeMarker = activeLocus ? { ...activeLocus, markerType: "trait", markerLabel: activeLocus.symbol } : activeGene ? {
+      ...activeGene,
+      id: activeGene.id,
+      color: activeGene.haplotype === "CUNphKi" ? "#f4bd55" : "#59a9df",
+      markerType: "gene",
+      markerLabel: activeGene.name,
+    } : null;
+    if (activeMarker && activeMarker.end >= state.start && activeMarker.start <= state.end) {
+      const exactStart = x(Math.max(activeMarker.start, state.start));
+      const exactEnd = x(Math.min(activeMarker.end, state.end));
       const exactWidth = Math.max(1.5, exactEnd - exactStart);
       const lx = (exactStart + exactEnd) / 2;
       const visibleWidth = Math.max(8, exactWidth);
       const visibleX = lx - visibleWidth / 2;
-      const marker = svgEl("g", { class: "locus-marker", "data-locus": activeLocus.id });
-      marker.append(svgEl("rect", { x: visibleX, y: top - 3, width: visibleWidth, height: H - top - bottom + 3, fill: activeLocus.color, opacity: .16, rx: 2 }));
-      marker.append(svgEl("rect", { x: exactStart, y: top - 3, width: exactWidth, height: H - top - bottom + 3, fill: activeLocus.color, opacity: .82, rx: 1 }));
-      marker.append(svgEl("line", { x1: exactStart, y1: top - 8, x2: exactEnd, y2: top - 8, stroke: activeLocus.color, "stroke-width": 3, "stroke-linecap": "round" }));
-      const text = svgEl("text", { x: clamp(lx + 9, left + 4, W - right - 95), y: top - 2, fill: activeLocus.color, "font-size": 11, "font-weight": 750 });
-      text.textContent = activeLocus.symbol; marker.append(text); svg.append(marker);
+      const marker = svgEl("g", { class: "locus-marker", "data-marker-type": activeMarker.markerType, "data-marker-id": activeMarker.id });
+      marker.append(svgEl("rect", { x: visibleX, y: top - 3, width: visibleWidth, height: H - top - bottom + 3, fill: activeMarker.color, opacity: .16, rx: 2 }));
+      marker.append(svgEl("rect", { x: exactStart, y: top - 3, width: exactWidth, height: H - top - bottom + 3, fill: activeMarker.color, opacity: .82, rx: 1 }));
+      marker.append(svgEl("line", { x1: exactStart, y1: top - 8, x2: exactEnd, y2: top - 8, stroke: activeMarker.color, "stroke-width": 3, "stroke-linecap": "round" }));
+      const text = svgEl("text", { x: clamp(lx + 9, left + 4, W - right - 95), y: top - 2, fill: activeMarker.color, "font-size": 11, "font-weight": 750 });
+      text.textContent = activeMarker.markerLabel; marker.append(text); svg.append(marker);
     }
 
     const cx = x(state.cursor);
@@ -577,8 +782,13 @@
     svg.querySelectorAll(".locus-marker").forEach(el => {
       el.style.cursor = "pointer";
       el.addEventListener("mouseenter", e => {
-        const locus = state.traitData.loci.find(item => item.id === el.dataset.locus);
-        showTooltip(e, `<strong>${locus.trait[state.language]} · ${locus.symbol}</strong><br>${locus.title[state.language]}<br>${locus.chromosome}:${Math.round(locus.start).toLocaleString("en-US")}–${Math.round(locus.end).toLocaleString("en-US")}<br>${locus.evidenceLabel[state.language]}`);
+        if (el.dataset.markerType === "gene") {
+          const gene = state.activeGene;
+          showTooltip(e, `<strong>${escapeHtml(gene.name)} · ${escapeHtml(gene.id)}</strong><br>${escapeHtml(gene.function)}<br>${escapeHtml(formatGeneCoordinate(gene))}<br>${escapeHtml(geneMappingLabel(gene))}`);
+        } else {
+          const locus = state.traitData.loci.find(item => item.id === el.dataset.markerId);
+          showTooltip(e, `<strong>${locus.trait[state.language]} · ${locus.symbol}</strong><br>${locus.title[state.language]}<br>${locus.chromosome}:${Math.round(locus.start).toLocaleString("en-US")}–${Math.round(locus.end).toLocaleString("en-US")}<br>${locus.evidenceLabel[state.language]}`);
+        }
       });
       el.addEventListener("mouseleave", hideTooltip);
     });
@@ -655,7 +865,8 @@
       const pathId = state.localGraphPath;
       const path = PATHS.find(item => item.id === pathId) || pathObjects[0];
       const locus = state.traitData?.loci?.find(item => item.id === state.activeLocus && item.chromosome === chr.id);
-      const focusReferencePosition = locus ? (locus.start + locus.end) / 2 : state.cursor;
+      const gene = state.activeGene?.chromosome === chr.id ? state.activeGene : null;
+      const focusReferencePosition = locus ? (locus.start + locus.end) / 2 : gene ? (gene.start + gene.end) / 2 : state.cursor;
       const focusSegment = (chr.tracks?.[pathId] || []).find(segment => segment.start <= focusReferencePosition && segment.end >= focusReferencePosition && Number.isFinite(segment.pathPosition));
       const focusPathPosition = focusSegment?.pathPosition;
       const candidates = [];
@@ -962,6 +1173,25 @@
     }).join("");
     els["path-cards"].innerHTML=cards||`<div class="path-card"><p>${t("noMikan")}</p></div>`;
     const locus = state.traitData?.loci?.find(item => item.id === state.activeLocus);
+    const gene = state.activeGene;
+    if (!locus && gene) {
+      const aliases = (gene.aliases || []).slice(0, 10);
+      const coverage = Number.isFinite(gene.mappingCoverage) && gene.mapping !== "reference" ? ` · ${Math.round(gene.mappingCoverage * 100)}%` : "";
+      els["locus-details"].innerHTML = `
+        <div class="locus-detail-head"><i style="background:${gene.haplotype === "CUNphKi" ? "#f4bd55" : "#59a9df"}"></i><span><small>${escapeHtml(gene.haplotype)}</small><strong>${escapeHtml(gene.name)}</strong></span></div>
+        <h3>${escapeHtml(gene.id)}</h3>
+        <span class="evidence-badge related">${escapeHtml(geneMappingLabel(gene))}${coverage}</span>
+        <p>${escapeHtml(gene.function)}</p>
+        <dl>
+          <div><dt>Transcript</dt><dd>${escapeHtml(gene.transcript)}</dd></div>
+          <div><dt>${t("sourceCoordinate")}</dt><dd>${escapeHtml(formatGeneCoordinate(gene, true))}</dd></div>
+          <div><dt>${t("referenceCoordinate")}</dt><dd>${escapeHtml(formatGeneCoordinate(gene))}</dd></div>
+          <div><dt>Strand</dt><dd>${escapeHtml(gene.strand)}</dd></div>
+        </dl>
+        ${gene.mapping !== "reference" && gene.chromosome ? `<p class="mapping-note">${t("projectedNote")}</p>` : ""}
+        ${aliases.length ? `<section class="literature-evidence"><h4>${t("searchAliases")}</h4><p>${aliases.map(escapeHtml).join(" · ")}</p></section>` : ""}`;
+      return;
+    }
     const literature = locus?.literature;
     const sources = literature?.sources || (locus?.source ? [{ label: { ja: t("sourcePaper"), en: t("sourcePaper") }, citation: locus.symbol, url: locus.source }] : []);
     const evidenceDetails = literature ? `
@@ -994,7 +1224,7 @@
     document.querySelectorAll(".chr-button").forEach(b=>b.classList.toggle("active",b.dataset.chr===chr.id));
   }
 
-  function render() { renderHeader(); renderTraitLoci(); renderGraph(); renderOverview(); renderLocalGraph(); renderSimilarity(); renderEvents(); renderInspector(); }
+  function render() { renderHeader(); renderTraitLoci(); renderGeneSelection(); renderGraph(); renderOverview(); renderLocalGraph(); renderSimilarity(); renderEvents(); renderInspector(); }
 
   function toast(message) { els.toast.textContent=message; els.toast.classList.add("show"); clearTimeout(toast.timer); toast.timer=setTimeout(()=>els.toast.classList.remove("show"),2600); }
 
@@ -1041,6 +1271,45 @@
   document.getElementById("pan-right").onclick=()=>pan(.35);
   document.getElementById("reset-view").onclick=()=>setWindow(0,getChr().length);
   els.coordinate.addEventListener("keydown",e=>{if(e.key==="Enter"){try{const p=parseCoordinate(els.coordinate.value);selectChromosome(p.chr);setWindow(p.start,p.end);}catch(err){toast(err.message);}}});
+  if (DATA_CONFIG.geneUrl) {
+    els["gene-search-input"].addEventListener("focus", () => ensureGeneIndex().catch(() => {}));
+    els["gene-search-input"].addEventListener("input", () => {
+      clearTimeout(geneSearchTimer);
+      geneSearchTimer = setTimeout(runGeneSearch, 120);
+    });
+    els["gene-search-haplotype"].addEventListener("change", runGeneSearch);
+    els["gene-search-results"].addEventListener("click", event => {
+      const button = event.target.closest(".gene-result");
+      if (!button) return;
+      if (button.dataset.coordinate) {
+        try {
+          const coordinate = parseCoordinate(els["gene-search-input"].value);
+          state.activeGene = null; state.activeLocus = null;
+          animateToInterval(coordinate.chr, coordinate.start, coordinate.end);
+          els["gene-search-results"].innerHTML = "";
+        } catch (error) { toast(error.message); }
+        return;
+      }
+      const gene = geneSearchMatches[Number(button.dataset.geneIndex)];
+      if (!gene) return;
+      els["gene-search-input"].value = gene.id;
+      els["gene-search-results"].innerHTML = "";
+      els["gene-search-status"].textContent = geneMappingLabel(gene);
+      focusGene(gene, "nearby");
+    });
+    els["gene-search-input"].addEventListener("keydown", event => {
+      const buttons = [...els["gene-search-results"].querySelectorAll(".gene-result")];
+      if (event.key === "ArrowDown" && buttons.length) {
+        event.preventDefault(); geneSearchActiveIndex = (geneSearchActiveIndex + 1) % buttons.length; updateGeneSearchActive();
+      } else if (event.key === "ArrowUp" && buttons.length) {
+        event.preventDefault(); geneSearchActiveIndex = (geneSearchActiveIndex - 1 + buttons.length) % buttons.length; updateGeneSearchActive();
+      } else if (event.key === "Enter" && buttons.length) {
+        event.preventDefault(); buttons[Math.max(0, geneSearchActiveIndex)].click();
+      } else if (event.key === "Escape") {
+        els["gene-search-results"].innerHTML = ""; geneSearchActiveIndex = -1;
+      }
+    });
+  }
   ["variants","inversions","uncertain"].forEach(k=>document.getElementById(`toggle-${k}`).addEventListener("change",e=>{state[`show${k[0].toUpperCase()+k.slice(1)}`]=e.target.checked;render();}));
   els["file-input"].addEventListener("change",e=>{if(e.target.files[0])loadFile(e.target.files[0]);});
   ["dragenter","dragover"].forEach(ev=>els["drop-zone"].addEventListener(ev,e=>{e.preventDefault();els["drop-zone"].classList.add("drag");}));
@@ -1052,6 +1321,7 @@
     document.documentElement.lang=state.language;
     document.getElementById("language-toggle").textContent=state.language==="ja"?"English":"日本語";
     document.querySelectorAll("[data-i18n]").forEach(element=>{element.textContent=t(element.dataset.i18n);});
+    updateGeneSearchLanguage();
     if(state.data){els["data-status"].textContent=state.filename==="Chr1–9 GFA"?t("loaded"):(state.language==="ja"?`${state.filename} を表示中`:`Showing ${state.filename}`);render();}
   };
   els["overview-track"].onclick=e=>{const r=els["overview-track"].getBoundingClientRect();const chr=getChr(),center=(e.clientX-r.left)/r.width*chr.length,width=state.end-state.start;setWindow(center-width/2,center+width/2);};
@@ -1107,7 +1377,7 @@
   els.graph.addEventListener("pointercancel", e => finishGraphDrag(e, false));
   els.graph.addEventListener("lostpointercapture", e => finishGraphDrag(e, false));
   els.graph.addEventListener("wheel",e=>{e.preventDefault();zoom(e.deltaY>0?1.25:.8);},{passive:false});
-  window.addEventListener("resize",()=>render());
+  window.addEventListener("resize",()=>{ if (state.data) render(); });
   window.addEventListener("keydown",e=>{if(e.target.matches("input"))return;if(e.key==="1")setMode("all");if(e.key==="2")setMode("kishu");if(e.key==="3")setMode("kunenbo");if(e.key==="+")zoom(.5);if(e.key==="-")zoom(2);});
 
   function registerWebMCP() {

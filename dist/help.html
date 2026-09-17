@@ -7,7 +7,7 @@
     <meta name="description" content="Unshu Haplotype Viewerの表示内容、色、数値、計算方法を説明するHelpページ" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1718'/%3E%3Cpath d='M12 34h13l6-12 7 24 6-12h8' fill='none' stroke='%23f2b84b' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
     <title>Help · Unshu Haplotype Viewer</title>
-    <link rel="stylesheet" href="./styles.css?v=14" />
+    <link rel="stylesheet" href="./styles.css?v=15" />
     <link rel="stylesheet" href="./help.css?v=1" />
   </head>
   <body class="help-page">
@@ -33,7 +33,7 @@
         </div>
 
         <nav class="help-nav" aria-label="ページ内メニュー">
-          <a href="#view-ja">基本表示</a><a href="#colors-ja">色と線</a><a href="#scores-ja">数値</a><a href="#events-ja">候補イベント</a><a href="#traits-ja">遺伝子</a><a href="#limits-ja">注意点</a>
+          <a href="#view-ja">基本表示</a><a href="#colors-ja">色と線</a><a href="#scores-ja">数値</a><a href="#events-ja">候補イベント</a><a href="#search-ja">遺伝子検索</a><a href="#traits-ja">形質候補</a><a href="#limits-ja">注意点</a>
         </nav>
 
         <section class="help-section" id="view-ja">
@@ -99,6 +99,17 @@
           </dl>
         </section>
 
+        <section class="help-section" id="search-ja">
+          <h2>任意の遺伝子を検索する</h2>
+          <p>MiGD2のCUNphKi／CUNphKu r2.0 primary transcript注釈、合計49,322遺伝子を検索できます。Gene ID、Transcript ID、既存の表現型候補名、Arabidopsis相同遺伝子のID・symbol、Citrus／Swiss-Prot相同ID、機能記述を検索対象にしています。相同遺伝子のsymbolは柑橘の正式symbolとしてではなく、検索用の別名として表示します。</p>
+          <p>検索結果を選ぶと遺伝子周辺±100 kbへ移動します。選択欄の「遺伝子」「±100 kb」「染色体全体」で表示幅を切り替えられます。<code>Chr3:694038-696235</code>のような座標入力にも対応します。</p>
+          <ul>
+            <li><strong>CUNphKu：</strong><code>CUN#1</code>参照パスと同じ座標なので、注釈座標を直接使います。</li>
+            <li><strong>CUNphKi：</strong>遺伝子区間と重なるGFA共有ノードを使って<code>CUN#1</code>座標へ投影します。共有部分がない場合は最近傍の共有ノードへ置き、検索結果と右欄に投影方法を表示します。</li>
+            <li><strong>Unplaced：</strong>Chr1–9外の遺伝子は検索できますが、染色体ブラウザへは移動できません。</li>
+          </ul>
+        </section>
+
         <section class="help-section" id="traits-ja">
           <h2>表現型候補遺伝子</h2>
           <p>候補遺伝子はGFAから自動発見したものではありません。文献から選んだ候補を <code>trait_loci.json</code> に登録しています。現在の全6ハプロタイプのアセンブリv2を使ったGFAでは <code>CUN#1</code> がMiGD2 <code>CUNphKu r2.0</code> の染色体長と一致するため、記録済み遺伝子IDをMiGD2 primary-transcript GFF3で検索し、そのmRNA区間を表示座標にしています。</p>
@@ -133,7 +144,7 @@
         </div>
 
         <nav class="help-nav" aria-label="Page navigation">
-          <a href="#view-en">Views</a><a href="#colors-en">Colors</a><a href="#scores-en">Scores</a><a href="#events-en">Events</a><a href="#traits-en">Genes</a><a href="#limits-en">Limitations</a>
+          <a href="#view-en">Views</a><a href="#colors-en">Colors</a><a href="#scores-en">Scores</a><a href="#events-en">Events</a><a href="#search-en">Gene search</a><a href="#traits-en">Trait loci</a><a href="#limits-en">Limitations</a>
         </nav>
 
         <section class="help-section" id="view-en">
@@ -192,6 +203,17 @@
             <div><dt>Yellow dot and dashed line</dt><dd>A transition between scores above +0.08 and below −0.08 where the new state persists for three bins. It is a candidate path switch requiring validation.</dd></div>
             <div><dt>Red line / INV candidate</dt><dd>A bin where more than 15% of shared nodes are traversed opposite to the reference orientation. Repeats and graph construction can also produce this signal.</dd></div>
           </dl>
+        </section>
+
+        <section class="help-section" id="search-en">
+          <h2>Search any annotated gene</h2>
+          <p>The search index contains 49,322 MiGD2 CUNphKi/CUNphKu r2.0 primary-transcript genes. It searches gene and transcript IDs, curated trait names, Arabidopsis homolog IDs and symbols, Citrus and Swiss-Prot homolog IDs, and functional descriptions. Homolog symbols are presented as search aliases rather than official citrus symbols.</p>
+          <p>Selecting a result opens a ±100 kb neighborhood. The Gene, ±100 kb and Whole chromosome buttons change the viewing scale. Coordinates such as <code>Chr3:694038-696235</code> can also be entered directly.</p>
+          <ul>
+            <li><strong>CUNphKu:</strong> annotation coordinates are used directly because this haplotype is the <code>CUN#1</code> reference path.</li>
+            <li><strong>CUNphKi:</strong> gene intervals are projected to <code>CUN#1</code> with overlapping shared GFA nodes. When no node overlaps, the nearest shared node is used and the projection method is shown in the result and inspector.</li>
+            <li><strong>Unplaced:</strong> genes outside Chr1–9 remain searchable but cannot open a chromosome-browser position.</li>
+          </ul>
         </section>
 
         <section class="help-section" id="traits-en">

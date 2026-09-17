@@ -91,6 +91,22 @@ python3 tools/update_trait_coordinates_from_gff.py \
 
 対象遺伝子がGFF3にない場合、primary transcriptが重複する場合、または染色体名から `ch1`–`ch9` を判別できない場合は更新を中止します。`--report` のTSVで旧座標と新座標を確認できます。
 
+## 遺伝子検索索引を作る
+
+`build_gene_index.py` は、MiGD2のCUNphKi／CUNphKu primary transcript注釈を検索用JSONへ変換します。CUNphKu座標はCUN#1参照座標として直接使い、CUNphKi座標は各染色体GFAのCUN#2・CUN#1共有ノードで参照座標へ投影します。`trait_loci.json` の名称も検索別名へ追加します。
+
+```bash
+python3 tools/build_gene_index.py \
+  --ki /path/to/CUNphKi_r2.0.annotation_info.primaryTranscript.tsv.gz \
+  --ku /path/to/CUNphKu_r2.0.annotation_info.primaryTranscript.tsv.gz \
+  --gfa-dir /path/to/chromosome-gfas \
+  --trait-json dist/data/trait_loci.json \
+  --output dist/data/gene_index.v2.json \
+  --assembly-version v2
+```
+
+索引には直接座標、共有ノード投影、部分投影、最近傍共有ノード投影、unplacedの区別を保存します。アセンブリまたはGFAを更新した場合は索引も再生成してください。
+
 ## ODGI bin TSVから作る（代替経路）
 
 `prepare_viewer_data.py` は、染色体ごとの `odgi bin` TSVを結合するための別経路です。
