@@ -1,6 +1,13 @@
 (() => {
   "use strict";
 
+  const DATA_CONFIG = Object.freeze({
+    viewerUrl: "data/citrus_ch1-ch9.viewer.json?v=3",
+    traitUrl: "data/trait_loci.json?v=13",
+    version: "v2",
+    ...(window.UNSHU_DATA_CONFIG || {}),
+  });
+
   const PATHS = [
     { id: "CKIhap1", label: "紀州 hap1", short: "CKI h1", group: "kishu", color: "#f0ad3d" },
     { id: "CKIhap2", label: "紀州 hap2", short: "CKI h2", group: "kishu", color: "#ffd889" },
@@ -27,11 +34,11 @@
       similarityHelp: "ゼロ交差は組換え候補。GFA共有ノードの差を表示します。", allOriginTitle: "温州2 hapの親由来：紀州 ↔ 九年母", allOriginHelp: "黄=CUNphKi、青=CUNphKu。各温州hapと親4 hapの最大共有ノード類似度の差です。灰色は親間の判別力が低い区間。", kishuSimilarityHelp: "CUNphKiと紀州hap1／hap2の共有ノード類似度差。上ほどhap1、下ほどhap2に近い区間です。", kunenboSimilarityHelp: "CUNphKuと九年母hap1／hap2の共有ノード類似度差。上ほどhap1、下ほどhap2に近い区間です。", kishuAxis: "紀州", kunenboAxis: "九年母", hap1Axis: "hap1", hap2Axis: "hap2", eventsTitle: "表示範囲のイベント", eventHelp: "候補を選択すると位置を拡大します。", noEvents: "表示範囲にイベントはありません。",
       selection: "選択範囲", selectionHint: "染色体上をクリックすると、その位置のパス状態を確認できます。", graphAria: "6ハプロタイプの染色体グラフ。左右へドラッグすると表示幅を保って移動できます。", position: "位置", window: "表示幅", shownPaths: "表示パス", events: "イベント",
       recombNote: "組換えは新規配列ではなく、温州パスが親のhap1／hap2に対応する経路を切り替える現象として読みます。", pathState: "パス状態", pathHelp: "現在位置で最も近い親ハプロタイプを示します。",
-      loadedBadge: "GFA投影データ", loading: "Chr1–9 GFAを読み込み中", loaded: "Chr1–9 GFAを表示中", loadToast: "Chr1–9のGFA投影データを読み込みました", pathDivergence: "経路差候補",
+      loadedBadge: "GFA投影データ {version}", loading: "Chr1–9 GFA {version}を読み込み中", loaded: "Chr1–9 GFA {version}を表示中", loadToast: "Chr1–9のGFA {version}投影データを読み込みました", pathDivergence: "経路差候補",
       support: "支持", confidence: "信頼度", crossoverCandidate: "経路切替候補",
       noComparable: "この領域には比較可能な親共有ノードがありません", nearest: "に最も近い区間（共有ノード判定）", noParent: "親候補なし", noMikan: "この表示セットには温州パスがありません。",
       kishuSimilarity: "CUNphKi：CKI hap1 ↔ hap2 類似度", kunenboSimilarity: "CUNphKu：CKU hap1 ↔ hap2 類似度", pathsWord: "paths", windowWord: "window",
-      traitLoci: "表現型候補", traitLociHelp: "最初は染色体全体を表示。同じ遺伝子名で周辺へ拡大／全体へ戻ります。", traitDetails: "表現型候補の詳細", mappedFrom: "座標対応", sourcePaper: "原著論文", openLocus: "領域を開く", evidenceLimits: "注意点・未局在形質", geneInterval: "遺伝子区間", displayNeighborhood: "周辺表示", help: "Help", literatureEvidence: "文献根拠", studySystem: "対象材料", experiment: "実験根拠", relevanceHere: "この3品種での解釈", mappingBasis: "座標の根拠", sources: "原著・ソース", openGeneOverview: "染色体全体で遺伝子を表示", zoomInGene: "遺伝子周辺へ拡大", zoomOutGene: "染色体全体へ戻る"
+      traitLoci: "表現型候補", traitLociHelp: "最初は染色体全体を表示。同じ遺伝子名で周辺へ拡大／全体へ戻ります。", traitDetails: "表現型候補の詳細", mappedFrom: "座標対応", sourcePaper: "原著論文", openLocus: "領域を開く", evidenceLimits: "注意点・未局在形質", geneInterval: "遺伝子区間", displayNeighborhood: "周辺表示", help: "Help", viewV1: "v1を見る", viewV2: "v2を見る", literatureEvidence: "文献根拠", studySystem: "対象材料", experiment: "実験根拠", relevanceHere: "この3品種での解釈", mappingBasis: "座標の根拠", sources: "原著・ソース", openGeneOverview: "染色体全体で遺伝子を表示", zoomInGene: "遺伝子周辺へ拡大", zoomOutGene: "染色体全体へ戻る"
     },
     en: {
       comparison: "Comparison set", all6: "All 6", all6sub: "Compare in shared coordinates", kishu3: "Kishu trio", kishu3sub: "CKI h1/h2 + CUNphKi", kunenbo3: "Kunenbo trio", kunenbo3sub: "CUNphKu + CKU h1/h2",
@@ -41,11 +48,11 @@
       similarityHelp: "Zero crossings indicate crossover candidates. Values are differences in shared GFA nodes.", allOriginTitle: "Parent origin of two Satsuma (Unshu) haplotypes: Kishu ↔ Kunenbo", allOriginHelp: "Yellow=CUNphKi; blue=CUNphKu. Each line is the difference between its best Kishu and best Kunenbo shared-node similarity. Gray marks low parental separability.", kishuSimilarityHelp: "Shared-node similarity difference between CUNphKi and Kishu hap1/hap2. Higher values favor hap1; lower values favor hap2.", kunenboSimilarityHelp: "Shared-node similarity difference between CUNphKu and Kunenbo hap1/hap2. Higher values favor hap1; lower values favor hap2.", kishuAxis: "Kishu", kunenboAxis: "Kunenbo", hap1Axis: "hap1", hap2Axis: "hap2", eventsTitle: "Events in view", eventHelp: "Select a candidate to zoom to its position.", noEvents: "No events in the current view.",
       selection: "Selection", selectionHint: "Click the chromosome view to inspect path states at that position.", graphAria: "Six-haplotype chromosome graph. Drag left or right to pan without changing the window width.", position: "Position", window: "Window", shownPaths: "Visible paths", events: "Events",
       recombNote: "A crossover is read as a switch in which parental haplotype path the Satsuma (Unshu) path follows, rather than as novel sequence.", pathState: "Path state", pathHelp: "Shows the closest parental haplotype at the current position.",
-      loadedBadge: "GFA projection", loading: "Loading Chr1–9 GFA", loaded: "Showing Chr1–9 GFA", loadToast: "Loaded the Chr1–9 GFA projection", pathDivergence: "Path divergence candidate",
+      loadedBadge: "GFA {version} projection", loading: "Loading Chr1–9 GFA {version}", loaded: "Showing Chr1–9 GFA {version}", loadToast: "Loaded the Chr1–9 GFA {version} projection", pathDivergence: "Path divergence candidate",
       support: "Support", confidence: "Confidence", crossoverCandidate: "Path-switch candidate",
       noComparable: "No comparable parent-shared nodes in this region", nearest: " is the closest region (shared-node estimate)", noParent: "No parent candidate", noMikan: "No Satsuma (Unshu) path in this comparison set.",
       kishuSimilarity: "CUNphKi: similarity to CKI hap1 ↔ hap2", kunenboSimilarity: "CUNphKu: similarity to CKU hap1 ↔ hap2", pathsWord: "paths", windowWord: "window",
-      traitLoci: "Trait candidates", traitLociHelp: "First click shows the whole chromosome. Click the same gene to zoom in or back out.", traitDetails: "Trait candidate details", mappedFrom: "Coordinate mapping", sourcePaper: "Source paper", openLocus: "Open region", evidenceLimits: "Caveats and unmapped traits", geneInterval: "Gene interval", displayNeighborhood: "Displayed neighborhood", help: "Help", literatureEvidence: "Literature evidence", studySystem: "Study material", experiment: "Experimental evidence", relevanceHere: "Interpretation for these cultivars", mappingBasis: "Coordinate basis", sources: "Primary sources", openGeneOverview: "Show gene on whole chromosome", zoomInGene: "Zoom into gene neighborhood", zoomOutGene: "Return to whole chromosome"
+      traitLoci: "Trait candidates", traitLociHelp: "First click shows the whole chromosome. Click the same gene to zoom in or back out.", traitDetails: "Trait candidate details", mappedFrom: "Coordinate mapping", sourcePaper: "Source paper", openLocus: "Open region", evidenceLimits: "Caveats and unmapped traits", geneInterval: "Gene interval", displayNeighborhood: "Displayed neighborhood", help: "Help", viewV1: "View v1", viewV2: "View v2", literatureEvidence: "Literature evidence", studySystem: "Study material", experiment: "Experimental evidence", relevanceHere: "Interpretation for these cultivars", mappingBasis: "Coordinate basis", sources: "Primary sources", openGeneOverview: "Show gene on whole chromosome", zoomInGene: "Zoom into gene neighborhood", zoomOutGene: "Return to whole chromosome"
     }
   };
   const state = {
@@ -70,7 +77,9 @@
   let graphDrag = null;
   let suppressGraphClick = false;
 
-  const t = key => I18N[state.language][key] || key;
+  const t = key => (I18N[state.language][key] || key).replaceAll("{version}", DATA_CONFIG.version);
+  const versionLinkKey = DATA_CONFIG.version === "v1" ? "viewV2" : "viewV1";
+  const versionLinkHref = DATA_CONFIG.version === "v1" ? "../" : "./v1/";
   const modeLabel = mode => state.language === "ja" ? MODES[mode].label : ({all:"All 6 haplotypes",kishu:"Kishu-origin trio",kunenbo:"Kunenbo-origin trio"}[mode]);
   function pathLabel(path) {
     if (state.language === "ja") return path.label;
@@ -119,6 +128,7 @@
         </div>
         <div class="top-actions">
           <div class="status"><span class="status-dot"></span><span id="data-status">${t("loading")}</span></div>
+          <a class="help-link" href="${versionLinkHref}" data-i18n="${versionLinkKey}">${t(versionLinkKey)}</a>
           <a class="help-link" href="./help.html" data-i18n="help">${t("help")}</a>
           <button class="language-toggle" id="language-toggle" aria-label="Switch language">${state.language === "ja" ? "English" : "日本語"}</button>
         </div>
@@ -1014,7 +1024,7 @@
 
   async function loadBundledData() {
     try {
-      const [response, traitResponse]=await Promise.all([fetch("data/citrus_ch1-ch9.viewer.json?v=2"), fetch("data/trait_loci.json?v=12")]);
+      const [response, traitResponse]=await Promise.all([fetch(DATA_CONFIG.viewerUrl), fetch(DATA_CONFIG.traitUrl)]);
       if(!response.ok||!traitResponse.ok)throw new Error(`HTTP ${response.status}/${traitResponse.status}`);
       state.traitData=await traitResponse.json();
       activateData(validateData(await response.json()), "Chr1–9 GFA");

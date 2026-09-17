@@ -65,10 +65,31 @@ python3 tools/merge_viewer_json.py \
   outputs/ch8.viewer.json \
   outputs/ch9.viewer.json \
   --output dist/data/citrus_ch1-ch9.viewer.json \
-  --title '温州・紀州・九年母 3品種6ハプロタイプ'
+  --title '温州・紀州・九年母 3品種6ハプロタイプ（v2）' \
+  --dataset-version v2 \
+  --reference-assembly 'CUN#1 = MiGD2 CUNphKu r2.0 chromosomes'
 ```
 
 入力JSONの `schema` とパス集合が一致しない場合はエラーになります。染色体は `Chr1`、`Chr2` … の数字順に並べられます。
+
+## Trait座標をGFF3から更新する
+
+`update_trait_coordinates_from_gff.py` は、各Traitに記録された遺伝子IDをprimary-transcript GFF3で検索し、染色体とmRNA区間を更新します。更新前のJSONを別名で保存してから実行してください。
+
+```bash
+python3 tools/update_trait_coordinates_from_gff.py \
+  dist/data/trait_loci.v1.json \
+  --gff /path/to/CUNphKu_r2.0.primaryTranscript.gff3.gz \
+  --hap-key CUNphKu \
+  --output dist/data/trait_loci.json \
+  --report docs/trait-loci-v2-coordinate-map.tsv \
+  --coordinate-system 'CUN#1 paths in the v2 GFA; identical chromosome lengths to MiGD2 CUNphKu r2.0' \
+  --mapping-method 'MiGD2 CUNphKu r2.0 primary-transcript GFF3 coordinates for the recorded CUNphKu gene IDs' \
+  --mapping-note-ja '表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。' \
+  --mapping-note-en 'Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3.'
+```
+
+対象遺伝子がGFF3にない場合、primary transcriptが重複する場合、または染色体名から `ch1`–`ch9` を判別できない場合は更新を中止します。`--report` のTSVで旧座標と新座標を確認できます。
 
 ## ODGI bin TSVから作る（代替経路）
 

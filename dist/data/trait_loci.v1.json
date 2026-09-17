@@ -1,7 +1,7 @@
 {
   "schema": "citrus-pathweaver/trait-loci/v2",
-  "coordinateSystem": "CUN#1 paths in the v2 GFA; identical chromosome lengths to MiGD2 CUNphKu r2.0",
-  "mappingMethod": "MiGD2 CUNphKu r2.0 primary-transcript GFF3 coordinates for the recorded CUNphKu gene IDs",
+  "coordinateSystem": "CUN#1 paths in the loaded GFA",
+  "mappingMethod": "MiGD2 r2.0 primary-transcript sequences aligned to the corresponding CUN#1 GFA path",
   "loci": [
     {
       "id": "citsweet6",
@@ -20,8 +20,8 @@
         "en": "Functionally validated"
       },
       "chromosome": "Chr3",
-      "start": 694038,
-      "end": 696235,
+      "start": 5238891,
+      "end": 5241126,
       "window": 1200000,
       "color": "#60c99a",
       "genes": {
@@ -46,8 +46,8 @@
           "en": "The paper concerns sugar composition in a bud sport; explaining Kishu/Kunenbo differences requires separate sequence, regulatory and expression tests at this locus."
         },
         "mapping": {
-          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -79,8 +79,8 @@
         "en": "Functionally validated"
       },
       "chromosome": "Chr6",
-      "start": 21311580,
-      "end": 21315879,
+      "start": 21943453,
+      "end": 21947579,
       "window": 1400000,
       "color": "#79cf9f",
       "genes": {
@@ -105,8 +105,8 @@
           "en": "It has not been tested as a causal locus for sweetness differences among the three cultivars."
         },
         "mapping": {
-          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -138,8 +138,8 @@
         "en": "Expression/biochemical candidate"
       },
       "chromosome": "Chr1",
-      "start": 26527560,
-      "end": 26534944,
+      "start": 27818445,
+      "end": 27825648,
       "window": 1500000,
       "color": "#91d28a",
       "genes": {
@@ -164,8 +164,8 @@
           "en": "The evidence is expression based; causality for sweetness differences among the three cultivars is untested."
         },
         "mapping": {
-          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -197,8 +197,8 @@
         "en": "Validated in a related mandarin"
       },
       "chromosome": "Chr5",
-      "start": 27097093,
-      "end": 27101705,
+      "start": 29206103,
+      "end": 29210562,
       "window": 1400000,
       "color": "#67c79b",
       "genes": {
@@ -223,8 +223,8 @@
           "en": "It is not established as the cause among the three cultivars; the displayed genes are homologs of the paper's mitochondrial INVA."
         },
         "mapping": {
-          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -256,8 +256,8 @@
         "en": "Regulatory function validated"
       },
       "chromosome": "Chr8",
-      "start": 31616193,
-      "end": 31617444,
+      "start": 33403475,
+      "end": 33404438,
       "window": 1500000,
       "color": "#44b985",
       "genes": {
@@ -282,8 +282,8 @@
           "en": "This is strong evidence in Satsuma germplasm, although the study's bud sport is not the displayed Satsuma individual."
         },
         "mapping": {
-          "ja": "論文アクセッションXM_006424377をCUN#1へ投影。MiGD2の両相同遺伝子は離れた位置にも整列するため、周辺構造は要確認。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "Paper accession XM_006424377 was projected to CUN#1. The two MiGD2 homologs also align at separated positions, so local structure should be checked. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "論文アクセッションXM_006424377をCUN#1へ投影。MiGD2の両相同遺伝子は離れた位置にも整列するため、周辺構造は要確認。",
+          "en": "Paper accession XM_006424377 was projected to CUN#1. The two MiGD2 homologs also align at separated positions, so local structure should be checked."
         },
         "sources": [
           {
@@ -315,8 +315,8 @@
         "en": "Functionally validated"
       },
       "chromosome": "Chr2",
-      "start": 441549,
-      "end": 442954,
+      "start": 373473,
+      "end": 374766,
       "window": 800000,
       "color": "#de735f",
       "genes": {
@@ -342,8 +342,8 @@
           "en": "A strong acidity candidate; allelic and expression differences in these three cultivars remain untested."
         },
         "mapping": {
-          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -374,8 +374,8 @@
         "en": "Genetic/functional evidence"
       },
       "chromosome": "Chr7",
-      "start": 5527617,
-      "end": 5532165,
+      "start": 31558539,
+      "end": 31563573,
       "window": 1600000,
       "color": "#e36d5e",
       "genes": {
@@ -400,8 +400,8 @@
           "en": "A strong causal acidity candidate; coding and regulatory regions are both worth comparing in these cultivars."
         },
         "mapping": {
-          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -433,8 +433,8 @@
         "en": "Genetic/functional evidence"
       },
       "chromosome": "Chr7",
-      "start": 8086110,
-      "end": 8093096,
+      "start": 33926663,
+      "end": 33933581,
       "window": 1600000,
       "color": "#f08b63",
       "genes": {
@@ -459,8 +459,8 @@
           "en": "It is a strong acidity candidate, but functional differences among these three cultivars remain untested."
         },
         "mapping": {
-          "ja": "PH5相同遺伝子はCUN#1上の離れた位置にも高類似で整列するため、この座標は主整列先。局所グラフと注釈の確認が必要。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "PH5 homologs also align with high similarity at a distant CUN#1 position; this is the principal projection and requires local graph/annotation review. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "PH5相同遺伝子はCUN#1上の離れた位置にも高類似で整列するため、この座標は主整列先。局所グラフと注釈の確認が必要。",
+          "en": "PH5 homologs also align with high similarity at a distant CUN#1 position; this is the principal projection and requires local graph/annotation review."
         },
         "sources": [
           {
@@ -492,8 +492,8 @@
         "en": "Natural-variant/functional evidence"
       },
       "chromosome": "Chr3",
-      "start": 43562046,
-      "end": 43567503,
+      "start": 44784979,
+      "end": 44790257,
       "window": 1500000,
       "color": "#cc788d",
       "genes": {
@@ -518,8 +518,8 @@
           "en": "A joint acidity/color candidate; the same causal variant need not occur in these three cultivars."
         },
         "mapping": {
-          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -551,8 +551,8 @@
         "en": "Pathway/expression candidate"
       },
       "chromosome": "Chr4",
-      "start": 30383849,
-      "end": 30389940,
+      "start": 29381195,
+      "end": 29387208,
       "window": 1500000,
       "color": "#d9a75d",
       "genes": {
@@ -577,8 +577,8 @@
           "en": "Shown as a pathway candidate; any SV requires metabolite and expression validation before inferring an acidity effect."
         },
         "mapping": {
-          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -610,8 +610,8 @@
         "en": "Pathway/expression candidate"
       },
       "chromosome": "Chr2",
-      "start": 19011256,
-      "end": 19019382,
+      "start": 30286238,
+      "end": 30292671,
       "window": 1600000,
       "color": "#c69756",
       "genes": {
@@ -636,8 +636,8 @@
           "en": "This is a pathway candidate, not a causal gene. Because ACO is a multigene family, the displayed interval is the principal CcACO3 projection."
         },
         "mapping": {
-          "ja": "論文配列FN552255とMiGD2相同遺伝子を投影。Chr2上の別の高類似領域にも整列するため、コピー数と注釈を要確認。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "Paper sequence FN552255 and MiGD2 homologs were projected. They also align to another high-similarity Chr2 region, so copy number and annotation require review. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "論文配列FN552255とMiGD2相同遺伝子を投影。Chr2上の別の高類似領域にも整列するため、コピー数と注釈を要確認。",
+          "en": "Paper sequence FN552255 and MiGD2 homologs were projected. They also align to another high-similarity Chr2 region, so copy number and annotation require review."
         },
         "sources": [
           {
@@ -669,8 +669,8 @@
         "en": "Enzyme validated"
       },
       "chromosome": "Chr8",
-      "start": 2588173,
-      "end": 2590163,
+      "start": 2497259,
+      "end": 2499059,
       "window": 1300000,
       "color": "#b98f55",
       "genes": {
@@ -695,8 +695,8 @@
           "en": "Direct enzyme evidence from Satsuma; cultivar bitterness also depends on substrate abundance and regulation."
         },
         "mapping": {
-          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "論文遺伝子またはそのMiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "The paper gene, or its MiGD2 homologous transcript, was projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -728,8 +728,8 @@
         "en": "Pathway homolog candidate"
       },
       "chromosome": "Chr8",
-      "start": 30583665,
-      "end": 30585194,
+      "start": 32357906,
+      "end": 32372361,
       "window": 1800000,
       "color": "#c7a56a",
       "genes": {
@@ -755,8 +755,8 @@
           "en": "True 1,2RhaT loss is reported in mandarins, so the display is a retained homologous cluster."
         },
         "mapping": {
-          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -787,8 +787,8 @@
         "en": "Enzyme/SV evidence"
       },
       "chromosome": "Chr3",
-      "start": 10336554,
-      "end": 10339923,
+      "start": 11650850,
+      "end": 11663004,
       "window": 1600000,
       "color": "#f3c453",
       "genes": {
@@ -814,8 +814,8 @@
           "en": "A valencene-specific candidate, not a complete explanation of aroma."
         },
         "mapping": {
-          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -846,8 +846,8 @@
         "en": "Enzyme validated"
       },
       "chromosome": "Chr5",
-      "start": 9144687,
-      "end": 9148093,
+      "start": 12260007,
+      "end": 12263396,
       "window": 1600000,
       "color": "#75cbb1",
       "genes": {
@@ -873,8 +873,8 @@
           "en": "A direct limonene candidate; nearby copies matter because TPS is a multigene family."
         },
         "mapping": {
-          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -905,8 +905,8 @@
         "en": "Regulatory SV validated"
       },
       "chromosome": "Chr6",
-      "start": 22447415,
-      "end": 22447843,
+      "start": 23023979,
+      "end": 23024403,
       "window": 1200000,
       "color": "#bd6b8e",
       "genes": {
@@ -932,8 +932,8 @@
           "en": "A regulatory-SV example, not a prediction of red flesh in these three cultivars."
         },
         "mapping": {
-          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -964,8 +964,8 @@
         "en": "Enzyme validated"
       },
       "chromosome": "Chr4",
-      "start": 22807799,
-      "end": 22810020,
+      "start": 21856934,
+      "end": 21859155,
       "window": 1400000,
       "color": "#f08b62",
       "genes": {
@@ -991,8 +991,8 @@
           "en": "A peel-color candidate whose causal role in these three cultivars is untested."
         },
         "mapping": {
-          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -1023,8 +1023,8 @@
         "en": "SV/GWAS associated"
       },
       "chromosome": "Chr1",
-      "start": 3091866,
-      "end": 3098180,
+      "start": 4377143,
+      "end": 4383433,
       "window": 1400000,
       "color": "#e7a85d",
       "genes": {
@@ -1050,8 +1050,8 @@
           "en": "A population association; causality within this pedigree remains untested."
         },
         "mapping": {
-          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -1082,8 +1082,8 @@
         "en": "Validated in related citrus"
       },
       "chromosome": "Chr1",
-      "start": 5569856,
-      "end": 5572000,
+      "start": 6856232,
+      "end": 6858376,
       "window": 1400000,
       "color": "#76a9ed",
       "genes": {
@@ -1109,8 +1109,8 @@
           "en": "Evidence comes from related citrus and does not establish the cause of fruit-size differences here."
         },
         "mapping": {
-          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -1141,8 +1141,8 @@
         "en": "Mechanism validated"
       },
       "chromosome": "Chr2",
-      "start": 28761777,
-      "end": 28767811,
+      "start": 41282005,
+      "end": 41286738,
       "window": 1400000,
       "color": "#b993df",
       "genes": {
@@ -1168,8 +1168,8 @@
           "en": "A male-sterility candidate that does not alone explain the full seedless phenotype of Satsuma."
         },
         "mapping": {
-          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -1200,8 +1200,8 @@
         "en": "Functional/genetic evidence"
       },
       "chromosome": "Chr1",
-      "start": 26166014,
-      "end": 26168319,
+      "start": 27456884,
+      "end": 27459184,
       "window": 1000000,
       "color": "#d889b5",
       "genes": {
@@ -1227,8 +1227,8 @@
           "en": "Direct Satsuma evidence; the upstream graph region is as important as the coding sequence."
         },
         "mapping": {
-          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
@@ -1259,8 +1259,8 @@
         "en": "Enzyme validated"
       },
       "chromosome": "Chr3",
-      "start": 18617187,
-      "end": 18621637,
+      "start": 19933464,
+      "end": 19937897,
       "window": 1400000,
       "color": "#9ac967",
       "genes": {
@@ -1286,8 +1286,8 @@
           "en": "A bioactive-compound candidate that need not be a major taste or aroma determinant."
         },
         "mapping": {
-          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。 表示座標はMiGD2 CUNphKu r2.0 primary-transcript GFF3で更新。",
-          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates. Display coordinates were updated from the MiGD2 CUNphKu r2.0 primary-transcript GFF3."
+          "ja": "MiGD2相同転写配列をCUN#1グラフ座標へ対応付け。",
+          "en": "MiGD2 homologous transcripts were projected to CUN#1 graph coordinates."
         },
         "sources": [
           {
