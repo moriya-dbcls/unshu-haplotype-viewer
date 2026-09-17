@@ -154,12 +154,15 @@ def main() -> None:
         viewer_id = source_to_id.get(source)
         if not viewer_id:
             continue
-        for _, walk in records:
+        for path_name, walk in records:
             previous_anchor: str | None = None
             off_walk: list[tuple[str, str]] = []
+            path_span = sum(lengths.get(node, 1) for node, _ in walk)
+            path_cursor = path_interval(path_name, path_span)[0]
+            off_path_start: int | None = None
 
             def commit_branch(next_anchor: str | None) -> None:
-                nonlocal off_walk, previous_anchor
+                nonlocal off_walk, previous_anchor, off_path_start
                 if not off_walk:
                     return
                 off_bp = sum(lengths.get(node, 1) for node, _ in off_walk)
@@ -204,17 +207,26 @@ def main() -> None:
                             "kind": kind,
                             "reversedAnchors": reversed_anchors,
                             "support": set(),
+                            "pathRanges": {},
                         }
                         graph_branch_index[key] = branch
                     branch["support"].add(viewer_id)
+                    branch["pathRanges"].setdefault(viewer_id, []).append({
+                        "start": off_path_start if off_path_start is not None else path_cursor - off_bp,
+                        "end": path_cursor,
+                    })
                 off_walk = []
+                off_path_start = None
 
             for node, orientation in walk:
                 if node in node_positions:
                     commit_branch(node)
                     previous_anchor = node
                 else:
+                    if not off_walk:
+                        off_path_start = path_cursor
                     off_walk.append((node, orientation))
+                path_cursor += lengths.get(node, 1)
             commit_branch(None)
 
     def branch_lineage(support: set[str]) -> str:
@@ -234,37 +246,72 @@ def main() -> None:
     graph_branches.sort(key=lambda branch: (branch["start"], branch["end"], -branch["offReferenceBp"]))
     for summary in off_reference_bins:
         summary["paths"] = sorted(summary["paths"])
-    source_nodes: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
+    source_path_lengths: dict[str, int] = defaultdict(int)
     for source, records in grouped.items():
-        for _, walk in records:
-            for node, orientation in walk:
-                source_nodes[source][node].add(orientation)
+        for path_name, walk in records:
+            span = sum(lengths.get(node, 1) for node, _ in walk)
+            record_start, record_end = path_interval(path_name, span)
+            source_path_lengths[source] = max(source_path_lengths[source], record_end, record_start + span)
 
     tracks: dict[str, list[dict[str, float]]] = defaultdict(list)
     bin_node_sets: dict[str, list[set[str]]] = defaultdict(list)
     for source, viewer_id in source_to_id.items():
         covered_bases = [0] * len(bins)
         inverted_bases = [0] * len(bins)
+        path_position_sums = [0.0] * len(bins)
         shared_nodes = [set() for _ in bins]
-        for node, (node_start, node_end, ref_orientation) in node_positions.items():
-            if node not in source_nodes[source] or node_end <= view_start or node_start >= view_end:
-                continue
+        best_occurrences: dict[str, tuple[float, int, str]] = {}
+        path_length = max(1, source_path_lengths[source])
+        reference_length = max(1, view_end - view_start)
+        for path_name, walk in grouped[source]:
+            span = sum(lengths.get(node, 1) for node, _ in walk)
+            path_cursor = path_interval(path_name, span)[0]
+            for node, path_orientation in walk:
+                node_length = lengths.get(node, 1)
+                ref_record = node_positions.get(node)
+                if ref_record:
+                    node_start, node_end, _ = ref_record
+                    reference_midpoint = (node_start + node_end) / 2
+                    expected_path_midpoint = (reference_midpoint - view_start) / reference_length * path_length
+                    actual_path_midpoint = path_cursor + node_length / 2
+                    score = abs(actual_path_midpoint - expected_path_midpoint)
+                    current = best_occurrences.get(node)
+                    if current is None or score < current[0]:
+                        best_occurrences[node] = (score, path_cursor, path_orientation)
+                path_cursor += node_length
+        for node, (_, occurrence_start, path_orientation) in best_occurrences.items():
+            node_start, node_end, ref_orientation = node_positions[node]
             first_bin = max(0, (node_start - view_start) // bin_width)
             last_bin = min(len(bins) - 1, (max(node_start, node_end - 1) - view_start) // bin_width)
             for index in range(first_bin, last_bin + 1):
                 start, end = bins[index]
-                overlap = max(0, min(end, node_end) - max(start, node_start))
+                overlap_start = max(start, node_start)
+                overlap_end = min(end, node_end)
+                overlap = max(0, overlap_end - overlap_start)
                 if not overlap:
                     continue
+                reference_midpoint = (overlap_start + overlap_end) / 2
+                if path_orientation == ref_orientation:
+                    path_midpoint = occurrence_start + (reference_midpoint - node_start)
+                else:
+                    path_midpoint = occurrence_start + (node_end - reference_midpoint)
                 shared_nodes[index].add(node)
                 covered_bases[index] += overlap
-                if ref_orientation not in source_nodes[source][node]:
+                path_position_sums[index] += path_midpoint * overlap
+                if path_orientation != ref_orientation:
                     inverted_bases[index] += overlap
         for index, (start, end) in enumerate(bins):
             covered = covered_bases[index]
             inverted = inverted_bases[index]
             width = max(1, end - start)
-            tracks[viewer_id].append({"start": start, "end": end, "coverage": round(covered / width, 4), "inversion": round(inverted / max(1, covered), 4), "meanPosition": (start + end) / 2})
+            tracks[viewer_id].append({
+                "start": start,
+                "end": end,
+                "coverage": round(covered / width, 4),
+                "inversion": round(inverted / max(1, covered), 4),
+                "meanPosition": (start + end) / 2,
+                "pathPosition": round(path_position_sums[index] / covered) if covered else None,
+            })
             bin_node_sets[source].append(shared_nodes[index])
 
     def similarity_track(child_source: str, parent_a: str, parent_b: str) -> list[dict[str, float]]:
@@ -342,6 +389,7 @@ def main() -> None:
             "similarityKi": similarity_ki, "similarityKu": similarity_ku,
             "parentOrigin": parent_origin,
             "variants": variants, "tracks": tracks,
+            "pathLengths": {source_to_id[source]: source_path_lengths[source] for source in source_to_id},
             "offReferenceBins": off_reference_bins,
             "graphBranches": graph_branches,
             "unplacedOffReferenceBp": dict(unplaced_bp),

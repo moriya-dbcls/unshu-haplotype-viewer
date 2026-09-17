@@ -234,8 +234,18 @@ button { color: inherit; }
 .similarity-svg { width: 100%; height: 132px; display: block; }
 .local-graph-card { padding: 15px 0 0; overflow: hidden; }
 .local-graph-copy { padding: 0 15px; }
-.local-graph-wrap { position: relative; min-height: 188px; }
-.local-graph-svg { width: 100%; height: 188px; display: block; }
+.local-graph-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.local-graph-heading h3 { flex: 1; }
+.local-graph-controls { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
+.view-switch { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.view-switch button { border: 0; border-right: 1px solid var(--line); background: #0b1b1e; color: var(--muted); padding: 5px 8px; font-size: 10px; cursor: pointer; }
+.view-switch button:last-child { border-right: 0; }
+.view-switch button.active { background: #294247; color: #eef5f3; }
+#local-graph-path { display: none; max-width: 190px; border: 1px solid var(--line); border-radius: 8px; background: #0b1b1e; color: #dce7e5; padding: 5px 7px; font-size: 10px; }
+#local-graph-path.visible { display: block; }
+.local-graph-wrap { position: relative; min-height: 262px; }
+.local-graph-svg { width: 100%; height: 262px; display: block; }
+.support-mark { cursor: help; }
 
 .events { display: grid; gap: 7px; max-height: 132px; overflow: auto; }
 .event-row {

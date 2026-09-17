@@ -23,7 +23,7 @@
       comparison: "比較セット", all6: "全6本", all6sub: "共通座標で比較", kishu3: "紀州 3本", kishu3sub: "CKI h1/h2 + CUNphKi", kunenbo3: "九年母 3本", kunenbo3sub: "CUNphKu + CKU h1/h2",
       chromosome: "染色体", data: "データ", upload: "別のviewer JSONをドロップまたは選択", openJson: "JSONを開く", tracks: "トラック", sv: "SV・分岐候補", inversion: "逆向き区間", uncertain: "低信頼区間",
       whole: "全体", overview: "染色体全体", kishuLineage: "紀州系統", kunenboLineage: "九年母系統", invCandidate: "逆位候補", lowConfidence: "低信頼",
-      referenceShared: "参照共有ノード", offReference: "参照外配列量", graphStructureTitle: "参照外分岐の局所グラフ", graphStructureHelp: "灰色がCUN#1参照パス、上側の分岐が参照にない配列です。画面端の矢印は分岐が表示範囲外へ続くことを示します。", graphZoomHint: "2 Mb以下へ拡大すると、参照外分岐をグラフとして表示します。", graphNoBranches: "この範囲には表示対象の参照外分岐がありません。", offReferenceBp: "参照外", branchNodes: "GFAノード", branchSupport: "通るパス", shownBranches: "表示分岐", continuesOutside: "表示範囲外へ継続",
+      referenceShared: "参照共有ノード", offReference: "参照外配列量", graphStructureTitle: "参照配列supportと局所グラフ", graphStructureHelp: "上側が参照外分岐、下側が各hapによるCUN#1参照ノードの保有状況です。破線は正規化したパス位置が大きく異なる区間候補です。", graphZoomHint: "2 Mb以下へ拡大すると、参照外分岐をグラフとして表示します。", graphNoBranches: "この範囲には表示対象の参照外分岐がありません。", offReferenceBp: "参照外", branchNodes: "GFAノード", branchSupport: "通るパス", shownBranches: "表示分岐", continuesOutside: "表示範囲外へ継続", referenceView: "CUN#1参照座標", pathOrderView: "選択hap順序", pathOrderHelp: "横軸は選択hapのPパス座標です。現在位置と交差する分岐を優先し、実際に現れる順序で表示します。", noPathOrder: "この範囲には選択hapの位置情報付き分岐がありません。", referenceCoverage: "参照共有", pathPosition: "hapパス位置", displacedCandidate: "別位置・別順序候補", collinearCandidate: "参照位置に概ね対応",
       similarityHelp: "ゼロ交差は組換え候補。GFA共有ノードの差を表示します。", allOriginTitle: "温州2 hapの親由来：紀州 ↔ 九年母", allOriginHelp: "黄=CUNphKi、青=CUNphKu。各温州hapと親4 hapの最大共有ノード類似度の差です。灰色は親間の判別力が低い区間。", kishuSimilarityHelp: "CUNphKiと紀州hap1／hap2の共有ノード類似度差。上ほどhap1、下ほどhap2に近い区間です。", kunenboSimilarityHelp: "CUNphKuと九年母hap1／hap2の共有ノード類似度差。上ほどhap1、下ほどhap2に近い区間です。", kishuAxis: "紀州", kunenboAxis: "九年母", hap1Axis: "hap1", hap2Axis: "hap2", eventsTitle: "表示範囲のイベント", eventHelp: "候補を選択すると位置を拡大します。", noEvents: "表示範囲にイベントはありません。",
       selection: "選択範囲", selectionHint: "染色体上をクリックすると、その位置のパス状態を確認できます。", graphAria: "6ハプロタイプの染色体グラフ。左右へドラッグすると表示幅を保って移動できます。", position: "位置", window: "表示幅", shownPaths: "表示パス", events: "イベント",
       recombNote: "組換えは新規配列ではなく、温州パスが親のhap1／hap2に対応する経路を切り替える現象として読みます。", pathState: "パス状態", pathHelp: "現在位置で最も近い親ハプロタイプを示します。",
@@ -37,7 +37,7 @@
       comparison: "Comparison set", all6: "All 6", all6sub: "Compare in shared coordinates", kishu3: "Kishu trio", kishu3sub: "CKI h1/h2 + CUNphKi", kunenbo3: "Kunenbo trio", kunenbo3sub: "CUNphKu + CKU h1/h2",
       chromosome: "Chromosome", data: "Data", upload: "Drop or choose another viewer JSON", openJson: "Open JSON", tracks: "Tracks", sv: "SV / branch candidates", inversion: "Reverse-oriented regions", uncertain: "Low-confidence regions",
       whole: "Fit", overview: "Whole chromosome", kishuLineage: "Kishu lineage", kunenboLineage: "Kunenbo lineage", invCandidate: "Inversion candidate", lowConfidence: "Low confidence",
-      referenceShared: "Reference-shared nodes", offReference: "Off-reference sequence", graphStructureTitle: "Local off-reference graph", graphStructureHelp: "Gray is the CUN#1 reference path; branches above it are absent from that path. An arrow at an edge means the branch continues beyond the view.", graphZoomHint: "Zoom to 2 Mb or less to show off-reference branches as a graph.", graphNoBranches: "No retained off-reference branch occurs in this region.", offReferenceBp: "Off-reference", branchNodes: "GFA nodes", branchSupport: "Traversed by", shownBranches: "branches shown", continuesOutside: "Continues beyond the displayed window",
+      referenceShared: "Reference-shared nodes", offReference: "Off-reference sequence", graphStructureTitle: "Reference support and local graph", graphStructureHelp: "Branches above the backbone are off-reference walks; rows below show which haplotypes contain CUN#1 reference nodes. Dashed segments have a large normalized path-position difference.", graphZoomHint: "Zoom to 2 Mb or less to show off-reference branches as a graph.", graphNoBranches: "No retained off-reference branch occurs in this region.", offReferenceBp: "Off-reference", branchNodes: "GFA nodes", branchSupport: "Traversed by", shownBranches: "branches shown", continuesOutside: "Continues beyond the displayed window", referenceView: "CUN#1 coordinates", pathOrderView: "Selected hap order", pathOrderHelp: "The horizontal axis is the selected haplotype's P-path coordinate. Branches crossing the current position are prioritized and shown in their actual path order.", noPathOrder: "No branch with path-position data is available for the selected haplotype in this region.", referenceCoverage: "Reference shared", pathPosition: "Haplotype path position", displacedCandidate: "Different-position/order candidate", collinearCandidate: "Approximately reference-positioned",
       similarityHelp: "Zero crossings indicate crossover candidates. Values are differences in shared GFA nodes.", allOriginTitle: "Parent origin of two Satsuma (Unshu) haplotypes: Kishu ↔ Kunenbo", allOriginHelp: "Yellow=CUNphKi; blue=CUNphKu. Each line is the difference between its best Kishu and best Kunenbo shared-node similarity. Gray marks low parental separability.", kishuSimilarityHelp: "Shared-node similarity difference between CUNphKi and Kishu hap1/hap2. Higher values favor hap1; lower values favor hap2.", kunenboSimilarityHelp: "Shared-node similarity difference between CUNphKu and Kunenbo hap1/hap2. Higher values favor hap1; lower values favor hap2.", kishuAxis: "Kishu", kunenboAxis: "Kunenbo", hap1Axis: "hap1", hap2Axis: "hap2", eventsTitle: "Events in view", eventHelp: "Select a candidate to zoom to its position.", noEvents: "No events in the current view.",
       selection: "Selection", selectionHint: "Click the chromosome view to inspect path states at that position.", graphAria: "Six-haplotype chromosome graph. Drag left or right to pan without changing the window width.", position: "Position", window: "Window", shownPaths: "Visible paths", events: "Events",
       recombNote: "A crossover is read as a switch in which parental haplotype path the Satsuma (Unshu) path follows, rather than as novel sequence.", pathState: "Path state", pathHelp: "Shows the closest parental haplotype at the current position.",
@@ -63,6 +63,8 @@
     locusZoomed: false,
     filename: "",
     language: new URLSearchParams(location.search).get("lang") === "en" || localStorage.getItem("citrus-language") === "en" ? "en" : "ja",
+    localGraphView: "reference",
+    localGraphPath: "CUNphKi",
   };
   let windowAnimationFrame = 0;
   let graphDrag = null;
@@ -202,7 +204,7 @@
 
           <div class="lower-grid">
             <section class="card small-card local-graph-card">
-              <div class="local-graph-copy"><h3 data-i18n="graphStructureTitle">${t("graphStructureTitle")}</h3>
+              <div class="local-graph-copy"><div class="local-graph-heading"><h3 data-i18n="graphStructureTitle">${t("graphStructureTitle")}</h3><div class="local-graph-controls"><div class="view-switch" role="group" aria-label="Local graph view"><button class="active" data-local-graph-view="reference" data-i18n="referenceView">${t("referenceView")}</button><button data-local-graph-view="path" data-i18n="pathOrderView">${t("pathOrderView")}</button></div><select id="local-graph-path" aria-label="Haplotype path"></select></div></div>
               <div class="sub" id="local-graph-help">${t("graphStructureHelp")}</div></div>
               <div class="local-graph-wrap" id="local-graph-wrap"><svg class="local-graph-svg" id="local-graph" role="img" aria-label="参照外分岐の局所グラフ"></svg><div class="tooltip" id="branch-tooltip"></div></div>
             </section>
@@ -246,7 +248,7 @@
   const els = Object.fromEntries([
     "chr-grid", "view-title", "view-subtitle", "graph", "graph-wrap", "tooltip", "overview-bars", "overview-window",
     "overview-track", "branch-overview-track", "branch-overview-bars", "branch-overview-window", "overview-length", "mode-badge", "window-badge", "coordinate", "similarity", "similarity-title", "similarity-help",
-    "local-graph", "local-graph-wrap", "local-graph-help", "branch-tooltip",
+    "local-graph", "local-graph-wrap", "local-graph-help", "local-graph-path", "branch-tooltip",
     "events", "events-sub", "selection-hint", "metric-position", "metric-window", "metric-paths", "metric-events",
     "path-cards", "file-input", "drop-zone", "data-status", "toast", "trait-loci", "trait-unmapped-list", "locus-details"
   ].map(id => [id, document.getElementById(id)]));
@@ -602,92 +604,184 @@
   function renderLocalGraph() {
     const svg = els["local-graph"];
     const chr = getChr();
-    const visiblePaths = new Set(getPaths().map(path => path.id));
+    const pathObjects = getPaths();
+    const visiblePaths = new Set(pathObjects.map(path => path.id));
+    if (!visiblePaths.has(state.localGraphPath)) {
+      state.localGraphPath = pathObjects.find(path => path.id.startsWith("CUN"))?.id || pathObjects[0]?.id || "CUNphKi";
+    }
+    els["local-graph-path"].innerHTML = pathObjects.map(path => `<option value="${path.id}" ${path.id === state.localGraphPath ? "selected" : ""}>${pathLabel(path)}</option>`).join("");
+    els["local-graph-path"].classList.toggle("visible", state.localGraphView === "path");
+    document.querySelectorAll("[data-local-graph-view]").forEach(button => button.classList.toggle("active", button.dataset.localGraphView === state.localGraphView));
     const branches = (chr.graphBranches || []).filter(branch =>
       branch.end >= state.start && branch.start <= state.end &&
       (branch.support || []).some(path => visiblePaths.has(path))
     );
-    const W = Math.max(720, svg.getBoundingClientRect().width || 900), H = 188;
+    const W = Math.max(720, svg.getBoundingClientRect().width || 900);
+    const H = state.localGraphView === "path" ? 226 : 262;
     const l = CHART_LAYOUT.left, r = CHART_LAYOUT.right, top = 12, bottom = 27;
     const pw = W - l - r;
-    const x = position => l + (position - state.start) / (state.end - state.start) * pw;
+    const refX = position => l + (position - state.start) / (state.end - state.start) * pw;
+    svg.style.height = `${H}px`;
+    els["local-graph-wrap"].style.minHeight = `${H}px`;
     svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.innerHTML = "";
 
-    const step = tickStep(state.end - state.start);
-    const first = Math.ceil(state.start / step) * step;
-    for (let position = first; position <= state.end; position += step) {
-      const xx = x(position);
-      svg.append(svgEl("line", {x1:xx,y1:top,x2:xx,y2:H-bottom,stroke:"#1b3033","stroke-width":1}));
-      const label = svgEl("text", {x:xx,y:H-7,fill:"#8ba2a1","font-size":9,"text-anchor":"middle"});
-      label.textContent = position >= 1e6 ? `${(position / 1e6).toFixed(step < 1e6 ? 1 : 0)} Mb` : `${Math.round(position / 1e3)} kb`;
-      svg.append(label);
-    }
-
-    const referenceY = 142;
-    const refLabel = svgEl("text", {x:l-12,y:referenceY+4,fill:"#a8b8b7","font-size":10,"text-anchor":"end"});
-    refLabel.textContent = "CUN#1 ref"; svg.append(refLabel);
-    svg.append(svgEl("line", {x1:l,y1:referenceY,x2:W-r,y2:referenceY,stroke:"#778789","stroke-width":7,"stroke-linecap":"round",opacity:.8}));
-
-    const wide = state.end - state.start > 2e6;
-    if (wide) {
-      const bins = (chr.offReferenceBins || []).filter(bin => bin.end >= state.start && bin.start <= state.end);
-      const values = bins.map(bin => [...visiblePaths].reduce((sum, path) => sum + Number(bin.bpByPath?.[path] || 0), 0));
-      const max = Math.max(1, ...values);
-      bins.forEach((bin, index) => {
-        const bp = values[index]; if (!bp) return;
-        const start = Math.max(bin.start, state.start), end = Math.min(bin.end, state.end);
-        const height = 12 + Math.log1p(bp) / Math.log1p(max) * 68;
-        svg.append(svgEl("rect", {x:x(start),y:referenceY-height,width:Math.max(1,x(end)-x(start)),height,fill:MODES[state.mode].accent,opacity:.48}));
-      });
-      const hint = svgEl("text", {x:l+pw/2,y:34,fill:"#b5c5c3","font-size":11,"text-anchor":"middle"});
-      hint.textContent = t("graphZoomHint"); svg.append(hint);
-      els["local-graph-help"].textContent = t("graphStructureHelp");
-    } else {
-      const selected = [...branches].sort((a,b) => b.offReferenceBp - a.offReferenceBp).slice(0,24).sort((a,b) => a.start - b.start);
-      const colors = {kishu:"#f0ad3d",kunenbo:"#3e94d8",shared:"#a8b8b7"};
-      selected.forEach((branch, index) => {
-        const outsideLeft = branch.start < state.start;
-        const outsideRight = branch.end > state.end;
-        const anchorX1 = x(clamp(branch.start, state.start, state.end));
-        const anchorX2 = x(clamp(branch.end, state.start, state.end));
-        const laneY = 26 + (index % 5) * 20;
-        const color = colors[branch.lineage] || colors.shared;
-        const nodeWidth = clamp(8 + Math.log10(Math.max(1,branch.offReferenceBp)) * 6, 16, 55);
-        const midX = clamp((anchorX1 + anchorX2) / 2, l + nodeWidth / 2 + 9, W - r - nodeWidth / 2 - 9);
-        const blockLeft = midX - nodeWidth / 2, blockRight = midX + nodeWidth / 2;
-        const leftPath = outsideLeft
-          ? `M ${l} ${laneY} L ${blockLeft} ${laneY}`
-          : `M ${anchorX1} ${referenceY} C ${anchorX1} ${laneY}, ${Math.min(anchorX1,blockLeft)} ${laneY}, ${blockLeft} ${laneY}`;
-        const rightPath = outsideRight
-          ? `L ${W-r} ${laneY}`
-          : `C ${Math.max(anchorX2,blockRight)} ${laneY}, ${anchorX2} ${laneY}, ${anchorX2} ${referenceY}`;
-        const path = svgEl("path", {d:`${leftPath} L ${blockRight} ${laneY} ${rightPath}`,fill:"none",stroke:color,"stroke-width":2.2,opacity:.9,class:"branch-mark","data-branch":branch.id});
-        svg.append(path);
-        svg.append(svgEl("rect", {x:blockLeft,y:laneY-5,width:nodeWidth,height:10,rx:4,fill:color,stroke:"#071416","stroke-width":1,class:"branch-mark","data-branch":branch.id}));
-        if (outsideLeft) svg.append(svgEl("path", {d:`M ${l+7} ${laneY-5} L ${l} ${laneY} L ${l+7} ${laneY+5}`,fill:"none",stroke:color,"stroke-width":2.2,class:"branch-mark","data-branch":branch.id}));
-        if (outsideRight) svg.append(svgEl("path", {d:`M ${W-r-7} ${laneY-5} L ${W-r} ${laneY} L ${W-r-7} ${laneY+5}`,fill:"none",stroke:color,"stroke-width":2.2,class:"branch-mark","data-branch":branch.id}));
-        if (branch.offReferenceBp >= 1000 && nodeWidth >= 34) {
-          const label = svgEl("text", {x:midX,y:laneY-9,fill:color,"font-size":8,"text-anchor":"middle","pointer-events":"none"});
-          label.textContent = branch.offReferenceBp >= 1e6 ? `${(branch.offReferenceBp/1e6).toFixed(1)} Mb` : `${Math.round(branch.offReferenceBp/1e3)} kb`;
-          svg.append(label);
-        }
-      });
-      if (!selected.length) {
-        const empty = svgEl("text", {x:l+pw/2,y:72,fill:"#79908f","font-size":11,"text-anchor":"middle"});
-        empty.textContent = t("graphNoBranches"); svg.append(empty);
+    const drawTicks = (start, end, scale, labelPrefix = "") => {
+      const step = tickStep(end - start);
+      const first = Math.ceil(start / step) * step;
+      for (let position = first; position <= end; position += step) {
+        const xx = scale(position);
+        svg.append(svgEl("line", {x1:xx,y1:top,x2:xx,y2:H-bottom,stroke:"#1b3033","stroke-width":1}));
+        const label = svgEl("text", {x:xx,y:H-7,fill:"#8ba2a1","font-size":9,"text-anchor":"middle"});
+        label.textContent = position >= 1e6 ? `${(position / 1e6).toFixed(step < 1e6 ? 1 : 0)} Mb` : `${Math.round(position / 1e3)} kb`;
+        svg.append(label);
       }
-      const omitted = Math.max(0, branches.length - selected.length);
-      els["local-graph-help"].textContent = `${t("graphStructureHelp")} ${selected.length}${omitted ? ` / ${branches.length}` : ""} ${t("shownBranches")}.`;
+      if (labelPrefix) {
+        const axisLabel = svgEl("text", {x:W-r,y:H-7,fill:"#8ba2a1","font-size":9,"text-anchor":"end"});
+        axisLabel.textContent = labelPrefix; svg.append(axisLabel);
+      }
+    };
+
+    if (state.localGraphView === "path") {
+      const pathId = state.localGraphPath;
+      const path = PATHS.find(item => item.id === pathId) || pathObjects[0];
+      const locus = state.traitData?.loci?.find(item => item.id === state.activeLocus && item.chromosome === chr.id);
+      const focusReferencePosition = locus ? (locus.start + locus.end) / 2 : state.cursor;
+      const focusSegment = (chr.tracks?.[pathId] || []).find(segment => segment.start <= focusReferencePosition && segment.end >= focusReferencePosition && Number.isFinite(segment.pathPosition));
+      const focusPathPosition = focusSegment?.pathPosition;
+      const candidates = [];
+      branches.filter(branch => (branch.support || []).includes(pathId)).forEach(branch => {
+        (branch.pathRanges?.[pathId] || []).forEach(range => candidates.push({ branch, range, crossesFocus: branch.start <= focusReferencePosition && branch.end >= focusReferencePosition }));
+      });
+      const selected = candidates.sort((a,b) => Number(b.crossesFocus) - Number(a.crossesFocus) || b.branch.offReferenceBp - a.branch.offReferenceBp).slice(0,10).sort((a,b) => a.range.start - b.range.start);
+      const domainValues = selected.flatMap(item => [item.range.start, item.range.end]);
+      if (Number.isFinite(focusPathPosition)) domainValues.push(focusPathPosition);
+      if (!domainValues.length) {
+        const empty = svgEl("text", {x:l+pw/2,y:104,fill:"#8ba2a1","font-size":11,"text-anchor":"middle"});
+        empty.textContent = t("noPathOrder"); svg.append(empty);
+        els["local-graph-help"].textContent = t("pathOrderHelp");
+      } else {
+        let domainStart = Math.min(...domainValues), domainEnd = Math.max(...domainValues);
+        const pad = Math.max(50000, (domainEnd - domainStart) * .06);
+        domainStart = Math.max(0, domainStart - pad); domainEnd += pad;
+        const pathX = position => l + (position - domainStart) / Math.max(1, domainEnd - domainStart) * pw;
+        drawTicks(domainStart, domainEnd, pathX);
+        const axisY = 148;
+        const pathLabelText = svgEl("text", {x:l-12,y:axisY+4,fill:path?.color || "#a8b8b7","font-size":10,"text-anchor":"end"});
+        pathLabelText.textContent = path?.short || pathId; svg.append(pathLabelText);
+        svg.append(svgEl("line", {x1:l,y1:axisY,x2:W-r,y2:axisY,stroke:path?.color || "#778789","stroke-width":6,"stroke-linecap":"round",opacity:.65}));
+        selected.forEach((item,index) => {
+          const center = pathX((item.range.start + item.range.end) / 2);
+          const nodeWidth = clamp(14 + Math.log10(Math.max(1,item.branch.offReferenceBp)) * 7, 20, 58);
+          const laneY = 28 + (index % 5) * 20;
+          const color = item.branch.lineage === "kishu" ? "#f0ad3d" : item.branch.lineage === "kunenbo" ? "#3e94d8" : "#a8b8b7";
+          const branchData = {class:"branch-mark","data-branch":item.branch.id,"data-path-start":item.range.start,"data-path-end":item.range.end};
+          svg.append(svgEl("line", {x1:center,y1:laneY+6,x2:center,y2:axisY-4,stroke:color,"stroke-width":1.2,opacity:.65,...branchData}));
+          svg.append(svgEl("rect", {x:center-nodeWidth/2,y:laneY-5,width:nodeWidth,height:11,rx:4,fill:color,stroke:"#071416","stroke-width":1,...branchData}));
+          const label = svgEl("text", {x:center,y:laneY-9,fill:color,"font-size":8,"text-anchor":"middle","pointer-events":"none"});
+          label.textContent = item.branch.offReferenceBp >= 1000 ? `${(item.branch.offReferenceBp/1000).toFixed(item.branch.offReferenceBp >= 10000 ? 0 : 1)} kb` : `${item.branch.offReferenceBp} bp`; svg.append(label);
+        });
+        if (Number.isFinite(focusPathPosition)) {
+          const fx = pathX(focusPathPosition);
+          svg.append(svgEl("line", {x1:fx,y1:top,x2:fx,y2:axisY+10,stroke:locus?.color || "#edf4f2","stroke-width":2,opacity:.9,"stroke-dasharray":"3 4"}));
+          const focusLabel = svgEl("text", {x:clamp(fx+6,l+4,W-r-100),y:18,fill:locus?.color || "#edf4f2","font-size":9,"font-weight":700});
+          focusLabel.textContent = `${locus?.symbol || t("position")} · ${fmtMb(focusPathPosition)}`; svg.append(focusLabel);
+        }
+        els["local-graph-help"].textContent = `${t("pathOrderHelp")} ${selected.length} ${t("shownBranches")}.`;
+      }
+    } else {
+      drawTicks(state.start, state.end, refX);
+      const referenceY = 112;
+      const refLabel = svgEl("text", {x:l-12,y:referenceY+4,fill:"#a8b8b7","font-size":10,"text-anchor":"end"});
+      refLabel.textContent = "CUN#1 ref"; svg.append(refLabel);
+      svg.append(svgEl("line", {x1:l,y1:referenceY,x2:W-r,y2:referenceY,stroke:"#778789","stroke-width":7,"stroke-linecap":"round",opacity:.8}));
+
+      const wide = state.end - state.start > 2e6;
+      if (wide) {
+        const bins = (chr.offReferenceBins || []).filter(bin => bin.end >= state.start && bin.start <= state.end);
+        const values = bins.map(bin => [...visiblePaths].reduce((sum, pathId) => sum + Number(bin.bpByPath?.[pathId] || 0), 0));
+        const max = Math.max(1, ...values);
+        bins.forEach((bin, index) => {
+          const bp = values[index]; if (!bp) return;
+          const start = Math.max(bin.start, state.start), end = Math.min(bin.end, state.end);
+          const height = 10 + Math.log1p(bp) / Math.log1p(max) * 62;
+          svg.append(svgEl("rect", {x:refX(start),y:referenceY-height,width:Math.max(1,refX(end)-refX(start)),height,fill:MODES[state.mode].accent,opacity:.48}));
+        });
+        const hint = svgEl("text", {x:l+pw/2,y:28,fill:"#b5c5c3","font-size":11,"text-anchor":"middle"});
+        hint.textContent = t("graphZoomHint"); svg.append(hint);
+      } else {
+        const selected = [...branches].sort((a,b) => b.offReferenceBp - a.offReferenceBp).slice(0,24).sort((a,b) => a.start - b.start);
+        const colors = {kishu:"#f0ad3d",kunenbo:"#3e94d8",shared:"#a8b8b7"};
+        selected.forEach((branch, index) => {
+          const outsideLeft = branch.start < state.start;
+          const outsideRight = branch.end > state.end;
+          const anchorX1 = refX(clamp(branch.start, state.start, state.end));
+          const anchorX2 = refX(clamp(branch.end, state.start, state.end));
+          const laneY = 20 + (index % 4) * 20;
+          const color = colors[branch.lineage] || colors.shared;
+          const nodeWidth = clamp(8 + Math.log10(Math.max(1,branch.offReferenceBp)) * 6, 16, 55);
+          const midX = clamp((anchorX1 + anchorX2) / 2, l + nodeWidth / 2 + 9, W - r - nodeWidth / 2 - 9);
+          const blockLeft = midX - nodeWidth / 2, blockRight = midX + nodeWidth / 2;
+          const leftPath = outsideLeft
+            ? `M ${l} ${laneY} L ${blockLeft} ${laneY}`
+            : `M ${anchorX1} ${referenceY} C ${anchorX1} ${laneY}, ${Math.min(anchorX1,blockLeft)} ${laneY}, ${blockLeft} ${laneY}`;
+          const rightPath = outsideRight
+            ? `L ${W-r} ${laneY}`
+            : `C ${Math.max(anchorX2,blockRight)} ${laneY}, ${anchorX2} ${laneY}, ${anchorX2} ${referenceY}`;
+          const pathMark = svgEl("path", {d:`${leftPath} L ${blockRight} ${laneY} ${rightPath}`,fill:"none",stroke:color,"stroke-width":2.2,opacity:.9,class:"branch-mark","data-branch":branch.id});
+          svg.append(pathMark);
+          svg.append(svgEl("rect", {x:blockLeft,y:laneY-5,width:nodeWidth,height:10,rx:4,fill:color,stroke:"#071416","stroke-width":1,class:"branch-mark","data-branch":branch.id}));
+          if (outsideLeft) svg.append(svgEl("path", {d:`M ${l+7} ${laneY-5} L ${l} ${laneY} L ${l+7} ${laneY+5}`,fill:"none",stroke:color,"stroke-width":2.2,class:"branch-mark","data-branch":branch.id}));
+          if (outsideRight) svg.append(svgEl("path", {d:`M ${W-r-7} ${laneY-5} L ${W-r} ${laneY} L ${W-r-7} ${laneY+5}`,fill:"none",stroke:color,"stroke-width":2.2,class:"branch-mark","data-branch":branch.id}));
+          if (branch.offReferenceBp >= 1000 && nodeWidth >= 34) {
+            const label = svgEl("text", {x:midX,y:laneY-9,fill:color,"font-size":8,"text-anchor":"middle","pointer-events":"none"});
+            label.textContent = branch.offReferenceBp >= 1e6 ? `${(branch.offReferenceBp/1e6).toFixed(1)} Mb` : `${Math.round(branch.offReferenceBp/1e3)} kb`; svg.append(label);
+          }
+        });
+        if (!selected.length) {
+          const empty = svgEl("text", {x:l+pw/2,y:60,fill:"#79908f","font-size":11,"text-anchor":"middle"});
+          empty.textContent = t("graphNoBranches"); svg.append(empty);
+        }
+      }
+
+      const supportStart = 139;
+      const referenceSpan = Math.max(1, (chr.viewEnd ?? chr.length) - (chr.viewStart ?? 0));
+      pathObjects.forEach((path,index) => {
+        const y = supportStart + index * 15;
+        const label = svgEl("text", {x:l-12,y:y+3,fill:path.color,"font-size":8,"text-anchor":"end"});
+        label.textContent = path.short; svg.append(label);
+        svg.append(svgEl("line", {x1:l,y1:y,x2:W-r,y2:y,stroke:"#203438","stroke-width":5,"stroke-linecap":"butt"}));
+        const pathLength = Number(chr.pathLengths?.[path.id]) || chr.length;
+        (chr.tracks?.[path.id] || []).filter(segment => segment.end >= state.start && segment.start <= state.end && Number(segment.coverage) > 0).forEach(segment => {
+          const start = Math.max(segment.start,state.start), end = Math.min(segment.end,state.end);
+          const referenceFraction = ((segment.start + segment.end) / 2 - (chr.viewStart ?? 0)) / referenceSpan;
+          const pathFraction = Number.isFinite(segment.pathPosition) ? segment.pathPosition / Math.max(1,pathLength) : referenceFraction;
+          const displacement = Math.abs(pathFraction-referenceFraction);
+          const attrs = {x1:refX(start),y1:y,x2:refX(end)+.5,y2:y,stroke:path.color,"stroke-width":5,opacity:clamp(.3+.7*Math.sqrt(Number(segment.coverage)),.3,1),"stroke-linecap":"butt",class:"support-mark","data-path":path.id,"data-start":segment.start,"data-end":segment.end,"data-coverage":segment.coverage,"data-path-position":segment.pathPosition ?? "","data-displacement":displacement};
+          if (displacement > .04) attrs["stroke-dasharray"] = "4 3";
+          svg.append(svgEl("line", attrs));
+          if (Number(segment.inversion) > .15) svg.append(svgEl("line", {x1:refX(start),y1:y+4,x2:refX(end),y2:y+4,stroke:"#f36a6a","stroke-width":1.5,opacity:.9}));
+        });
+      });
+      const omitted = Math.max(0, branches.length - Math.min(24,branches.length));
+      els["local-graph-help"].textContent = `${t("graphStructureHelp")} ${Math.min(24,branches.length)}${omitted ? ` / ${branches.length}` : ""} ${t("shownBranches")}.`;
+
+      const cursorX = refX(state.cursor);
+      svg.append(svgEl("line", {x1:cursorX,y1:top,x2:cursorX,y2:H-bottom,stroke:"#edf4f2","stroke-width":1,opacity:.55,"stroke-dasharray":"2 5"}));
     }
 
-    const cursorX = x(state.cursor);
-    svg.append(svgEl("line", {x1:cursorX,y1:top,x2:cursorX,y2:H-bottom,stroke:"#edf4f2","stroke-width":1,opacity:.55,"stroke-dasharray":"2 5"}));
     svg.querySelectorAll(".branch-mark").forEach(element => {
       const branch = branches.find(item => item.id === element.dataset.branch);
       if (!branch) return;
       element.style.cursor = "pointer";
       const outsideNote = branch.start < state.start || branch.end > state.end ? `<br>↔ ${t("continuesOutside")}` : "";
-      const tooltip = event => showBranchTooltip(event, `<strong>${fmtMb(branch.start)}–${fmtMb(branch.end)}</strong><br>${t("offReferenceBp")}: ${Number(branch.offReferenceBp).toLocaleString("en-US")} bp · ${branch.nodeCount.toLocaleString("en-US")} ${t("branchNodes")}<br>${t("branchSupport")}: ${(branch.support || []).join(", ")}${outsideNote}`);
+      const pathStart = Number(element.dataset.pathStart);
+      const pathEnd = Number(element.dataset.pathEnd);
+      const pathRange = Number.isFinite(pathStart) && Number.isFinite(pathEnd)
+        ? {start:pathStart,end:pathEnd}
+        : branch.pathRanges?.[state.localGraphPath]?.[0];
+      const pathNote = state.localGraphView === "path" && pathRange ? `<br>${t("pathPosition")}: ${fmtMb(pathRange.start)}–${fmtMb(pathRange.end)}` : "";
+      const directionNote = branch.reversedAnchors ? `<br>↩ ${state.language === "ja" ? "参照アンカー順が逆" : "Reference anchors are reversed"}` : "";
+      const tooltip = event => showBranchTooltip(event, `<strong>${fmtMb(branch.start)}–${fmtMb(branch.end)}</strong><br>${t("offReferenceBp")}: ${Number(branch.offReferenceBp).toLocaleString("en-US")} bp · ${branch.nodeCount.toLocaleString("en-US")} ${t("branchNodes")}<br>${t("branchSupport")}: ${(branch.support || []).join(", ")}${pathNote}${directionNote}${outsideNote}`);
       element.addEventListener("mouseenter", tooltip);
       element.addEventListener("mousemove", tooltip);
       element.addEventListener("mouseleave", hideBranchTooltip);
@@ -696,6 +790,16 @@
         const width = Math.max(100000, Math.abs(branch.end - branch.start) * 2.5, branch.offReferenceBp * 2.5);
         state.cursor = center; setWindow(center-width/2, center+width/2);
       });
+    });
+    svg.querySelectorAll(".support-mark").forEach(element => {
+      const path = PATHS.find(item => item.id === element.dataset.path);
+      const coverage = Number(element.dataset.coverage);
+      const pathPosition = Number(element.dataset.pathPosition);
+      const displaced = Number(element.dataset.displacement) > .04;
+      const tooltip = event => showBranchTooltip(event, `<strong>${pathLabel(path)}</strong><br>${fmtMb(Number(element.dataset.start))}–${fmtMb(Number(element.dataset.end))}<br>${t("referenceCoverage")}: ${(coverage*100).toFixed(1)}%${Number.isFinite(pathPosition) ? `<br>${t("pathPosition")}: ${fmtMb(pathPosition)}` : ""}<br>${displaced ? t("displacedCandidate") : t("collinearCandidate")}`);
+      element.addEventListener("mouseenter", tooltip);
+      element.addEventListener("mousemove", tooltip);
+      element.addEventListener("mouseleave", hideBranchTooltip);
     });
   }
 
@@ -887,7 +991,7 @@
   function validateData(data) {
     if(!data || data.schema!=="citrus-pathweaver/v1") throw new Error("対応するschemaではありません");
     if(!Array.isArray(data.paths)||!data.paths.length||!Array.isArray(data.chromosomes)||!data.chromosomes.length) throw new Error("pathsまたはchromosomesがありません");
-    data.chromosomes.forEach(c=>{ if(!c.id||!Number.isFinite(c.length))throw new Error("染色体IDまたは長さが不正です"); c.variants=c.variants||[]; c.switchesKi=c.switchesKi||[]; c.switchesKu=c.switchesKu||[]; c.similarityKi=c.similarityKi||[]; c.similarityKu=c.similarityKu||[]; c.parentOrigin=c.parentOrigin||{}; c.tracks=c.tracks||{}; c.offReferenceBins=c.offReferenceBins||[]; c.graphBranches=c.graphBranches||[]; });
+    data.chromosomes.forEach(c=>{ if(!c.id||!Number.isFinite(c.length))throw new Error("染色体IDまたは長さが不正です"); c.variants=c.variants||[]; c.switchesKi=c.switchesKi||[]; c.switchesKu=c.switchesKu||[]; c.similarityKi=c.similarityKi||[]; c.similarityKu=c.similarityKu||[]; c.parentOrigin=c.parentOrigin||{}; c.tracks=c.tracks||{}; c.pathLengths=c.pathLengths||{}; c.offReferenceBins=c.offReferenceBins||[]; c.graphBranches=c.graphBranches||[]; });
     return data;
   }
 
@@ -910,7 +1014,7 @@
 
   async function loadBundledData() {
     try {
-      const [response, traitResponse]=await Promise.all([fetch("data/citrus_ch1-ch9.viewer.json"), fetch("data/trait_loci.json?v=12")]);
+      const [response, traitResponse]=await Promise.all([fetch("data/citrus_ch1-ch9.viewer.json?v=2"), fetch("data/trait_loci.json?v=12")]);
       if(!response.ok||!traitResponse.ok)throw new Error(`HTTP ${response.status}/${traitResponse.status}`);
       state.traitData=await traitResponse.json();
       activateData(validateData(await response.json()), "Chr1–9 GFA");
@@ -919,6 +1023,8 @@
   }
 
   document.querySelectorAll(".mode-button").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.mode)));
+  document.querySelectorAll("[data-local-graph-view]").forEach(button=>button.addEventListener("click",()=>{state.localGraphView=button.dataset.localGraphView;renderLocalGraph();}));
+  els["local-graph-path"].addEventListener("change",event=>{state.localGraphPath=event.target.value;renderLocalGraph();});
   document.getElementById("zoom-in").onclick=()=>zoom(.5);
   document.getElementById("zoom-out").onclick=()=>zoom(2);
   document.getElementById("pan-left").onclick=()=>pan(-.35);
