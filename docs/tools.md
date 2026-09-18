@@ -16,6 +16,8 @@
 python3 tools/gfa_to_viewer.py /path/to/ch1.gfa \
   --output outputs/ch1.viewer.json \
   --reference 'CUN#1' \
+  --cun-ki-path 'CUN#2' \
+  --cun-ku-path 'CUN#1' \
   --bin-width 50000 \
   --min-branch-bp 50
 ```
@@ -25,6 +27,8 @@ python3 tools/gfa_to_viewer.py /path/to/ch1.gfa \
 - 第1引数：入力GFA
 - `--output`：出力JSON（必須）
 - `--reference`：座標軸に使うパスの接頭辞。既定値は `CUN#1`
+- `--cun-ki-path`：紀州由来と確認済みの温州hapのGFAパス接頭辞（必須）
+- `--cun-ku-path`：九年母由来と確認済みの温州hapのGFAパス接頭辞（必須）
 - `--bin-width`：集約幅（bp）。既定値は5,000 bp。公開版は50,000 bpを使用
 - `--min-branch-bp`：局所グラフへ残す参照外分岐の最小長。既定値は50 bp
 
@@ -34,14 +38,14 @@ python3 tools/gfa_to_viewer.py /path/to/ch1.gfa \
 |---|---|
 | `CKI#1` | 紀州 hap1 |
 | `CKI#2` | 紀州 hap2 |
-| `CUN#1` | 温州 hap（親系統は共有ノードから暫定判定） |
-| `CUN#2` | 温州 hap（親系統は共有ノードから暫定判定） |
+| `CUN#1` | 温州 hap（公開データではCUNphKu） |
+| `CUN#2` | 温州 hap（公開データではCUNphKi） |
 | `CKU#1` | 九年母 hap1 |
 | `CKU#2` | 九年母 hap2 |
 
 GFAの `P` レコードは、ノード名の後ろに `+` または `-` が付いたカンマ区切りのwalkを想定しています。パス名に `#ch1:開始-終了` のような区間があれば、その座標を表示範囲に利用します。
 
-温州2パスの紀州由来／九年母由来の割り当ては、染色体全体の共有ノード長で重み付けしたJaccard係数から1対1になるよう暫定的に決めます。確定した系譜情報ではありません。
+温州2パスの紀州由来／九年母由来の割り当ては、`--cun-ki-path` と `--cun-ku-path` で明示します。共有ノード類似度からハプロタイプ名を推定しません。公開データでは元FASTAとGFAパスの染色体長を照合し、Chr1–9のすべてで `CUN#1 = CUNphKu`、`CUN#2 = CUNphKi` と確認しています。共有ノード類似度は親系統との局所的な関係を探索する指標としてのみ計算します。
 
 参照パスに含まれない連続walkは、前後の参照ノードへアンカーして抽出します。出力には、染色体全体表示用の50 kb集約値 `offReferenceBins` と、局所グラフ用の `graphBranches` が入ります。`graphBranches` は開始・終了アンカー、参照外塩基数、ノード数、通過するパスに加え、各Pパスでの出現座標 `pathRanges` を保持します。ノード名・塩基配列は含めません。前後どちらにも参照ノードがないwalkは `unplacedOffReferenceBp` にパス別の合計だけを記録します。
 

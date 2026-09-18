@@ -40,17 +40,18 @@ def weighted_jaccard(a: set[str], b: set[str], lengths: dict[str, int]) -> float
     return sum(lengths.get(node, 1) for node in a & b) / sum(lengths.get(node, 1) for node in union)
 
 
-def choose_cun_origins(node_sets: dict[str, set[str]], lengths: dict[str, int]) -> tuple[dict[str, str], dict[str, dict[str, float]]]:
+def score_cun_origins(
+    node_sets: dict[str, set[str]],
+    lengths: dict[str, int],
+    child_paths: tuple[str, str],
+) -> dict[str, dict[str, float]]:
     scores: dict[str, dict[str, float]] = {}
-    for child in ("CUN#1", "CUN#2"):
+    for child in child_paths:
         scores[child] = {
             "kishu": max((weighted_jaccard(node_sets.get(child, set()), node_sets.get(p, set()), lengths) for p in ("CKI#1", "CKI#2")), default=0),
             "kunenbo": max((weighted_jaccard(node_sets.get(child, set()), node_sets.get(p, set()), lengths) for p in ("CKU#1", "CKU#2")), default=0),
         }
-    direct = scores["CUN#1"]["kishu"] + scores["CUN#2"]["kunenbo"]
-    swapped = scores["CUN#1"]["kunenbo"] + scores["CUN#2"]["kishu"]
-    mapping = {"CUN#1": "kishu", "CUN#2": "kunenbo"} if direct >= swapped else {"CUN#1": "kunenbo", "CUN#2": "kishu"}
-    return mapping, scores
+    return scores
 
 
 def stable_switches(scores: list[dict[str, float]], span_start: int, span_end: int) -> list[float]:
@@ -81,6 +82,8 @@ def main() -> None:
     parser.add_argument("gfa", type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--reference", default="CUN#1")
+    parser.add_argument("--cun-ki-path", required=True, help="GFA path prefix for the Kishu-derived Satsuma haplotype")
+    parser.add_argument("--cun-ku-path", required=True, help="GFA path prefix for the Kunenbo-derived Satsuma haplotype")
     parser.add_argument("--bin-width", type=int, default=5000)
     parser.add_argument("--min-branch-bp", type=int, default=50, help="minimum off-reference length retained for local graph rendering")
     args = parser.parse_args()
@@ -106,6 +109,12 @@ def main() -> None:
         grouped[key].append((name, walk))
         node_sets[key].update(node for node, _ in walk)
 
+    if args.cun_ki_path == args.cun_ku_path:
+        raise ValueError("--cun-ki-path and --cun-ku-path must be different")
+    for source in (args.cun_ki_path, args.cun_ku_path):
+        if source not in grouped:
+            raise ValueError(f"Satsuma path {source!r} not found in GFA")
+
     reference_records = grouped.get(args.reference)
     if not reference_records:
         raise ValueError(f"Reference path {args.reference!r} not found")
@@ -126,7 +135,8 @@ def main() -> None:
         cursor += node_length
     view_end = max(view_end, cursor)
 
-    origin_map, origin_scores = choose_cun_origins(node_sets, lengths)
+    origin_map = {args.cun_ki_path: "kishu", args.cun_ku_path: "kunenbo"}
+    origin_scores = score_cun_origins(node_sets, lengths, (args.cun_ki_path, args.cun_ku_path))
     source_to_id = {key: value[0] for key, value in PATH_STYLE.items()}
     for source, origin in origin_map.items():
         source_to_id[source] = "CUNphKi" if origin == "kishu" else "CUNphKu"
@@ -396,7 +406,7 @@ def main() -> None:
             "source": {"gfa": args.gfa.name, "referencePath": reference_name, "projection": "shared reference nodes"},
         }],
         "originAssignment": {
-            "method": "one-to-one weighted node-set Jaccard; provisional",
+            "method": "explicit GFA path mapping supplied at conversion",
             "mapping": origin_map,
             "scores": origin_scores,
         },

@@ -128,7 +128,7 @@
           <h2>解釈するときの注意</h2>
           <ul class="limit-list">
             <li>共有ノード類似度は塩基配列identity、IBD、親子関係を直接測る値ではありません。</li>
-            <li>CUNphKi／CUNphKuの割り当ては染色体ごとの共有ノード類似度による暫定推定です。特にChr2はphasingや割り当ての再検証が必要です。</li>
+            <li><code>CUN#1 = CUNphKu</code>、<code>CUN#2 = CUNphKi</code>の対応は、元FASTAとGFAパスの染色体長がChr1–9のすべてで完全一致することにより確認しています。</li>
             <li>0付近の揺れは、親同士が似た区間、比較可能ノードの不足、反復配列、50 kb集約、参照パスへの投影で生じます。</li>
             <li>組換え、SV、因果遺伝子の確定には、塩基レベルのアラインメント、read support、遺伝子注釈、発現、集団解析などの追加検証が必要です。</li>
           </ul>
@@ -225,7 +225,7 @@
 
         <section class="help-section" id="limits-en">
           <h2>Interpretation limits</h2>
-          <ul class="limit-list"><li>Shared-node similarity is not nucleotide identity, IBD or direct proof of parentage.</li><li>CUNphKi/CUNphKu labels are provisional chromosome-level assignments from shared-node similarity. Chr2 particularly needs phasing and assignment validation.</li><li>Oscillation near zero can arise from low parental separability, missing comparable nodes, repeats, 50 kb binning and reference projection.</li><li>Crossover, SV and causal-gene claims require nucleotide alignment, read support, annotation, expression and population-level validation.</li></ul>
+          <ul class="limit-list"><li>Shared-node similarity is not nucleotide identity, IBD or direct proof of parentage.</li><li>The mapping <code>CUN#1 = CUNphKu</code> and <code>CUN#2 = CUNphKi</code> was verified by exact chromosome-length matches between the source FASTA and GFA paths for all chromosomes 1–9.</li><li>Oscillation near zero can arise from low parental separability, missing comparable nodes, repeats, 50 kb binning and reference projection.</li><li>Crossover, SV and causal-gene claims require nucleotide alignment, read support, annotation, expression and population-level validation.</li></ul>
         </section>
       </article>
     </main>
