@@ -4,11 +4,17 @@
 
 A lightweight pangenome chromosome viewer for comparing six haplotypes from three citrus cultivars: Satsuma mandarin (Unshu) and its parental lineages, Kishu mandarin and Kunenbo mandarin.
 
-The viewer projects Minigraph-Cactus GFA data onto reference chromosome coordinates and displays haplotype paths, shared nodes, local similarity to the parental lineages, candidate structural variants, and candidate trait-associated genes.
+The viewer projects PGGB GFA data onto reference chromosome coordinates and displays haplotype paths, shared nodes, local similarity to the parental lineages, candidate structural variants, and candidate trait-associated genes.
 
 ## Viewer
 
 https://moriya-dbcls.github.io/unshu-haplotype-viewer/
+
+## Data source and development
+
+The haplotype-resolved assemblies used in this project were obtained from the [Mikan Genome Database (MiGD2)](https://mikan.dna.naro.go.jp/migd2/data_download/download.html).
+
+This viewer was developed during the [DBCLS BioHackathon 2026](https://2026.biohackathon.org/).
 
 ## Repository contents
 

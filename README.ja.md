@@ -4,11 +4,17 @@
 
 温州みかん（Satsuma mandarin / Unshu）と、その親系統である紀州みかん・九年母の3品種6ハプロタイプを比較する、軽量なパンゲノム染色体ビューワです。
 
-Minigraph-Cactus由来のGFAを参照染色体座標へ投影し、ハプロタイプ経路、共有ノード、親系統との局所類似度、構造変異候補、表現型候補遺伝子を表示します。
+PGGB由来のGFAを参照染色体座標へ投影し、ハプロタイプ経路、共有ノード、親系統との局所類似度、構造変異候補、表現型候補遺伝子を表示します。
 
 ## Viewer
 
 https://moriya-dbcls.github.io/unshu-haplotype-viewer/
+
+## データソースと開発
+
+本プロジェクトで使用したハプロタイプアセンブリは、[Mikan Genome Database（MiGD2）](https://mikan.dna.naro.go.jp/migd2/data_download/download.html)から取得しました。
+
+本ビューワは[DBCLS BioHackathon 2026](https://2026.biohackathon.org/)で開発しました。
 
 ## Repository contents
 
