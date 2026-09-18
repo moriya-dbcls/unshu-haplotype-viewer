@@ -14,6 +14,8 @@ https://moriya-dbcls.github.io/unshu-haplotype-viewer/
 
 The haplotype-resolved assemblies used in this project were obtained from the [Mikan Genome Database (MiGD2)](https://mikan.dna.naro.go.jp/migd2/data_download/download.html).
 
+Step-by-step instructions for constructing the citrus pangenome graph are available in the [Citrus Pangenome Tutorial](https://github.com/lsid-lab/citrus-pangenome-tutorial).
+
 This viewer was developed during the [DBCLS BioHackathon 2026](https://2026.biohackathon.org/).
 
 ## Repository contents

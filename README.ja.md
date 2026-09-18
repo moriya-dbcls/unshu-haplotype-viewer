@@ -14,6 +14,8 @@ https://moriya-dbcls.github.io/unshu-haplotype-viewer/
 
 本プロジェクトで使用したハプロタイプアセンブリは、[Mikan Genome Database（MiGD2）](https://mikan.dna.naro.go.jp/migd2/data_download/download.html)から取得しました。
 
+柑橘パンゲノムグラフの構築手順は、[Citrus Pangenome Tutorial](https://github.com/lsid-lab/citrus-pangenome-tutorial)にまとめています。
+
 本ビューワは[DBCLS BioHackathon 2026](https://2026.biohackathon.org/)で開発しました。
 
 ## Repository contents
