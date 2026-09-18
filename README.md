@@ -1,8 +1,10 @@
 # Unshu Haplotype Viewer
 
-温州みかん（Satsuma mandarin / Unshu）と、その親系統である紀州みかん・九年母の3品種6ハプロタイプを比較する、軽量なパンゲノム染色体ビューワです。
+[日本語版 README](README.ja.md)
 
-Minigraph-Cactus由来のGFAを参照染色体座標へ投影し、ハプロタイプ経路、共有ノード、親系統との局所類似度、構造変異候補、表現型候補遺伝子を表示します。
+A lightweight pangenome chromosome viewer for comparing six haplotypes from three citrus cultivars: Satsuma mandarin (Unshu) and its parental lineages, Kishu mandarin and Kunenbo mandarin.
+
+The viewer projects Minigraph-Cactus GFA data onto reference chromosome coordinates and displays haplotype paths, shared nodes, local similarity to the parental lineages, candidate structural variants, and candidate trait-associated genes.
 
 ## Viewer
 
@@ -10,9 +12,9 @@ https://moriya-dbcls.github.io/unshu-haplotype-viewer/
 
 ## Repository contents
 
-- `dist/`: GitHub Pagesで配信する静的ビューアとChr1–9の表示用データ
-- `tools/`: GFAから軽量viewer JSONを生成・結合するスクリプト
-- `viewer_config.example.json`: GFAパス名と表示名の対応例
+- `dist/`: Static viewer and Chr1–9 display data published through GitHub Pages
+- `tools/`: Scripts for generating and merging lightweight viewer JSON files from GFA data
+- `viewer_config.example.json`: Example mapping between GFA path names and viewer labels
 
 ## Local preview
 
@@ -20,8 +22,8 @@ https://moriya-dbcls.github.io/unshu-haplotype-viewer/
 python3 -m http.server 8000 --directory dist
 ```
 
-ブラウザで `http://localhost:8000/` を開いてください。
+Open `http://localhost:8000/` in a browser.
 
 ## Notes
 
-共有ノード類似度は、塩基配列identity、IBD、親子関係を直接示す値ではありません。詳しい計算方法と解釈上の注意は、ビューア右上のHelpに記載しています。
+Shared-node similarity does not directly measure nucleotide sequence identity, identity by descent, or parent–offspring relationships. See **Help** in the upper-right corner of the viewer for calculation details and interpretation notes.
